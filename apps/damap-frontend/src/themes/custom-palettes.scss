@@ -3,6 +3,7 @@
 $light-primary-text: white;
 $dark-primary-text: rgba(black, 0.87);
 
+
 $custom-primary-color: (
   50: #ffd9c2,
   100: #ffcaa0,
@@ -33,7 +34,7 @@ $custom-primary-color: (
     A200: $dark-primary-text,
     A400: $light-primary-text,
     A700: $light-primary-text,
-  ),
+),
 );
 $custom-accent-color: (
   50: #e7e7e7,

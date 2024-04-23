@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 <mat-form-field
   [appearance]="appearance"
   [class.custom-style]="applyCustomStyle">
   <mat-label class="wrap-label">
     {{ label | translate }}
   </mat-label>
+=======
+<mat-form-field [appearance]="appearance" [class.custom-style]="applyCustomStyle">
+  <mat-label class="wrap-label">
+    {{ label | translate }}
+   </mat-label>
+>>>>>>> 7c12786 (issue: visual identity enhancement)
 
   <ng-template #standard>
     <textarea
@@ -16,9 +23,7 @@
       rows="4"
       #message>
     </textarea>
-    <mat-hint align="end"
-      >{{ message.value.length }} / {{ maxLength }}</mat-hint
-    >
+    <mat-hint align="end">{{ message.value.length }} / {{ maxLength }}</mat-hint>
   </ng-template>
 
   <!-- AUTOCOMPLETE -->
@@ -32,14 +37,10 @@
       [required]="required"
       rows="4"
       #message></textarea>
-    <mat-hint align="end"
-      >{{ message.value.length }} / {{ maxLength }}</mat-hint
-    >
+    <mat-hint align="end">{{ message.value.length }} / {{ maxLength }}</mat-hint>
 
     <mat-autocomplete #auto="matAutocomplete">
-      <mat-option
-        *ngFor="let option of autocompleteOptions"
-        value="{{ option | translate }}">
+      <mat-option *ngFor="let option of autocompleteOptions" [value]="option | translate">
         {{ option | translate }}
       </mat-option>
     </mat-autocomplete>
