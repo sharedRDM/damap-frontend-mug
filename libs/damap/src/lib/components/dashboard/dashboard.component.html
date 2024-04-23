@@ -22,7 +22,7 @@
       <h2 translate>dashboard.dmp.heading</h2>
       <p>
         {{ "dashboard.dmp.text.prefix" | translate }}
-        <a [href]="'dashboard.dmp.text.dmp.link' | translate" target="_blank">
+        <a [href]="'dashboard.dmp.text.gsp.link' | translate" target="_blank">
           {{ "dashboard.dmp.text.gsp.text" | translate }}</a
         >{{ "dashboard.dmp.text.gsp.body" | translate }}
         <a
@@ -48,7 +48,15 @@
       <ol>
         <u><li translate>dashboard.instructions.steps.heading</li></u>
         <p translate>dashboard.instructions.steps.body</p>
-        <p translate>dashboard.instructions.steps.body1</p>
+        <p>
+          {{ "dashboard.instructions.steps.text.prefix" | translate }}
+          <a
+            [href]="'dashboard.instructions.steps.text.link' | translate"
+            target="_blank">
+            {{ "dashboard.instructions.steps.text.title" | translate }}</a
+          >
+          {{ "dashboard.instructions.steps.text.endPrefix" | translate }}
+        </p>
         <u><li translate>dashboard.instructions.export.heading</li></u>
         <p translate>dashboard.instructions.export.body</p>
         <u><li translate>dashboard.instructions.finalise.heading</li></u>
@@ -60,11 +68,11 @@
     <section>
       <h2 translate>dashboard.help.heading</h2>
       <p>
-        <span translate>dashboard.help.prefix</span>
+        {{ "dashboard.help.prefix" | translate }}
         <a [href]="'dashboard.help.MUni.link' | translate" target="_blank">
-          {{ "dashboard.help.MUni.title" | translate }}
-        </a>
-        <span translate>dashboard.help.body</span>
+          {{ "dashboard.help.MUni.title" | translate }}</a
+        >
+        {{ "dashboard.help.body" | translate }}
         <a
           [href]="'mailto:' + ('dashboard.help.endPrefix.title' | translate)"
           target="_blank">
