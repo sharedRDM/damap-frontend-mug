@@ -6,3 +6,9 @@
 .full-width {
   width: 100%;
 }
+
+.tooltip-position {
+  position: absolute;
+  right: 30px;
+  margin: 5px;
+}
