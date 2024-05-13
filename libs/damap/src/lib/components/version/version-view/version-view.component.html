@@ -1,20 +1,20 @@
 <div class="content" *ngIf="dmp$ | async as dmp">
   <div class="action-buttons">
-    <button mat-raised-button [routerLink]="'/dmp/' + id + '/version'">
+    <button class="button-position-custom" mat-raised-button [routerLink]="'/dmp/' + id + '/version'">
       <mat-icon>chevron_left</mat-icon>
       {{ "versions.view.button.versions" | translate }}
     </button>
-    <button mat-raised-button color="primary" [routerLink]="'/dmp/' + id">
+    <button class="button-position-custom" mat-raised-button color="primary" [routerLink]="'/dmp/' + id">
       {{ "versions.view.button.goto.latest" | translate }}
     </button>
   </div>
 
   <h2 *ngIf="versions$ | async as versions">{{ getVersionName(versions) }}</h2>
   <div class="action-buttons">
-    <button mat-button (click)="accordion.openAll()">
+    <button class="button-position-custom" mat-button (click)="accordion.openAll()">
       {{ "versions.view.button.expand" | translate }}
     </button>
-    <button mat-button (click)="accordion.closeAll()">
+    <button class="button-position-custom" mat-button (click)="accordion.closeAll()">
       {{ "versions.view.button.collapse" | translate }}
     </button>
   </div>

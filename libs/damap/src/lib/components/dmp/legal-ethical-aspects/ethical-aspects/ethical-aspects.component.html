@@ -32,21 +32,11 @@
           | translate
       }}</a
     >
-    {{ "info.ethical.humanParticipants.middle" | translate }}
-    <a
-      href="{{
-        'info.ethical.humanParticipants.researchEthics.link' | translate
-      }}"
-      target="_blank"
-      rel="noopener"
-      >{{ "info.ethical.humanParticipants.researchEthics.text" | translate }}</a
-    >.
   </app-info-message>
 
   <label id="ethicalIssues">
     {{ "dmp.steps.ethical.question.ethicalIssues" | translate }}
   </label>
-  <app-tooltip [tooltip]="'help.ethical.ethicalIssues'"></app-tooltip>
   <div class="flex-radio">
     <mat-radio-group
       aria-labelledby="ethicalIssues"
@@ -78,6 +68,11 @@
         'dmp.steps.ethical.question.committeeReviewed.researchCommittee.link'
           | translate
       }}"
+      [href]="
+        'mailto:' +
+        ('dmp.steps.ethical.question.committeeReviewed.researchCommittee.link'
+          | translate)
+      "
       target="_blank"
       rel="noopener"
       >{{
@@ -103,7 +98,9 @@
   <app-info-message>
     {{ "info.ethical.committeeReviewed.prefix" | translate }}
     <a
-      href="{{ 'info.ethical.committeeReviewed.mail.link' | translate }}"
+      [href]="
+        'mailto:' + ('info.ethical.committeeReviewed.mail.link' | translate)
+      "
       rel="noopener">
       {{ "info.ethical.committeeReviewed.mail.text" | translate }}</a
     >

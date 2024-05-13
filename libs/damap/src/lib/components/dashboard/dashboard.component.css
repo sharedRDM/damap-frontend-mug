@@ -2,3 +2,7 @@
   font-size: 1.2em;
   padding: 1rem 1rem;
 }
+
+.content {
+  color: var(--primary-text)
+}

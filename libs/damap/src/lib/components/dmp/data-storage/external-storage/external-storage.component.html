@@ -2,6 +2,7 @@
   <div class="storage-grid">
     <button
       mat-raised-button
+      class="action-button button-position-custom"
       color="primary"
       (click)="addExternalStorage()"
       [style]="'margin: 5px; font-weight: normal'">
@@ -30,6 +31,7 @@
                 [label]="'dmp.steps.storage.external.question.name'"
                 [control]="getFormControl(i, 'title')"></app-input-wrapper>
               <button
+                class="button-position-custom"
                 mat-icon-button
                 color="primary"
                 aria-label="{{

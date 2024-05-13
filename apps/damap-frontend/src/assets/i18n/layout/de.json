@@ -17,15 +17,15 @@
     },
     "dataprotection": {
       "text": "Datenschutzerklärung",
-      "link": "#"
+      "link": "https://www.medunigraz.at"
     },
     "impressum": {
       "text": "Impressum",
-      "link": "#"
+      "link": "https://www.medunigraz.at"
     },
     "termsandconditions": {
       "text": "Allgemeine Geschäftsbedingungen",
-      "link": "#"
+      "link": "https://www.medunigraz.at"
     },
     "gdpr": "DSGVO-Info"
   },
