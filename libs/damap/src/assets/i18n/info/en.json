@@ -13,7 +13,7 @@
         "link": "https://www.tuwien.at/en/research/rti-support/research-data/rdm-infos-tips/persistent-identifiers",
         "text": "(such as DOI for journal articles) that connects researchers and research (output) permanently. "
       },
-      "endPrefix": "In case of a mul-partner project briefly assign the data management responsibilities/roles among the project partners and make sure that any data or material transfer to external project partners is documented in a data (DTA) and/or material (MTA) transfer agreement unless otherwise stated in a consortium agreement. For further information regarding data transfer to third parties see ",
+      "endPrefix": "In case of a multi-partner project briefly assign the data management responsibilities/roles among the project partners and make sure that any data or material transfer to external project partners is documented in a data (DTA) and/or material (MTA) transfer agreement unless otherwise stated in a consortium agreement. For further information regarding data transfer to third parties see ",
       "mUni": {
         "title": "MUniverse.",
         "link": "https://muniverse.medunigraz.at/forschung/forschungsdatenmanagement/datenweitergabe?language=DE"
@@ -133,6 +133,21 @@
             "url": "https://zenodo.org/",
             "title": "Zenodo",
             "text": "for datasets up to 50 GB."
+          }
+        ]
+      },
+      "itKnowledgeBase": {
+        "description": "The IT-Knowledge Base of our IT-department provides detailed specifications (e.g., regarding backup and storage capacity by default) on all storage options at Med Uni Graz. Also make sure that you store data according to our institutional Guidelines for data protection and IT security.",
+        "links": [
+          {
+            "url": "https://confluence.medunigraz.at/display/ITKB/Datenablage+-+Fileservices",
+            "title": "IT-Knowledge Base",
+            "text": "for detailed specifications on storage options."
+          },
+          {
+            "url": "https://confluence.medunigraz.at/pages/viewpage.action?pageId=64392119elines.medunigraz/",
+            "title": "Guidelines for data protection and IT security",
+            "text": "to ensure data is stored securely according to institutional guidelines."
           }
         ]
       }

@@ -37,7 +37,8 @@ export class DocDataQualityComponent {
 
   optionsStructureAndVersioningPlaceholder: string[] = [
     'e.g. “Files will be organized as following (Folder Structure): One main folder will exist (‘FWF-7589’).',
-    'Within this main folder, there will be subfolders for ‘Results’, ‘Data analysis’ and ‘Output’, termed either ‘7589_results’, ’7589_analysis’, and ’7589_output’.” '];
+    'Within this main folder, there will be subfolders for ‘Results’, ‘Data analysis’ and ‘Output’, termed either ‘7589_results’, ’7589_analysis’, and ’7589_output’.” ',
+  ];
 
   optionsConventionPlaceholder: string =
     '.g. “Files will be saved according to the following naming convention: [date in ISO format YYYYMMDD]_[project prefix]_[experimental  identifier]_[initials of the researcher], for instance ‘20231021_FWF7589_TFA_TM.xlsx’.” ';
@@ -51,7 +52,7 @@ export class DocDataQualityComponent {
 
   constructor(
     private _formBuilder: FormBuilder,
-    public dialog: MatDialog
+    public dialog: MatDialog,
   ) {
     this.options = this._formBuilder.group({
       hideRequired: this.hideRequiredControl,
@@ -68,11 +69,10 @@ export class DocDataQualityComponent {
   openMetadataDialog() {
     this.dialog.open(MetadataDialogInfoComponent).afterClosed().subscribe();
   }
-  
+
   openDocumentationDialog() {
     this.dialog.open(ValidationDialogInfoComponent).afterClosed().subscribe();
   }
-  
 
   getFloatLabelValue(): FloatLabelType {
     return this.floatLabelControl.value || 'auto';

@@ -16,9 +16,14 @@
       </mat-card-header>
       <ng-container *ngIf="element.url">
         <mat-card-content
-          ><a class="info-card-custom" class="info-card-custom" href="{{ element.url }}" target="_blank" rel="noopener">{{
-            "dmp.steps.storage.link" | translate
-          }}</a>
+          ><a
+            class="info-link-custom"
+            class="info-link-custom"
+            href="{{ element.url }}"
+            target="_blank"
+            rel="noopener"
+            >{{ "dmp.steps.storage.link" | translate }}</a
+          >
         </mat-card-content>
       </ng-container>
     </mat-card>
@@ -32,7 +37,7 @@
           <mat-card-title>{{ item.value.title }}</mat-card-title>
           <mat-card-actions>
             <button
-             class="button-position-custom"
+              class="button-position-custom"
               mat-icon-button
               color="primary"
               aria-label="{{ 'dmp.steps.storage.remove' | translate }}"

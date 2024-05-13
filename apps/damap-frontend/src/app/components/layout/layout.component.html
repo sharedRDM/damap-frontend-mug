@@ -102,7 +102,9 @@
 <div class="footer">
   <div class="version-information">
     {{ "layout.version" | translate }}: {{ version }}
-    <a class="info-card-custom" [routerLink]="'/gdpr'" rel="noopener">{{ "layout.gdpr" | translate }}</a>
+    <a class="info-link-custom" [routerLink]="'/gdpr'" rel="noopener">{{
+      "layout.gdpr" | translate
+    }}</a>
   </div>
   <div class="info">
     <a

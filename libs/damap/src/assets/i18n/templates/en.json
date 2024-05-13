@@ -211,21 +211,6 @@
             },
             "info": "Please explain why institutional storage will not be used"
           }
-        },
-        "itKnowledgeBase": {
-          "description": "The IT-Knowledge Base of our IT-department provides detailed specifications (e.g., regarding backup and storage capacity by default) on all storage options at Med Uni Graz. Also make sure that you store data according to our institutional Guidelines for data protection and IT security.",
-          "links": [
-            {
-              "url": "https://confluence.medunigraz.at/display/ITKB/Datenablage+-+Fileservices",
-              "title": "IT-Knowledge Base",
-              "text": "for detailed specifications on storage options."
-            },
-            {
-              "url": "https://confluence.medunigraz.at/pages/viewpage.action?pageId=64392119elines.medunigraz/",
-              "title": "Guidelines for data protection and IT security",
-              "text": "to ensure data is stored securely according to institutional guidelines."
-            }
-          ]
         }
       },
       "legal": {

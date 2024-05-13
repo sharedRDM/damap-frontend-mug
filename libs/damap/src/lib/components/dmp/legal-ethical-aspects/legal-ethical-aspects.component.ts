@@ -47,10 +47,8 @@ export class LegalEthicalAspectsComponent {
   agreementOptions: any = Agreement;
 
   originalOrder = (): number => 0;
-  constructor(
-    public dialog: MatDialog
-  ) {}
-  
+  constructor(public dialog: MatDialog) {}
+
   openLegalAspectsDialogInfo() {
     this.dialog.open(LegalAspectsDialogInfoComponent).afterClosed().subscribe();
   }

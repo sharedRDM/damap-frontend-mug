@@ -15,7 +15,13 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ValidationDialogInfoComponent } from './question-dialogs/validation-dialog-info.component';
 
 @NgModule({
-  declarations: [InputWrapperComponent, TextareaWrapperComponent, MetadataDialogInfoComponent, LegalAspectsDialogInfoComponent, ValidationDialogInfoComponent],
+  declarations: [
+    InputWrapperComponent,
+    TextareaWrapperComponent,
+    MetadataDialogInfoComponent,
+    LegalAspectsDialogInfoComponent,
+    ValidationDialogInfoComponent,
+  ],
   imports: [
     CommonModule,
     FormsModule,
