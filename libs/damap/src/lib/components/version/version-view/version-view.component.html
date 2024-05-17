@@ -1,14 +1,14 @@
 <div class="content" *ngIf="dmp$ | async as dmp">
   <div class="action-buttons">
     <button
-      class="button-position-custom"
+     
       mat-raised-button
       [routerLink]="'/dmp/' + id + '/version'">
       <mat-icon>chevron_left</mat-icon>
       {{ "versions.view.button.versions" | translate }}
     </button>
     <button
-      class="button-position-custom"
+     
       mat-raised-button
       color="primary"
       [routerLink]="'/dmp/' + id">
@@ -19,13 +19,13 @@
   <h2 *ngIf="versions$ | async as versions">{{ getVersionName(versions) }}</h2>
   <div class="action-buttons">
     <button
-      class="button-position-custom"
+     
       mat-button
       (click)="accordion.openAll()">
       {{ "versions.view.button.expand" | translate }}
     </button>
     <button
-      class="button-position-custom"
+     
       mat-button
       (click)="accordion.closeAll()">
       {{ "versions.view.button.collapse" | translate }}

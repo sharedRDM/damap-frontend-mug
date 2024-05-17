@@ -65,42 +65,42 @@
     </th>
     <td mat-cell *matCellDef="let element">
       <button
-        class="button-position-custom"
+       
         mat-icon-button
         [matMenuTriggerFor]="menu">
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu" xPosition="before">
         <button
-          class="button-position-custom"
+         
           mat-menu-item
           routerLink="/dmp/{{ element.id }}/access">
           <mat-icon>admin_panel_settings</mat-icon>
           {{ "plans.table.actions.access" | translate }}
         </button>
         <button
-          class="button-position-custom"
+         
           mat-menu-item
           (click)="getJsonFile(element.id)">
           <mat-icon>code</mat-icon>
           {{ "plans.table.export.json" | translate }}
         </button>
         <button
-          class="button-position-custom"
+         
           mat-menu-item
           (click)="getDocument(element.id)">
           <mat-icon>description</mat-icon>
           {{ "plans.table.export.doc" | translate }}
         </button>
         <button
-          class="button-position-custom"
+         
           mat-menu-item
           routerLink="/dmp/{{ element.id }}/version">
           <mat-icon>history</mat-icon>
           {{ "plans.table.actions.history" | translate }}
         </button>
         <button
-          class="button-position-custom"
+         
           mat-menu-item
           *ngIf="element.accessType === FUNCTION_ROLES.OWNER || admin"
           (click)="deleteDmp(element.id)">

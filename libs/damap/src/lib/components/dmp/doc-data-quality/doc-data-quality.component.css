@@ -6,9 +6,3 @@
 .full-width {
   width: 100%;
 }
-
-.customTooltip {
-  max-width: 500px !important;
-  position: relative;
-  transform: translateX(50%);
-}

@@ -6,3 +6,8 @@
 .content {
   color: var(--primary-text);
 }
+
+.button-position-custom {
+  color: var(--white-smoke-text) !important;
+  font-weight: 400 !important;
+}

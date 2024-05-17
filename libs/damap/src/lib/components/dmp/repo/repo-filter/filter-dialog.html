@@ -57,11 +57,11 @@
     (params)="onFilterChange('metadataStandards', $event)"></app-tree-select-form-field>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button class="button-position-custom" mat-button (click)="onNoClick()">
+  <button mat-button (click)="onNoClick()">
     {{'dmp.dialog.button.cancel' | translate}}
   </button>
   <button
-    class="button-position-custom"
+   
     mat-raised-button
     color="primary"
     [mat-dialog-close]="filter">
