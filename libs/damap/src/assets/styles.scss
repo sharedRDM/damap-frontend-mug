@@ -166,3 +166,7 @@ mat-card {
   color: var(--main-color);
   font-weight: bold;
 }
+
+.mdc-button__label {
+  font-weight: 400 !important;
+}
