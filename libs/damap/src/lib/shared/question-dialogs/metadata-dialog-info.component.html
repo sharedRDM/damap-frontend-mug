@@ -32,13 +32,8 @@
         let link of 'info.documentation.overview.reportingGuidelines.links'
           | translate
       ">
-      <a
-        class="info-link-custom"
-        [href]="link.url"
-        target="_blank">
-        {{ link.title }}
-      </a>
-      {{ link.text }}
+      <a class="info-link-custom" [href]="link.url" target="_blank">
+        {{ link.title }}</a>{{ link.text }}
     </ng-container>
   </p>
 
@@ -52,13 +47,8 @@
         let standard of 'info.documentation.overview.disciplineSpecificStandards.standards'
           | translate
       ">
-      <a
-        class="info-link-custom"
-        [href]="standard.url"
-        target="_blank">
-        {{ standard.title }}
-      </a>
-      {{ standard.text }}
+      <a class="info-link-custom" [href]="standard.url" target="_blank">
+        {{ standard.title }}</a>{{ standard.text }}
     </ng-container>
   </p>
 </mat-dialog-content>

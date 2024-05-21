@@ -73,12 +73,12 @@
             {
               "url": "http://miaca.sourceforge.net/",
               "title": "MIACA",
-              "text": " (Mindestinformationen über ein Zell-Assay) Standard wird beispielsweise in der Genomik-Forschungsgemeinschaft verwendet und ist Teil der "
+              "text": "(Mindestinformationen über ein Zell-Assay) Standard wird beispielsweise in der Genomik-Forschungsgemeinschaft verwendet und ist Teil der "
             },
             {
               "url": "https://www.ebi.ac.uk/training/online/courses/bioinformatics-terrified/what-makes-a-good-bioinformatics-database/minimum-information-standards/",
               "title": "MIBBI",
-              "text": " (Mindestinformationen über eine biomedizinische oder biologische Untersuchung) Sammlung."
+              "text": "(Mindestinformationen über eine biomedizinische oder biologische Untersuchung) Sammlung."
             }
           ]
         }
