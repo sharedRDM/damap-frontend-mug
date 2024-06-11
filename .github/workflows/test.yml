@@ -1,7 +1,6 @@
 name: test
 
 env:
-  is-master-branch: ${{ github.ref == 'refs/heads/master' }}
   is-next-branch: ${{ github.ref == 'refs/heads/next' }}
   is-pull-request: ${{ github.event_name == 'pull_request' }}
 
@@ -33,7 +32,6 @@ jobs:
       - run: npm run format:check
 
       - name: Merge - Lint all projects
-        if: ${{ env.is-master-branch == 'true' || env.is-next-branch == 'true' }}
         run: npm run ci:lint
 
       - name: PR - Lint affected
