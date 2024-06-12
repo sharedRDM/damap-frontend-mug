@@ -15,7 +15,9 @@
   {{ "info.documentation.repositoryGuidance.start" | translate }}
   <ng-container
     *ngFor="
-      let link of 'info.documentation.repositoryGuidance.links' | translate
+      let link of 'info.documentation.repositoryGuidance.links'
+        | translate
+        | keyvalue
     ">
     <a class="info-link-custom" [href]="link.url" target="_blank">{{
       link.title
