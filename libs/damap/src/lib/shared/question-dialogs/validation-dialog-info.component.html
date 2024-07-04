@@ -10,8 +10,16 @@
           | translate
       ">
       <a class="info-link-custom" [href]="link.url" target="_blank">
-        {{ link.title }}</a
-      >{{ link.text }}
+        {{ link.title }}
+      </a>
+      <ng-container *ngIf="link.title === 'OSF'">
+        (<span style="font-weight: bold">O</span>pen
+        <span style="font-weight: bold">S</span>cience
+        <span style="font-weight: bold">F</span>ramework){{ link.text }}
+      </ng-container>
+      <ng-container *ngIf="link.title === 'protocols.io'">
+        {{ link.text }}
+      </ng-container>
     </ng-container>
   </p>
 </mat-dialog-content>
