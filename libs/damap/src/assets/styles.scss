@@ -60,18 +60,6 @@ mat-card {
   margin: 5px;
 }
 
-.snack-error {
-  background-color: var(--error-bg);
-  color: black;
-  font-weight: bold;
-}
-
-.snack-success {
-  background-color: var(--success-bg);
-  color: black;
-  font-weight: bold;
-}
-
 .full-width {
   flex: 1;
   width: 100%;
@@ -80,12 +68,6 @@ mat-card {
 .wrap-normal-label {
   white-space: normal;
   height: auto;
-}
-
-.mat-mdc-tooltip {
-  font-size: 0.75rem !important;
-  line-height: 1rem;
-  background: #2a2a2a;
 }
 
 .flex-radio {
@@ -126,10 +108,6 @@ mat-card {
 /* Form field tooltip */
 .form-field-hint {
   display: flex;
-}
-
-.form-error {
-  color: red;
 }
 
 .form-error::before {
