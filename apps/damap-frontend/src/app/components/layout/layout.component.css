@@ -45,7 +45,6 @@ mat-nav-list {
 }
 
 .mm-navbar-button {
-  color: #fff;
   height: 100%;
 }
 
@@ -59,8 +58,8 @@ mat-nav-list {
   padding: 0;
   border: none;
   position: relative;
-  background-color: var(--main-color);
-  color: #fff;
+  background-color: var(--primary);
+  color: var(--primary);
   width: 100%;
   float: left;
   clear: both;
@@ -173,12 +172,12 @@ A[data-lang-active-en] {
 }
 
 #mainHeader {
-  height: 50px;
-  background-color: white;
+  height: 70px;
   overflow: visible;
 }
 
 #mainHeader #mainHeaderLogo A {
+  margin-bottom: -20px;
   top: 5px;
   position: relative;
   display: block;
