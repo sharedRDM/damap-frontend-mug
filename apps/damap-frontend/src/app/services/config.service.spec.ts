@@ -6,7 +6,6 @@ import {
   HttpTestingController,
 } from '@angular/common/http/testing';
 import { OAuthService } from 'angular-oauth2-oidc';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('ConfigService', () => {
   let service: ConfigService;
@@ -19,7 +18,6 @@ describe('ConfigService', () => {
     ]);
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      schemas: [NO_ERRORS_SCHEMA],
       providers: [{ provide: OAuthService, useValue: spy }],
     });
     service = TestBed.inject(ConfigService);

@@ -1,19 +1,18 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { ReactiveFormsModule, UntypedFormControl } from '@angular/forms';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { TextareaWrapperComponent } from './textarea-wrapper.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule, UntypedFormControl } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { TextareaWrapperComponent } from './textarea-wrapper.component';
 import { TranslateTestingModule } from '../../testing/translate-testing/translate-testing.module';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('TextareaWrapperComponent', () => {
   let component: TextareaWrapperComponent;
   let fixture: ComponentFixture<TextareaWrapperComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [
         MatFormFieldModule,
         MatInputModule,
@@ -21,10 +20,9 @@ describe('TextareaWrapperComponent', () => {
         NoopAnimationsModule,
         TranslateTestingModule,
       ],
-      schemas: [NO_ERRORS_SCHEMA],
       declarations: [TextareaWrapperComponent],
     }).compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TextareaWrapperComponent);

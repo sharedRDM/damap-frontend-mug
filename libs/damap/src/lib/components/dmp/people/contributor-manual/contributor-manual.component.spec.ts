@@ -1,19 +1,19 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { ReactiveFormsModule, UntypedFormGroup } from '@angular/forms';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContributorManualComponent } from './contributor-manual.component';
-import { IdentifierType } from '../../../../domain/enum/identifier-type.enum';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
 import { TranslateTestingModule } from '../../../../testing/translate-testing/translate-testing.module';
+import { UntypedFormGroup, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { IdentifierType } from '../../../../domain/enum/identifier-type.enum';
 
 describe('ContributorManualComponent', () => {
   let component: ContributorManualComponent;
   let fixture: ComponentFixture<ContributorManualComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [
         MatButtonModule,
         MatIconModule,
@@ -23,7 +23,7 @@ describe('ContributorManualComponent', () => {
       ],
       declarations: [ContributorManualComponent],
     }).compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ContributorManualComponent);

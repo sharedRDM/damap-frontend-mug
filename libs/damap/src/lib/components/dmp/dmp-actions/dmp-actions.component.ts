@@ -103,10 +103,10 @@ export class DmpActionsComponent implements OnInit, OnDestroy {
       this.dmpForm.controls.project?.getRawValue()?.funderSupported ?? false;
     dialogRef.componentInstance.funderSupported = funderSupported;
 
-    dialogRef.afterClosed().subscribe(result => {
-      if (result === 'cancel' || result === undefined) {
+    dialogRef.beforeClosed().subscribe(result => {
+      if (result === undefined) {
+        return;
       } else {
-        // Handle the actual export action
         const template = result;
         if (!funderSupported) {
           this.exportDmpType = template;

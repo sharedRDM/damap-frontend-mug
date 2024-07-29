@@ -1,12 +1,12 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoadingState } from '../../../domain/enum/loading-state.enum';
 import { RepoComponent } from './repo.component';
 import { StepIntroComponent } from '../../../widgets/step-intro/step-intro.component';
 import { TranslateTestingModule } from '../../../testing/translate-testing/translate-testing.module';
-import { UntypedFormArray } from '@angular/forms';
 import { provideMockStore } from '@ngrx/store/testing';
+import { LoadingState } from '../../../domain/enum/loading-state.enum';
 import { selectRepositoriesLoaded } from '../../../store/selectors/repository.selectors';
+import { UntypedFormArray } from '@angular/forms';
 
 describe('RepoComponent', () => {
   let component: RepoComponent;
@@ -21,8 +21,8 @@ describe('RepoComponent', () => {
     },
   };
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [TranslateTestingModule],
       declarations: [RepoComponent, StepIntroComponent],
       providers: [
@@ -37,7 +37,7 @@ describe('RepoComponent', () => {
         }),
       ],
     }).compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(RepoComponent);

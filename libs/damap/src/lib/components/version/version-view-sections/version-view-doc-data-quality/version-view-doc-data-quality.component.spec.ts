@@ -1,18 +1,18 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TranslateTestingModule } from '../../../../testing/translate-testing/translate-testing.module';
 import { VersionViewDocDataQualityComponent } from './version-view-doc-data-quality.component';
+import { TranslateTestingModule } from '../../../../testing/translate-testing/translate-testing.module';
 
 describe('VersionViewDocDataQualityComponent', () => {
   let component: VersionViewDocDataQualityComponent;
   let fixture: ComponentFixture<VersionViewDocDataQualityComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [VersionViewDocDataQualityComponent],
       imports: [TranslateTestingModule],
     }).compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(VersionViewDocDataQualityComponent);

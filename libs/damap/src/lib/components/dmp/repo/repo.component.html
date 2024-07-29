@@ -34,7 +34,7 @@
   <mat-card
     appearance="raised"
     *ngFor="let repo of repoStep.controls; index as i"
-    class="card-selected">
+    class="mat-mdc-selected">
     <mat-card-content>
       <ng-container formArrayName="repositories">
         <div class="mat-card-container">
@@ -99,7 +99,7 @@
         <p translate>dmp.steps.repositories.recommended.none</p>
         <button
           mat-raised-button
-          class="button-color-primary"
+          color="primary"
           (click)="selectedTabIndex = 1">
           {{ "dmp.steps.repositories.find.other" | translate }}
           <mat-icon iconPositionEnd>search</mat-icon>

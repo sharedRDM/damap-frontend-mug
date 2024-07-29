@@ -1,5 +1,4 @@
-import { BehaviorSubject, of } from 'rxjs';
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import {
   ReactiveFormsModule,
   UntypedFormArray,
@@ -16,8 +15,6 @@ import {
 } from '../../../mocks/contributor-mocks';
 
 import { BackendService } from '../../../services/backend.service';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { Config } from '../../../domain/config';
 import { ContributorFilterPipe } from './contributor-filter.pipe';
 import { HarnessLoader } from '@angular/cdk/testing';
 import { MatCardModule } from '@angular/material/card';
@@ -30,6 +27,8 @@ import { PeopleComponent } from './people.component';
 import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 import { TranslateTestingModule } from '../../../testing/translate-testing/translate-testing.module';
 import { mockContributorSearchResult } from '../../../mocks/search';
+import { BehaviorSubject, of } from 'rxjs';
+import { Config } from '../../../domain/config';
 
 describe('PeopleComponent', () => {
   let component: PeopleComponent;
@@ -37,14 +36,14 @@ describe('PeopleComponent', () => {
   let backendSpy;
   let loader: HarnessLoader;
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(async () => {
     backendSpy = jasmine.createSpyObj('BackendService', [
       'getPersonSearchResult',
     ]);
     backendSpy.getPersonSearchResult.and.returnValue(
       of(mockContributorSearchResult),
     );
-    TestBed.configureTestingModule({
+    await TestBed.configureTestingModule({
       imports: [
         TranslateTestingModule,
         MatCardModule,
@@ -54,11 +53,10 @@ describe('PeopleComponent', () => {
         MatSelectModule,
         NoopAnimationsModule,
       ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
       declarations: [PeopleComponent, ContributorFilterPipe],
       providers: [{ provide: BackendService, useValue: backendSpy }],
     }).compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PeopleComponent);
@@ -88,7 +86,7 @@ describe('PeopleComponent', () => {
     });
   });
 
-  it('should update serviceConfigType when a service option is selected', waitForAsync(async () => {
+  it('should update serviceConfigType when a service option is selected', async () => {
     spyOn(component, 'onServiceConfigChange').and.callThrough();
 
     const selectHarness = await loader.getHarness<MatSelectHarness>(
@@ -115,7 +113,7 @@ describe('PeopleComponent', () => {
     fixture.detectChanges();
 
     expect(component.serviceConfigType).toEqual(serviceConfigMockData[1]);
-  }));
+  });
 
   it('should emit contact', () => {
     spyOn(component.contactPerson, 'emit');

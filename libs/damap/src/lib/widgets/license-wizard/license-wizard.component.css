@@ -3,7 +3,7 @@
 }
 
 .ls-description {
-  color: var(--on-surface);
+  color: #666;
   cursor: pointer;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .ls-item:hover {
-  border: 1px solid var(--primary);
+  border: 1px solid var(--main-color);
 }
 
 .ls-item-header {

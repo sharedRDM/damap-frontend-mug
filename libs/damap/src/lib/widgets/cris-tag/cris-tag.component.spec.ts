@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CrisTagComponent } from './cris-tag.component';
 
@@ -6,11 +6,11 @@ describe('CrisTagComponent', () => {
   let component: CrisTagComponent;
   let fixture: ComponentFixture<CrisTagComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [CrisTagComponent],
     }).compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CrisTagComponent);

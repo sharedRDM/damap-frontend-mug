@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import {
   UntypedFormArray,
   UntypedFormControl,
@@ -12,19 +12,17 @@ import {
 import { DataDeletionComponent } from './data-deletion.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { TranslateTestingModule } from '../../../testing/translate-testing/translate-testing.module';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('DataDeletionComponent', () => {
   let component: DataDeletionComponent;
   let fixture: ComponentFixture<DataDeletionComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [MatSliderModule, TranslateTestingModule],
-      schemas: [NO_ERRORS_SCHEMA],
       declarations: [DataDeletionComponent],
     }).compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(DataDeletionComponent);

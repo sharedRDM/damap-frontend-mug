@@ -2,7 +2,6 @@ import { TestBed } from '@angular/core/testing';
 
 import { AuthService } from './auth.service';
 import { OAuthService } from 'angular-oauth2-oidc';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('AuthService', () => {
   let service: AuthService;
@@ -15,7 +14,6 @@ describe('AuthService', () => {
       'getIdentityClaims',
     ]);
     TestBed.configureTestingModule({
-      schemas: [NO_ERRORS_SCHEMA],
       providers: [{ provide: OAuthService, useValue: spy }],
     });
     service = TestBed.inject(AuthService);

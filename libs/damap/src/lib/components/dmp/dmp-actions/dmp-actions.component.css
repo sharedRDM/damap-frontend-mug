@@ -11,7 +11,7 @@
 }
 
 .actions-bar {
-  background-color: var(--surface-container-high);
+  background-color: var(--secondary-color-light);
   display: flex;
   justify-content: space-between;
   align-items: center;

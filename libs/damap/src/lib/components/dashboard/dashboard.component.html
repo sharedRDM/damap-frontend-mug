@@ -3,16 +3,18 @@
     <p translate>dashboard.welcome.message</p>
     <div class="button-row-left">
       <button
-        mat-flat-button
-        class="big-button button-position-custom"
-        routerLink="/plans">
+        mat-raised-button
+        class="big-button, button-position-custom"
+        routerLink="/plans"
+        color="primary">
         {{ "plans.mydmps" | translate }}
       </button>
       <button
-        mat-flat-button
-        class="big-button button-position-custom"
-        routerLink="/dmp">
-        <mat-icon>add</mat-icon>
+        mat-raised-button
+        class="big-button, button-position-custom"
+        routerLink="/dmp"
+        color="primary">
+        <mat-icon class="button-position-custom">add</mat-icon>
         {{ "plans.create.dmp" | translate }}
       </button>
     </div>

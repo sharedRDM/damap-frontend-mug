@@ -9,10 +9,6 @@ div#content {
 }
 
 .button-position-custom {
-  color: white !important;
+  color: var(--white-smoke-text) !important;
   font-weight: 400 !important;
-}
-
-.position {
-  margin-top: 10px;
 }

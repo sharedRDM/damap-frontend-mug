@@ -8,9 +8,7 @@
           | storageFilter: storageStep?.getRawValue()
       "
       class="storage-card">
-      <mat-card-header
-        (click)="addStorage(element)"
-        onKeyDown="addStorage(element)">
+      <mat-card-header (click)="addStorage(element)">
         <div mat-card-avatar>
           <mat-icon>folder_open</mat-icon>
         </div>
@@ -34,18 +32,18 @@
       <mat-card
         appearance="raised"
         *ngFor="let item of storageStep?.controls; let i = index">
-        <mat-card-header>
-          <mat-card-title-group>
-            <mat-card-title>{{ item.value.title }}</mat-card-title>
+        <div class="storage-card-top">
+          <mat-card-title>{{ item.value.title }}</mat-card-title>
+          <mat-card-actions>
             <button
               mat-icon-button
-              class="button-color-primary"
+              color="primary"
               aria-label="{{ 'dmp.steps.storage.remove' | translate }}"
               (click)="removeStorage(i)">
               <mat-icon>cancel</mat-icon>
             </button>
-          </mat-card-title-group>
-        </mat-card-header>
+          </mat-card-actions>
+        </div>
         <mat-card-content>
           <div [formGroupName]="i">
             <div class="form-row">

@@ -1,18 +1,18 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TranslateTestingModule } from '../../../../testing/translate-testing/translate-testing.module';
 import { VersionViewReuseComponent } from './version-view-reuse.component';
+import { TranslateTestingModule } from '../../../../testing/translate-testing/translate-testing.module';
 
 describe('VersionViewReuseComponent', () => {
   let component: VersionViewReuseComponent;
   let fixture: ComponentFixture<VersionViewReuseComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [VersionViewReuseComponent],
       imports: [TranslateTestingModule],
     }).compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(VersionViewReuseComponent);

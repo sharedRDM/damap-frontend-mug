@@ -7,11 +7,11 @@ tr.detail-row {
 }
 
 tr.element-row:not(.expanded-row):hover {
-  background: var(--surface-container-low);
+  background: whitesmoke;
 }
 
 tr.element-row:not(.expanded-row):active {
-  background: var(--surface-container-high);
+  background: #efefef;
 }
 
 .element-detail {

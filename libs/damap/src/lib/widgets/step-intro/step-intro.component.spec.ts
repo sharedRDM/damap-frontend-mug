@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { StepIntroComponent } from './step-intro.component';
 
@@ -6,11 +6,11 @@ describe('IntroComponent', () => {
   let component: StepIntroComponent;
   let fixture: ComponentFixture<StepIntroComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [StepIntroComponent],
     }).compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(StepIntroComponent);
