@@ -41,13 +41,12 @@ export class DocDataQualityComponent {
   ];
 
   optionsConventionPlaceholder: string =
-    '.g. “Files will be saved according to the following naming convention: [date in ISO format YYYYMMDD]_[project prefix]_[experimental  identifier]_[initials of the researcher], for instance ‘20231021_FWF7589_TFA_TM.xlsx’.” ';
+    'e.g. “Files will be saved according to the following naming convention: [date in ISO format YYYYMMDD]_[project prefix]_[experimental  identifier]_[initials of the researcher], for instance ‘20231021_FWF7589_TFA_TM.xlsx’.” ';
 
   optionsVersionPlaceholder: string =
     'e.g. “If several versions of the same data files will be performed, the individual files will be extended by v1, v2 and so forth, for instance ‘20231021_FWF7589_TFA_TM_v2.xlsx’.”';
 
   hideRequiredControl = new FormControl(false);
-  floatLabelControl = new FormControl('auto' as FloatLabelType);
   options: UntypedFormGroup;
 
   constructor(
@@ -56,7 +55,6 @@ export class DocDataQualityComponent {
   ) {
     this.options = this._formBuilder.group({
       hideRequired: this.hideRequiredControl,
-      floatLabel: this.floatLabelControl,
     });
   }
 
@@ -72,10 +70,6 @@ export class DocDataQualityComponent {
 
   openDocumentationDialog() {
     this.dialog.open(ValidationDialogInfoComponent).afterClosed().subscribe();
-  }
-
-  getFloatLabelValue(): FloatLabelType {
-    return this.floatLabelControl.value || 'auto';
   }
 
   get metadata(): UntypedFormControl {
