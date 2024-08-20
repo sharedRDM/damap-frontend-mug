@@ -37,35 +37,27 @@
     }}
   </p>
 </app-info-message>
-<mat-form-field
-  appearance="fill"
-  [style]="'width: 100%'"
-  [floatLabel]="getFloatLabelValue()">
-  <mat-label>{{
-    "dmp.steps.documentation.question.structure" | translate
-  }}</mat-label>
-  <input matInput [placeholder]="optionsStructureAndVersioningPlaceholder" />
-</mat-form-field>
+<app-textarea-wrapper
+  [label]="'dmp.steps.documentation.question.structure' | translate"
+  [control]="structure"
+  [placeholder]="optionsStructureAndVersioningPlaceholder">
+</app-textarea-wrapper>
 
-<mat-form-field
-  appearance="fill"
-  [style]="'width: 100%'"
-  [floatLabel]="getFloatLabelValue()">
-  <mat-label>{{
-    "dmp.steps.documentation.question.convention" | translate
-  }}</mat-label>
-  <input matInput [placeholder]="optionsConventionPlaceholder" />
-</mat-form-field>
+<!-- We do not have a field for this in the back end. We have to wait until we can add custom fields in the back end and then we can have separate questions here. -->
+<!-- Also needs extra control attribute on the component and logic when (de)serializing the response from/to the backend -->
+<!-- 
+<app-textarea-wrapper
+  [label]="'dmp.steps.documentation.question.convention' | translate"
+  [control]="convention"
+  [placeholder]="optionsConventionPlaceholder">
+</app-textarea-wrapper>
 
-<mat-form-field
-  appearance="fill"
-  [style]="'width: 100%'"
-  [floatLabel]="getFloatLabelValue()">
-  <mat-label>{{
-    "dmp.steps.documentation.question.version" | translate
-  }}</mat-label>
-  <input matInput [placeholder]="optionsVersionPlaceholder" />
-</mat-form-field>
+<app-textarea-wrapper
+  [label]="'dmp.steps.documentation.question.version' | translate"
+  [control]="version"
+  [placeholder]="optionsVersionPlaceholder">
+</app-textarea-wrapper>
+-->
 
 <div class="form-field-hint">
   <mat-form-field hintLabel="Max 4000 characters" [style]="'width: 100%'">
@@ -74,10 +66,11 @@
     }}</mat-label>
     <input
       matInput
-      #input
+      #inputMetadata
+      [formControl]="metadata"
       maxlength="4000"
       placeholder=" As there are no domain specific metadata standards applicable, we will provide a README file with an explanation of all values and terms used [at file level/at dataset level/at project level]" />
-    <mat-hint align="end">{{ input.value.length }}/4000</mat-hint>
+    <mat-hint align="end">{{ inputMetadata.value.length }}/4000</mat-hint>
   </mat-form-field>
   <mat-icon
     class="tooltip-position material-icon-primary"
@@ -92,8 +85,12 @@
     <mat-label>{{
       "dmp.steps.documentation.question.documentation" | translate
     }}</mat-label>
-    <input matInput #input maxlength="4000" />
-    <mat-hint align="end">{{ input.value.length }}/4000</mat-hint>
+    <input
+      matInput
+      #inputDocumentation
+      [formControl]="documentation"
+      maxlength="4000" />
+    <mat-hint align="end">{{ inputDocumentation.value.length }}/4000</mat-hint>
   </mat-form-field>
   <mat-icon
     class="tooltip-position material-icon-primary"
