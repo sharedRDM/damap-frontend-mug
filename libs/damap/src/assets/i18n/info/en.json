@@ -31,7 +31,7 @@
         "text": "Your research plan may require ethical review. Inform yourself by consulting your ",
         "researchEthics": {
           "text": "institution's code of conduct",
-          "link": "https://www.tuwien.at/index.php?eID=dms&s=4&path=Richtlinien%20und%20Verordnungen/Code%20of%20Conduct%20fuer%20wissenschaftliches%20Arbeiten.pdf"
+          "link": "https://muniverse.medunigraz.at/uploads/rl_standards_for_good_scientific_practice_fc13707260.pdf"
         }
       },
       "committeeReviewed": {
@@ -144,7 +144,7 @@
             "text": "for detailed specifications on storage options."
           },
           {
-            "url": "https://confluence.medunigraz.at/pages/viewpage.action?pageId=64392119elines.medunigraz/",
+            "url": "https://confluence.medunigraz.at/pages/viewpage.action?pageId=64392119",
             "title": "Guidelines for data protection and IT security",
             "text": "to ensure data is stored securely according to institutional guidelines."
           }
