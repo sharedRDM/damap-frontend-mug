@@ -169,15 +169,10 @@
         "question": {
           "metadata": "Please indicate which metadata will be provided to help others identify, discover and reuse the data.",
           "datageneration": "How will the research data be generated or reused and which methods and software will be used?",
-          "structure": "Which folder structure do you follow? ",
-          "convention": "Which file naming convention do you follow? ",
-          "version": "Which method of version control will you apply",
-          "documentation": "How and where will you provide documentation needed to validate data analysis and facilitate data reuse?",
+          "structure": "How will you structure the data and handle versioning?",
+          "documentation": "How will you provide documentation needed to validate data analysis and facilitate data reuse?",
           "dataQuality": "How will the consistency and quality of data collection be controlled?",
-          "otherDataQuality": "Please specify what other measures are taken:",
-          "placeholder": {
-            "firstQuestion": "e.g. “Files will be organized as following (Folder Structure): One main folder will exist (‘FWF-7589’). Within this main folder, there will be subfolders for ‘Results’, ‘Data analysis’ and ‘Output’, termed either ‘7589_results’, ’7589_analysis’, and ’7589_output’.”   "
-          }
+          "otherDataQuality": "Please specify what other measures are taken:"
         },
         "messageInfo": {
           "dataOrganization": {
