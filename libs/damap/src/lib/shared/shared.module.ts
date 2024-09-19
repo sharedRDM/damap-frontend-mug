@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MetadataDialogInfoComponent } from './question-dialogs/metadata-dialog-info.component';
 import { NgModule } from '@angular/core';
 import { TextareaWrapperComponent } from './textarea-wrapper/textarea-wrapper.component';
+import { TooltipModule } from '../widgets/tooltip/tooltip.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { ValidationDialogInfoComponent } from './question-dialogs/validation-dialog-info.component';
 
@@ -27,6 +28,7 @@ import { ValidationDialogInfoComponent } from './question-dialogs/validation-dia
     FormsModule,
     ReactiveFormsModule,
     TranslateModule,
+    TooltipModule,
     MatButtonModule,
     MatDialogModule,
 
@@ -42,6 +44,7 @@ import { ValidationDialogInfoComponent } from './question-dialogs/validation-dia
     ReactiveFormsModule,
     InputWrapperComponent,
     TextareaWrapperComponent,
+    TooltipModule,
     MetadataDialogInfoComponent,
     ValidationDialogInfoComponent,
     LegalAspectsDialogInfoComponent,

@@ -31,6 +31,9 @@
       "text": "Terms and Conditions",
       "link": "https://www.medunigraz.at"
     },
+    "icon": {
+      "dataAlert": "Expand the menu to access legal information"
+    },
     "gdpr": "GDPR Info"
   },
   "env": {

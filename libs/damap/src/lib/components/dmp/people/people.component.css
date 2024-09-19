@@ -1,7 +1,7 @@
 .projectRoleTag {
   padding: 5px 7px;
   border-radius: 4px;
-  background: var(--tertiary-color-very-light) !important;
+  background: var(--tertiary-color-very-light);
   font-size: 10pt;
 }
 
@@ -13,18 +13,35 @@
 
 .mat-search-form-field {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-top: 1.25rem;
-  gap: 1.25rem;
+  flex-direction: column;
+  width: 100%;
 }
 
 mat-form-field {
-  transform: translateY(0em) scale(0.95);
   width: 100%;
-  top: -0.4rem;
 }
 
 .mat-card-container {
   margin: 15px;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.search-and-service-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 15px;
+  width: 100%;
+  gap: 15px;
+}
+
+.service-select-container,
+.app-person-search {
+  flex: 1;
+  min-width: 100px;
 }

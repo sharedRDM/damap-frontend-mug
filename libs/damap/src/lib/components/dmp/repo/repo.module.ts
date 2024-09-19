@@ -20,6 +20,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RepoComponent } from './repo.component';
@@ -43,6 +44,7 @@ import { TreeSelectFormFieldModule } from '../../../widgets/tree-select-form-fie
     TreeSelectFormFieldModule,
     DatasetSourceModule,
     TagModule,
+    InfoMessageModule,
 
     // Materials
     MatCardModule,
@@ -58,7 +60,7 @@ import { TreeSelectFormFieldModule } from '../../../widgets/tree-select-form-fie
     MatPaginatorModule,
     MatExpansionModule,
     MatDialogModule,
-    InfoMessageModule,
+    MatTooltipModule,
   ],
   declarations: [
     RepoDetailsComponent,
