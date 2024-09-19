@@ -15,7 +15,7 @@ td.mat-mdc-footer-cell {
 }
 
 td a {
-  color: blue;
+  color: var(--primary);
   text-decoration: underline;
   cursor: pointer;
 }

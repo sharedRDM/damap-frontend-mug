@@ -57,22 +57,6 @@
   background: transparent;
 }
 
-.footer-desktop {
-  font-size: small;
-  display: flex;
-  justify-content: flex-end;
-  position: sticky;
-  bottom: 0;
-}
-
-.footer-mobile {
-  font-size: small;
-  display: flex;
-  justify-content: flex-end;
-  position: sticky;
-  bottom: 0;
-}
-
 .mat-sidenav {
   width: 301px;
   display: flex;
@@ -103,8 +87,7 @@
 
 .footer {
   background-color: var(--user-navbar-color);
-  color: white;
-  font-size: small;
+  color: var(--primary-lightest);
   padding: 1rem 1rem;
   z-index: 10;
   display: flex;
@@ -144,6 +127,10 @@
   color: var(--neutral-color-medium-light) !important;
 }
 
+.version-information {
+  text-align: center;
+}
+
 #logout {
   transform: scale(0.7);
 }
@@ -178,7 +165,7 @@ mat-nav-list {
   flex-direction: column;
   justify-content: flex-end;
   position: absolute;
-  bottom: 130px;
+  bottom: 150px;
   width: 100%;
 }
 
@@ -201,7 +188,10 @@ mat-nav-list {
   flex-direction: row;
   flex-grow: 0;
   height: 100%;
-  font-weight: 500;
+}
+
+mat-toolbar-row {
+  height: 50px;
 }
 
 .logo {
@@ -210,8 +200,6 @@ mat-nav-list {
   display: flex;
   align-items: center;
   text-align: left;
-  font-size: 2rem;
-  font-weight: 500;
 }
 
 .languageElement-desktop {
@@ -250,6 +238,10 @@ mat-nav-list {
   text-decoration: none;
 }
 
+.baseLogo {
+  top: 15px;
+}
+
 #user {
   height: 35px !important;
   margin-top: 70px;
@@ -259,10 +251,6 @@ mat-nav-list {
   padding: 8px 10px;
   background-color: var(--user-navbar-color);
   color: var(--neutral-color-medium-light) !important;
-}
-
-#user > div {
-  font-weight: 500;
 }
 
 #user .mat-icon {
@@ -290,13 +278,6 @@ svg {
   margin-left: auto;
   display: flex;
   align-content: flex-end;
-}
-
-.mainHeaderNav {
-  display: flex;
-  min-width: 50px;
-  margin-right: 20px;
-  font-size: 1.2rem;
 }
 
 .nav-item-desktop {

@@ -20,7 +20,7 @@
           }}</mat-icon>
         </button>
 
-        <div class="logo">
+        <div class="logo mat-title-large">
           <a
             title="DMP Tool"
             id="damap-logo"
@@ -33,7 +33,9 @@
     </div>
 
     <div id="user">
-      <div *ngIf="!isCollapsed" class="user-name">{{ name }}</div>
+      <div *ngIf="!isCollapsed" class="user-name mat-title-small">
+        {{ name }}
+      </div>
       <div class="languageElement-desktop">
         <button
           mat-button
@@ -88,22 +90,7 @@
       </div>
     </div>
 
-    <div *ngIf="!isCollapsed" class="footer">
-      <div class="version-information">
-        <div>
-          {{ "layout.version" | translate }}: {{ version }}
-          <a [routerLink]="'/gdpr'" rel="noopener">{{
-            "layout.gdpr" | translate
-          }}</a>
-        </div>
-        <a
-          class="mat-focus-indicator"
-          [href]="'layout.baseLogo.link' | translate"
-          target="_blank"
-          rel="noopener">
-          <img src="assets/damap_white_new.png" alt="Logo" height="40" />
-        </a>
-      </div>
+    <div *ngIf="!isCollapsed" class="footer mat-title-small">
       <div class="info">
         <a
           [href]="'layout.impressum.link' | translate"
@@ -131,6 +118,13 @@
         <span class="version-text"
           >{{ "layout.version" | translate }}: {{ version }}</span
         >
+        <a
+          class="mat-focus-indicator baseLogo"
+          [href]="'layout.baseLogo.link' | translate"
+          target="_blank"
+          rel="noopener">
+          <img src="assets/damap_white_new.png" alt="Logo" height="30" />
+        </a>
       </div>
     </div>
     <div *ngIf="isCollapsed" class="footer-icon">
@@ -145,7 +139,7 @@
 
   <mat-sidenav-content>
     <mat-toolbar>
-      <mat-toolbar-row id="mainHeader" style="padding: 0">
+      <mat-toolbar-row id="mainHeader">
         <div class="mainHeaderRight"></div>
         <div id="mainHeaderLogo">
           <a
@@ -157,8 +151,8 @@
             <img
               src="assets/logo.svg"
               alt="Logo"
-              height="250px"
-              width="300px" />
+              height="150px"
+              width="100px" />
           </a>
         </div>
       </mat-toolbar-row>

@@ -1,13 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 import { AuthService } from '@damap/core';
 import { ConfigService } from '../../services/config.service';
-import pkg from '../../../../../../package.json'; // eslint-disable-line
 import { MatSidenav } from '@angular/material/sidenav';
 import { TranslateService } from '@ngx-translate/core';
+import pkg from '../../../../../../package.json'; // eslint-disable-line
 
 @Component({
   selector: 'app-layout',
