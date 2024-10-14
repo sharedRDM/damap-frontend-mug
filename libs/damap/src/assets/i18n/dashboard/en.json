@@ -99,6 +99,15 @@
         "heading": "+ CREATE NEW DMP",
         "description": "  Start creating a new DMP by following guided steps. Save your progress, invite colleagues, and export the DMP as a document for submission."
       }
+    },
+    "help": {
+      "heading": "Further help?",
+      "prefix": "In",
+      "MUni": {
+        "title": "MUniverse",
+        "link": "https://muniverse.medunigraz.at/forschung/forschungsdatenmanagement/dm-plan"
+      },
+      "body": "You will find further help for your DMP creation. You will find a 30 minute DMP tutorial, our quick help for creating a FWF-DMP, public example DMPs as well as information regarding DMP training courses. If you would like feedback on your DMP or if you have further questions please write an email to rdmsupport@medunigraz.at"
     }
   }
 }

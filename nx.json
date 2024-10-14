@@ -1,6 +1,6 @@
 {
   "affected": {
-    "defaultBase": "next"
+    "defaultBase": "next-mug"
   },
   "targetDefaults": {
     "build": {
