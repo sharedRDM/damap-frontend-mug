@@ -20,7 +20,7 @@
           }}</mat-icon>
         </button>
 
-        <div class="logo mat-title-large">
+        <div class="logo mat-headline-large">
           <a
             title="DMP Tool"
             id="damap-logo"
@@ -39,7 +39,7 @@
       <div class="languageElement-desktop">
         <button
           mat-button
-          class="mm-navbar-button"
+          class="mm-navbar-button material-btn-text-primary-lightest"
           [matMenuTriggerFor]="language">
           {{ lang }}
         </button>
@@ -75,9 +75,7 @@
       </div>
       <mat-divider></mat-divider>
     </mat-nav-list>
-
     <div class="bottom-section">
-      <mat-divider></mat-divider>
       <div class="logout-container">
         <button
           mat-icon-button
@@ -89,7 +87,6 @@
         </button>
       </div>
     </div>
-
     <div *ngIf="!isCollapsed" class="footer mat-title-small">
       <div class="info">
         <a
@@ -136,32 +133,31 @@
       </button>
     </div>
   </mat-sidenav>
-
-  <mat-sidenav-content>
-    <mat-toolbar>
+  <mat-sidenav-content class="mat-sidenav-content">
+    <app-env-banner *ngIf="env === 'DEV'"></app-env-banner>
+    <mat-toolbar class="toolbar">
       <mat-toolbar-row id="mainHeader">
-        <div class="mainHeaderRight"></div>
-        <div id="mainHeaderLogo">
+        <div class="header-container">
+          <div class="header-title">
+            <h1>
+              {{ greeting | translate }}
+            </h1>
+            <div class="paragraph-section mat-title-medium">
+              {{ summaryLine | translate }}
+            </div>
+          </div>
           <a
-            class="mat-focus-indicator"
+            class="logo-header"
             [title]="'layout.logo.text' | translate"
             [href]="'layout.logo.link' | translate"
             target="_blank"
-            rel="noopener noreferrer">
-            <img
-              src="assets/logo.svg"
-              alt="Logo"
-              height="150px"
-              width="100px" />
+            rel="noopener">
+            <img src="assets/logo.svg" alt="Logo" height="150px" width="auto" />
           </a>
         </div>
       </mat-toolbar-row>
-      <mat-toolbar-row class="mat-toolbar-row-grey">
-        <strong>{{ "title" | translate }}</strong>
-      </mat-toolbar-row>
     </mat-toolbar>
 
-    <app-env-banner *ngIf="env === 'DEV'"></app-env-banner>
-    <router-outlet></router-outlet>
+    <router-outlet #outlet="outlet"></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

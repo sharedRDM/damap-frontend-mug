@@ -20,8 +20,8 @@ import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 import { TranslateTestingModule } from '../../testing/translate-testing/translate-testing.module';
 import { completeDmp } from '../../mocks/dmp-mocks';
 import { configMockData } from '../../mocks/config-service-mocks';
-import { mockContributor1 } from '../../mocks/contributor-mocks';
-import { provideMockStore } from '@ngrx/store/testing';
+import { Config } from '../../domain/config';
+import { NO_ERRORS_SCHEMA, ChangeDetectionStrategy } from '@angular/core';
 
 describe('DmpComponent', () => {
   let component: DmpComponent;
@@ -77,7 +77,10 @@ describe('DmpComponent', () => {
         { provide: BackendService, useValue: backendSpy },
         { provide: FeedbackService, useValue: feedbackSpy },
       ],
-    }).compileComponents();
+      .overrideComponent(DmpComponent, {
+        set: { changeDetection: ChangeDetectionStrategy.OnPush },
+      })
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -85,10 +88,11 @@ describe('DmpComponent', () => {
     component = fixture.componentInstance;
     component.config$ = new Subject<Config>();
     fixture.detectChanges();
+
     loader = TestbedHarnessEnvironment.loader(fixture);
   });
 
-  it('should create', () => {
+  it('should create', async () => {
     expect(component).toBeTruthy();
   });
 
