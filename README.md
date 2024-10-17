@@ -70,4 +70,4 @@ For customising the DMP Tool MUG frontend, please refer to the [CUSTOMISING](CUS
 
 ## Screenshots
 
-![damap-mug](https://github.com/user-attachments/assets/f1770dfb-621f-4c0b-971a-c96fe9725dc4)
+![mug-bew](https://github.com/user-attachments/assets/855aa8ad-0525-4f72-8647-8ee666a7f433)
