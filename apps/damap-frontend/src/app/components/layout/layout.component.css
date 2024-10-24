@@ -140,8 +140,9 @@
 }
 
 .version-text {
-  display: inline-block;
+  display: block;
   color: var(--neutral-color-medium-light) !important;
+  font-size: x-small;
 }
 
 .version-information {
