@@ -9,49 +9,52 @@
     class="card-selected responsive-card card-shadow">
     <mat-card-content>
       <div class="mat-card-container">
-        
-    <app-info-message>
-  {{ "dmp.steps.documentation.messageInfo.dataOrganization.text" | translate }}
-  <a
-    class="info-link-custom"
-    [href]="
-      'dmp.steps.documentation.messageInfo.dataOrganization.link' | translate
-    "
-    target="_blank">
-    {{
-      "dmp.steps.documentation.messageInfo.dataOrganization.linkTitle"
-        | translate
-    }}</a
-  >
-  <p>
-    {{
-      "dmp.steps.documentation.messageInfo.dataOrganization.paragraph"
-        | translate
-    }}
-    <a
-      class="info-link-custom"
-      [href]="
-        'dmp.steps.documentation.messageInfo.dataOrganization.paragraphLink'
-          | translate
-      "
-      target="_blank">
-      {{
-        "dmp.steps.documentation.messageInfo.dataOrganization.paragraphTitle"
-          | translate
-      }}</a
-    >
-    {{
-      "dmp.steps.documentation.messageInfo.dataOrganization.paragraphEnd"
-        | translate
-    }}
-  </p>
-</app-info-message>
+        <app-info-message>
+          {{
+            "dmp.steps.documentation.messageInfo.dataOrganization.text"
+              | translate
+          }}
+          <a
+            class="info-link-custom"
+            [href]="
+              'dmp.steps.documentation.messageInfo.dataOrganization.link'
+                | translate
+            "
+            target="_blank">
+            {{
+              "dmp.steps.documentation.messageInfo.dataOrganization.linkTitle"
+                | translate
+            }}</a
+          >
+          <p>
+            {{
+              "dmp.steps.documentation.messageInfo.dataOrganization.paragraph"
+                | translate
+            }}
+            <a
+              class="info-link-custom"
+              [href]="
+                'dmp.steps.documentation.messageInfo.dataOrganization.paragraphLink'
+                  | translate
+              "
+              target="_blank">
+              {{
+                "dmp.steps.documentation.messageInfo.dataOrganization.paragraphTitle"
+                  | translate
+              }}</a
+            >
+            {{
+              "dmp.steps.documentation.messageInfo.dataOrganization.paragraphEnd"
+                | translate
+            }}
+          </p>
+        </app-info-message>
 
-<app-textarea-wrapper
-  [label]="'dmp.steps.documentation.question.structure'"
-  [control]="structure"
-  [autocompleteOptions]="optionsStructureAndVersioning">
-</app-textarea-wrapper>
+        <app-textarea-wrapper
+          [label]="'dmp.steps.documentation.question.structure'"
+          [control]="structure"
+          [autocompleteOptions]="optionsStructureAndVersioning">
+        </app-textarea-wrapper>
 
         <div class="form-field-hint">
           <app-textarea-wrapper

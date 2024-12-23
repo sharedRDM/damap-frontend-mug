@@ -82,7 +82,10 @@
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
-                  <app-tooltip class="tooltip-position" [tooltip]="'help.legal.sensitiveDataSecurity'" onkeyup />
+                  <app-tooltip
+                    class="tooltip-position"
+                    [tooltip]="'help.legal.sensitiveDataSecurity'"
+                    onkeyup />
                 </div>
                 <ng-container *ngIf="isOtherMeasureSelected">
                   <app-textarea-wrapper
