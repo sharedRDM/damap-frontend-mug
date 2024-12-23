@@ -7,9 +7,11 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconButton } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MetadataDialogInfoComponent } from './question-dialogs/metadata-dialog-info.component';
 import { NgModule } from '@angular/core';
+import { SearchFieldComponent } from './search-field/search-field.component';
 import { TextareaWrapperComponent } from './textarea-wrapper/textarea-wrapper.component';
 import { TooltipModule } from '../widgets/tooltip/tooltip.module';
 import { TranslateModule } from '@ngx-translate/core';
@@ -19,7 +21,7 @@ import { ValidationDialogInfoComponent } from './question-dialogs/validation-dia
   declarations: [
     InputWrapperComponent,
     TextareaWrapperComponent,
-    MetadataDialogInfoComponent,
+    SearchFieldComponent,
     LegalAspectsDialogInfoComponent,
     ValidationDialogInfoComponent,
   ],
@@ -36,6 +38,7 @@ import { ValidationDialogInfoComponent } from './question-dialogs/validation-dia
     MatFormFieldModule,
     MatInputModule,
     MatAutocompleteModule,
+    MatIconButton,
   ],
   exports: [
     CommonModule,
@@ -45,6 +48,7 @@ import { ValidationDialogInfoComponent } from './question-dialogs/validation-dia
     InputWrapperComponent,
     TextareaWrapperComponent,
     TooltipModule,
+    SearchFieldComponent,
     MetadataDialogInfoComponent,
     ValidationDialogInfoComponent,
     LegalAspectsDialogInfoComponent,

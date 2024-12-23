@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,6 +10,7 @@ import { Router } from '@angular/router';
 export class FlipCardComponent {
   @Input() frontContent: string;
   @Input() backContent: string;
+  @Input() iconCard: string;
   @Input() navigateRoute?: string;
   @Input() relinkUrl?: string;
 
