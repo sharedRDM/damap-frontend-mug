@@ -25,6 +25,8 @@ export class LegalEthicalAspectsComponent {
   translateCompliancePrefixEnum = 'enum.compliance.';
   translateSecurityPrefixEnum = 'enum.securitymeasure.';
 
+  selectedView: 'primaryView' | 'secondaryView' = 'primaryView';
+
   optionsLinksEthics: string[] = [
     'Guidelines on Safeguarding Good Scientific Practice',
   ];
@@ -105,5 +107,9 @@ export class LegalEthicalAspectsComponent {
     return this.legalEthicalStep.controls.legalRestrictionsDocuments.value?.includes(
       Agreement.OTHER,
     );
+  }
+
+  onViewChange(view: 'primaryView' | 'secondaryView'): void {
+    this.selectedView = view;
   }
 }

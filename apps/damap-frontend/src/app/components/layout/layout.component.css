@@ -21,8 +21,17 @@
   margin: 13px;
 }
 
-.mat-sidenav.collapsed {
-  width: 90px !important;
+.mat-sidenav-content {
+  transition: margin-left 0.3s ease;
+  margin-left: 90px;
+}
+
+.mat-sidenav-content:not(.collapsed) {
+  margin-left: 300px;
+}
+
+.mat-sidenav-content {
+  margin-left: 90px;
 }
 
 .menu-icon-text {
@@ -143,6 +152,7 @@
   display: block;
   color: var(--neutral-color-medium-light) !important;
   font-size: x-small;
+  line-height: normal;
 }
 
 .version-information {
