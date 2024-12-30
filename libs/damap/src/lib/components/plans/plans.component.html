@@ -1,12 +1,8 @@
 <app-info-card></app-info-card>
-<div class="text-content" id="content" style="max-width: 1440px">
+<div id="content" style="max-width: 1440px">
   <h2 translate>plans.mydmps</h2>
-  <button class="button-position-custom" [routerLink]="'/dmp'" mat-flat-button>
-    <mat-icon class="button-position-custom">add</mat-icon>
-    {{ "plans.create.dmp" | translate }}
-  </button>
 
-  <div class="position" *ngIf="(dmpsLoaded$ | async) === LoadingState.LOADED">
+  <div>
     <app-dmp-table
       [dmps]="dmps$ | async"
       [dmpsLoaded]="dmpsLoaded$"

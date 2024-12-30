@@ -152,6 +152,7 @@
   display: block;
   color: var(--neutral-color-medium-light) !important;
   font-size: x-small;
+  line-height: normal;
 }
 
 .version-information {

@@ -133,7 +133,6 @@ mat-card {
 }
 
 .button-position-custom {
-  color: white !important;
   font-weight: 400 !important;
 }
 
@@ -189,7 +188,7 @@ mat-card {
 
 .zebra-table {
   & tbody tr:not(.expanded-row):hover {
-    background: var(--secondary-container);
+    background: var(--info-bg);
     color: var(--on-secondary-container);
   }
 

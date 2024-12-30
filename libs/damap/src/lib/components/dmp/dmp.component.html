@@ -114,38 +114,40 @@
         {{ "dmp.steps.documentation.error" | translate }}
       </div>
     </ng-container>
-    <ng-container *ngIf="showStep; else noDatasets">
-      <div *ngIf="selectedViewStorage === 'primaryView'">
-        <app-data-access
-          [dmpForm]="dmpForm"
-          [datasets]="datasets"></app-data-access>
-      </div>
-      <div *ngIf="selectedViewStorage === 'secondaryView'">
-        <app-dmp-storage
-          [dmpForm]="dmpForm"
-          [storageStep]="storageStep"
-          [datasets]="datasets"
-          (storageToAdd)="addStorage($event)"
-          (storageToRemove)="removeStorage($event)">
-        </app-dmp-storage>
-        <mat-divider></mat-divider>
-        <app-dmp-external-storage
-          [externalStorageStep]="externalStorageStep"
-          [externalStorageInfo]="externalStorageInfo"
-          [datasets]="datasets"
-          (externalStorageToAdd)="addExternalStorage()"
-          (externalStorageToRemove)="removeExternalStorage($event)">
-        </app-dmp-external-storage>
-      </div>
-      <div
-        *ngIf="
-          storageStep.invalid ||
-          externalStorageStep.invalid ||
-          externalStorageInfo.invalid
-        "
-        class="error-message">
-        {{ "dmp.steps.storage.error" | translate }}
-      </div>
+    <ng-container *ngIf="selectedStep === 4">
+      <ng-container *ngIf="showStep; else noDatasets">
+        <div *ngIf="selectedViewStorage === 'primaryView'">
+          <app-data-access
+            [dmpForm]="dmpForm"
+            [datasets]="datasets"></app-data-access>
+        </div>
+        <div *ngIf="selectedViewStorage === 'secondaryView'">
+          <app-dmp-storage
+            [dmpForm]="dmpForm"
+            [storageStep]="storageStep"
+            [datasets]="datasets"
+            (storageToAdd)="addStorage($event)"
+            (storageToRemove)="removeStorage($event)">
+          </app-dmp-storage>
+          <mat-divider></mat-divider>
+          <app-dmp-external-storage
+            [externalStorageStep]="externalStorageStep"
+            [externalStorageInfo]="externalStorageInfo"
+            [datasets]="datasets"
+            (externalStorageToAdd)="addExternalStorage()"
+            (externalStorageToRemove)="removeExternalStorage($event)">
+          </app-dmp-external-storage>
+        </div>
+        <div
+          *ngIf="
+            storageStep.invalid ||
+            externalStorageStep.invalid ||
+            externalStorageInfo.invalid
+          "
+          class="error-message">
+          {{ "dmp.steps.storage.error" | translate }}
+        </div>
+      </ng-container>
     </ng-container>
     <ng-container *ngIf="selectedStep === 5">
       <ng-container *ngIf="showStep; else noDatasets">
