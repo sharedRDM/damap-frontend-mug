@@ -20,6 +20,7 @@ import { StorageGuidelinesDialogComponent } from './storage-dialog/storage-guide
 import { StorageInfoDialogComponent } from './storage-dialog/storage-info-dialog.component';
 import { ToggleButtonsModule } from '../../../widgets/toggle-buttons/toggle-buttons.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { MatSlideToggle } from '@angular/material/slide-toggle';
 
 @NgModule({
   imports: [
@@ -40,6 +41,7 @@ import { TranslateModule } from '@ngx-translate/core';
     MatButtonModule,
     MatFormFieldModule,
     InfoMessageModule,
+    MatSlideToggle,
   ],
   declarations: [
     DataAccessComponent,
