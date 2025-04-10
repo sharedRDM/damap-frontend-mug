@@ -95,11 +95,11 @@
                     [control]="otherDataSecurityMeasures"
                     [maxLength]="4000"></app-textarea-wrapper>
                 </ng-container>
-                <app-input-wrapper
+                <app-textarea-wrapper
                   [label]="'dmp.steps.legal.question.sensitiveDataAccess'"
                   [control]="sensitiveDataAccess"
                   [maxLength]="4000"
-                  appearance="fill"></app-input-wrapper>
+                  appearance="fill"></app-textarea-wrapper>
               </div>
             </ng-container>
             <hr />
@@ -183,7 +183,6 @@
                 </ng-container>
               </div>
             </ng-container>
-
             <!--Legal Restrictions-->
             <ng-container
               *ngIf="
@@ -266,5 +265,6 @@
     >{{ "dmp.steps.ethical.heading" | translate }}</mat-label
   >
   <app-ethical-aspects
-    [legalEthicalStep]="legalEthicalStep"></app-ethical-aspects>
+    [legalEthicalStep]="legalEthicalStep"
+    [ethicalReportEnabled]="ethicalReportEnabled"></app-ethical-aspects>
 </div>
