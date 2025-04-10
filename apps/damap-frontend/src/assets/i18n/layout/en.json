@@ -18,7 +18,7 @@
     },
     "logout": "Logout",
     "version": "Version",
-    "baseVersion": " (based on DAMAP v4.3.1)",
+    "baseVersion": " (based on DAMAP v4.5.0)",
     "logo": {
       "text": "Go back to main page",
       "link": "https://www.medunigraz.at"

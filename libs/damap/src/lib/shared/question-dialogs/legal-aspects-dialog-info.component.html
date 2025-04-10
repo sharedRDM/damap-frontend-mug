@@ -1,15 +1,25 @@
-<mat-dialog-content>
-  <p>
-    {{ "info.documentation.dataOwnership.description" | translate }}
-    <ng-container
-      *ngFor="let link of 'info.documentation.dataOwnership.links' | translate">
-      <a class="info-link-custom" [href]="link.url" target="_blank">{{
-        link.title
+<div class="dialog-content">
+  <h2 mat-dialog-title>{{ "legal.aspects.dialog.title" | translate }}</h2>
+  <mat-dialog-content>
+    <p>
+      {{ "legal.aspects.dialog.dataOwnership.description" | translate }}
+    </p>
+    <p>
+      {{ "legal.aspects.dialog.contact.description" | translate }}
+      <a
+        href="https://muniverse.medunigraz.at/forschung/technologietransfer"
+        target="_blank">
+        {{ "legal.aspects.dialog.contact.link" | translate }}
+      </a>
+    </p>
+    <p>
+      {{ "legal.aspects.dialog.rdmPolicy.description" | translate }}
+      <a href="#" target="_blank">{{
+        "legal.aspects.dialog.rdmPolicy.link" | translate
       }}</a>
-      {{ link.text }}
-    </ng-container>
-  </p>
-</mat-dialog-content>
-<mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
-</mat-dialog-actions>
+    </p>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+  </mat-dialog-actions>
+</div>

@@ -16,6 +16,7 @@ import { LegalEthicalAspectsModule } from './legal-ethical-aspects/legal-ethical
 import { LicensesModule } from './licenses/licenses.module';
 import { LivePreviewModule } from './live-preview/live-preview.module';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatIconModule } from '@angular/material/icon';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
 import { NgModule } from '@angular/core';
@@ -28,7 +29,6 @@ import { SpecifyDataModule } from './specify-data/specify-data.module';
 import { SummaryModule } from './summary/summary.module';
 import { ToggleButtonsModule } from '../../widgets/toggle-buttons/toggle-buttons.module';
 import { VersionModule } from '../version/version.module';
-import { MatIconModule } from '@angular/material/icon';
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpBackend): MultiTranslateHttpLoader {

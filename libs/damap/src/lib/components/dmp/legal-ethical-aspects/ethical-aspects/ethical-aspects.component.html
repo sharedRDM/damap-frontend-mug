@@ -4,7 +4,10 @@
       <label id="humanParticipants">
         {{ "dmp.steps.ethical.question.humanParticipants" | translate }}
       </label>
-      <app-tooltip [tooltip]="'help.ethical.humanParticipants'"></app-tooltip>
+      <app-tooltip
+        [tooltip]="
+          'dmp.steps.ethical.messageInfo.ethical.humanParticipants' | translate
+        "></app-tooltip>
       <div class="flex-radio">
         <app-cris-tag
           [cris]="legalEthicalStep?.value.humanParticipantsCris"></app-cris-tag>
@@ -21,29 +24,20 @@
       </div>
       <app-info-message
         *ngIf="legalEthicalStep.controls.humanParticipants.value">
-        {{ "info.ethical.humanParticipants.prefix" | translate }}
+        {{
+          "dmp.steps.ethical.info.ethical.humanParticipants.prefix" | translate
+        }}
         <a
           class="info-link-custom"
           href="{{
-            'info.ethical.humanParticipants.researchEthicsCoordination.link'
+            'dmp.steps.ethical.info.ethical.humanParticipants.researchEthicsCoordination.link'
               | translate
           }}"
           target="_blank"
           rel="noopener"
           >{{
-            "info.ethical.humanParticipants.researchEthicsCoordination.text"
+            "dmp.steps.ethical.info.ethical.humanParticipants.researchEthicsCoordination.text"
               | translate
-          }}</a
-        >
-        {{ "info.ethical.humanParticipants.middle" | translate }}
-        <a
-          href="{{
-            'info.ethical.humanParticipants.researchEthics.link' | translate
-          }}"
-          target="_blank"
-          rel="noopener"
-          >{{
-            "info.ethical.humanParticipants.researchEthics.text" | translate
           }}</a
         >
         .
@@ -52,7 +46,10 @@
       <label id="ethicalIssues">
         {{ "dmp.steps.ethical.question.ethicalIssues" | translate }}
       </label>
-      <app-tooltip [tooltip]="'help.ethical.ethicalIssues'"></app-tooltip>
+      <app-tooltip
+        [tooltip]="
+          'dmp.steps.ethical.messageInfo.ethical.ethicalIssues' | translate
+        "></app-tooltip>
       <div class="flex-radio">
         <mat-radio-group
           aria-labelledby="ethicalIssues"
@@ -68,15 +65,19 @@
         </mat-radio-group>
       </div>
       <app-info-message *ngIf="legalEthicalStep.controls.ethicalIssues.value">
-        {{ "info.ethical.ethicalIssues.text" | translate }}
+        {{ "dmp.steps.ethical.info.ethical.ethicalIssues.text" | translate }}
         <a
           class="info-link-custom"
           href="{{
-            'info.ethical.ethicalIssues.researchEthics.link' | translate
+            'dmp.steps.ethical.info.ethical.ethicalIssues.researchEthics.link'
+              | translate
           }}"
           target="_blank"
           rel="noopener"
-          >{{ "info.ethical.ethicalIssues.researchEthics.text" | translate }}</a
+          >{{
+            "dmp.steps.ethical.info.ethical.ethicalIssues.researchEthics.text"
+              | translate
+          }}</a
         >
         .
       </app-info-message>
@@ -123,16 +124,25 @@
           [control]="ethicalIssuesReport"></app-input-wrapper>
       </div>
       <app-info-message>
-        {{ "info.ethical.committeeReviewed.prefix" | translate }}
+        {{
+          "dmp.steps.ethical.info.ethical.committeeReviewed.prefix" | translate
+        }}
         <a
           class="info-link-custom"
           [href]="
-            'mailto:' + ('info.ethical.committeeReviewed.mail.link' | translate)
+            'mailto:' +
+            ('dmp.steps.ethical.info.ethical.committeeReviewed.mail.link'
+              | translate)
           "
           rel="noopener">
-          {{ "info.ethical.committeeReviewed.mail.text" | translate }}</a
+          {{
+            "dmp.steps.ethical.info.ethical.committeeReviewed.mail.text"
+              | translate
+          }}</a
         >
-        {{ "info.ethical.committeeReviewed.suffix" | translate }}
+        {{
+          "dmp.steps.ethical.info.ethical.committeeReviewed.suffix" | translate
+        }}
       </app-info-message>
     </div>
   </mat-card-content>

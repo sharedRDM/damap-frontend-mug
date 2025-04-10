@@ -1,14 +1,12 @@
+<h2 mat-dialog-title>{{ "validation.title" | translate }}</h2>
 <mat-dialog-content>
   <p>
-    {{ "info.documentation.validation.documentationGuidance" | translate }}
+    {{ "validation.documentationGuidance" | translate }}
   </p>
   <p>
-    {{ "info.documentation.validation.sharingOptions.description" | translate }}
+    {{ "validation.sharingOptions.description" | translate }}
     <ng-container
-      *ngFor="
-        let link of 'info.documentation.validation.sharingOptions.links'
-          | translate
-      ">
+      *ngFor="let link of 'validation.sharingOptions.links' | translate">
       <a class="info-link-custom" [href]="link.url" target="_blank">{{
         link.title
       }}</a>

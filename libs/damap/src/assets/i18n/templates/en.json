@@ -13,9 +13,9 @@
         "manual.input": "Input project manually",
         "list": "Choose project from the project database",
         "label": "Choose project",
-        "greeting": "Hi Firstname, let’s get started",
+        "greeting": "Hi Firstname, let's get started",
         "summaryLine": "Begin creating your DMP by identifying your project.",
-        "instructions": "In this step, you choose a project from your institution’s project database (if integrated) or manually input your project.",
+        "instructions": "In this step, you choose a project from your institution's project database (if integrated) or manually input your project.",
         "search": "Search project...",
         "select": "Please select the project you want to create a DMP for:",
         "selected": "Selected project:",
@@ -32,7 +32,7 @@
         "greeting": "Welcome to Step 2, Firstname",
         "summaryLine": "Identify team members in your project.",
         "instructions": "In this step, you add individuals to the project and provide additional information about them, for example, their role in the project. To mark someone as the contact person click the person-with-envelope icon next to their role. You can change the existing information and add more contributors via the search (choose a search service and start typing the name). Please provide a minimum of one contact person as well as a data manager (it can be the same person).",
-        "intro": "In this step, you add people involved in the project and provide additional info about them, e.g., their role. In this example, the project leader’s info has already been added and marked as the contact person (note icon with person and envelope next to their name). You can add more contributors via the search field (ensure you select the appropriate database, e.g., ORCID), or manually via the “Add contributor manually button”. Please provide a minimum of one contact person as well as a data manager (it can be the same person).",
+        "intro": "In this step, you add people involved in the project and provide additional info about them, e.g., their role. In this example, the project leader's info has already been added and marked as the contact person (note icon with person and envelope next to their name). You can add more contributors via the search field (ensure you select the appropriate database, e.g., ORCID), or manually via the \"Add contributor manually button\". Please provide a minimum of one contact person as well as a data manager (it can be the same person).",
         "search": "Search for person...",
         "search.service": "Search service",
         "general.search": "Find Contributors",
@@ -53,7 +53,23 @@
           "update": "Update",
           "cancel": "Cancel",
           "title": "Project contact",
-          "info": "Select a contact from the list of contributors using the button"
+          "info": "Select a contact from the list of contributors using the button",
+          "orcid": {
+            "link": "https://orcid.org/",
+            "title": "ORCiD iD",
+            "text": "(Open Researcher and Contributor ID). An ORCiD iD is a "
+          },
+          "id": {
+            "title": "persistent identifier",
+            "link": "https://www.tuwien.at/en/research/rti-support/research-data/rdm-infos-tips/persistent-identifiers",
+            "text": "(such as DOI for journal articles) that connects researchers and research (output) permanently. "
+          },
+          "prefix": "We generally recommend, to register for an ",
+          "endPrefix": "In case of a multi-partner project briefly assign the data management responsibilities/roles among the project partners and make sure that any data or material transfer to external project partners is documented in a data (DTA) and/or material (MTA) transfer agreement unless otherwise stated in a consortium agreement. For further information regarding data transfer to third parties see ",
+          "mUni": {
+            "title": "MUniverse.",
+            "link": "https://muniverse.medunigraz.at/forschung/forschungsdatenmanagement/datenweitergabe?language=DE"
+          }
         },
         "manual.input": {
           "show": "Add contributor manually",
@@ -79,7 +95,7 @@
       "data": {
         "specify": {
           "label": "Specify research data",
-          "greeting": "Let’s talk about data, Firstname",
+          "greeting": "Let's talk about data, Firstname",
           "summaryLine": "Describe your research data.",
           "instructions": "In this step, you specify the datasets (i.e., groups of data with similar properties) you will produce or reuse in your project.",
           "intro": {
@@ -219,12 +235,27 @@
             "paragraphLink": "https://confluence.medunigraz.at/display/ITKB/Ordner-+und+Dateinamen+am+Filesystem",
             "paragraphTitle": "specifications of the Med Uni Graz O-IT",
             "paragraphEnd": " with regard to folders and file names on the file system."
+          },
+          "fileServices": {
+            "text": "In general, we strongly recommend utilizing the secure, centrally managed, and automatically backed-up",
+            "links": [
+              {
+                "url": "https://confluence.medunigraz.at/display/ITKB/Datenablage+-+Fileservices",
+                "title": "file services",
+                "text": " provided by the Organizational Unit Information Technology (O-IT). Additionally, we encourage you to familiarize yourself with our institutional "
+              },
+              {
+                "url": "https://confluence.medunigraz.at/pages/viewpage.action?pageId=6439211",
+                "title": "Guidelines for data protection and IT security",
+                "text": ", as well as the IT-Knowledge Base, which offers comprehensive information on all available IT-services."
+              }
+            ]
           }
         }
       },
       "storage": {
         "label": "Storage and Backup",
-        "greeting": "Step 5, Let’s elaborate on your storage, Firstname",
+        "greeting": "Step 5, Let's elaborate on your storage, Firstname",
         "summaryLine": "Define who can access and modify your data and describe your storage and backup strategies.",
         "instructions": "This step helps you 1) document who is allowed to see or edit your data in the project phase and 2) find appropriate storage and backup solutions for your data.",
         "intro": "Choose the best storage option for each dataset:",
@@ -249,7 +280,7 @@
       },
       "legal": {
         "label": "Legal and ethical aspects",
-        "greeting": "On to Step 6, you’re halfway there, Firstname!",
+        "greeting": "On to Step 6, you're halfway there, Firstname!",
         "summaryLine": "Address important legal and ethical dimensions of your project.",
         "instructions": "This step helps you consider potential issues concerning personal data, intellectual property rights, and ownership and asks you for basic information on the handling of ethical issues within this project.",
         "intro": "This step helps you consider potential issues concerning personal data, intellectual property rights and ownership and asks you for basic information on the handling of ethical issues within this project.",
@@ -279,6 +310,31 @@
         },
         "link": {
           "sensitiveData": "https://ec.europa.eu/info/law/law-topic/data-protection/reform/rules-business-and-organisations/legal-grounds-processing-data/sensitive-data/what-personal-data-considered-sensitive_en"
+        },
+        "messageInfo": {
+          "introduction": "When collecting, preserving and sharing research data, researchers are irrevocably confronted with legal obligations and ethical considerations. For instance, they must determine who holds usage rights to the data, clarify whether data and materials can be shared with third parties (e.g. through a Material or Data Transfer Agreement), and ensure the GDPR-compliant handling of personal data. In general, you should at least be informed about the following legal requirements of Med Uni Graz:",
+          "links": {
+            "rdmPolicy": {
+              "url": "https://www.medunigraz.at/frontend/user_upload/OEs/oe-forschungsmanagement/abt-forschungsdokumentation/FDM_Policy_EN.pdf",
+              "title": " RDM-Policy",
+              "text": " (Point 2 on usage rights)"
+            },
+            "dataProtection": {
+              "url": "https://confluence.medunigraz.at/pages/viewpage.action?pageId=64392119",
+              "title": " Guidelines for Data Protection and IT Security",
+              "text": "Med Uni"
+            },
+            "dataTransfer": {
+              "url": "https://muniverse.medunigraz.at/forschung/forschungsdatenmanagement/datenweitergabe?language=DE",
+              "title": " MUniverse Info Page on Data Transfer",
+              "text": ""
+            },
+            "personalData": {
+              "url": "https://muniverse.medunigraz.at/uploads/Positionspapier_Datenweitergabe_f249bb2446.pdf",
+              "title": " Med Uni Position Paper on Use and Disclosure of Personal Data in the Research Context",
+              "text": ""
+            }
+          }
         }
       },
       "ethical": {
@@ -295,7 +351,54 @@
             "suffix": ", or a similar body?"
           },
           "ethicalIssueReport": "Please provide the ethical issue report."
+        },
+        "messageInfo": {
+          "ethical": {
+            "humanParticipants": "The participation may include activities such as interviews, prototype testing, observations, surveys, etc.",
+            "ethicalIssues": "For example: Your research involves human embryos, foetuses, cells or tissues, animals, activities that may adversely affect the environment or the health and safety of involved persons, artificial intelligence, activities outside the EU, or there are dual use or misuse aspects that must be addressed."
+          }
+        },
+        "info": {
+          "ethical": {
+            "humanParticipants": {
+              "prefix": " An informed consent for participation (in addition to an informed consent to data processing) is required. For more information, please contact our  ",
+              "researchEthicsCoordination": {
+                "text": "local ethics committee.",
+                "link": "https://muniverse.medunigraz.at/struktur/kommissionen-und-vertretungen/ethikkommission"
+              }
+            },
+            "ethicalIssues": {
+              "text": "Your research plan may require ethical review. Inform yourself by consulting your ",
+              "researchEthics": {
+                "text": "institution's code of conduct",
+                "link": "https://www.medunigraz.at/frontend/user_upload/themen-forschung/pdf/Richtlinie_Good_Scientific_Practice_EN.pdf"
+              }
+            },
+            "committeeReviewed": {
+              "prefix": " Please note that you must address (potential) ethical issues in separate documents according to the requirements of the relevant funding body. The DMP only serves to help identify some ethical issues.\nPlease contact your ",
+              "mail": {
+                "text": "institution's Ethic's Committee",
+                "link": "https://muniverse.medunigraz.at/struktur/kommissionen-und-vertretungen/ethikkommission"
+              },
+              "suffix": " for additional information and support. You must do so if your planned research involves any human participation."
+            }
+          }
         }
+      },
+      "repositoryGuidance": {
+        "start": "The ",
+        "links": [
+          {
+            "url": "https://www.nature.com/sdata/policies/repositories",
+            "title": "Data Repository Guidance by Scientific Data",
+            "text": "might also help you to find a domain-specific repository for your data. If you can not find a suitable disciplinary repository, we recommend "
+          },
+          {
+            "url": "https://zenodo.org/",
+            "title": "zenodo",
+            "text": ", an easy to use catch-all and free of charge repository for datasets up to 50 GB (multiple datasets allowed, larger datasets on request)."
+          }
+        ]
       },
       "licensing": {
         "label": "Data access and licensing",
@@ -332,7 +435,7 @@
         "greeting": "Step 8, Firstname",
         "summaryLine": "Choose suitable repositories for your data.",
         "instructions": "Repositories are used for sustainable data management beyond the lifetime of the project and to make data discoverable and reusable to others. If available, use a domain specific repository for your data. The search filter below may help you to find one.",
-        "intro": "Use repositories to sustainably manage your data after the project’s life and to make your data discoverable and reusable. If possible, use a domain specific repository for your data. The search filter below can help you to find one. You’ll also want to set the time for how long your data should remain in the repository. This retention period can be selected in the Set retention period for datasets section",
+        "intro": "Use repositories to sustainably manage your data after the project's life and to make your data discoverable and reusable. If possible, use a domain specific repository for your data. The search filter below can help you to find one. You'll also want to set the time for how long your data should remain in the repository. This retention period can be selected in the Set retention period for datasets section",
         "heading": "Repositories",
         "search": "Search repository",
         "add": "Add repository",
@@ -373,7 +476,7 @@
         "label": "Costs",
         "rightLabel": "Data management costs",
         "addButton": "Add cost",
-        "greeting": "Step 10, you’re almost there, Firstname!",
+        "greeting": "Step 10, you're almost there, Firstname!",
         "summaryLine": "Estimate the costs for data management in this project. ",
         "instructions": "In this step, you will provide information on the resources required to manage your data and a clear statement on how these costs will be covered.",
         "infoBox": {
@@ -402,7 +505,7 @@
       },
       "end": {
         "label": "Summary",
-        "greeting": "Finally, let’s review your work, Firstname",
+        "greeting": "Finally, let's review your work, Firstname",
         "summaryLine": "Check if you covered everything.",
         "instructions": "Below is a summary of the information you provided. To add more information, go to the previous step(s)."
       },
@@ -520,6 +623,85 @@
     "changes": {
       "saved": "All changes have been saved.",
       "unsaved": "You have unsaved changes."
+    }
+  },
+  "structure": {
+    "title": "Structure and Versioning Information",
+    "content": "Try to establish group-internal conventions for the naming of files, the creation of folder structures and the versioning of files in order to facilitate the retrieval of files. Also consider to capture these conventions in a central document (e.g. write a SOP for data organization).",
+    "bestPractices": {
+      "text": "If you need best practices for file and folder naming we recommend the article:",
+      "link": {
+        "url": "https://exadox.com/files/pdf/en/Folder-File-Naming-Convention-10Rules-Best-Practice.pdf",
+        "title": "Folder and File Naming Convention – 10 Rules for Best Practice"
+      }
+    },
+    "medUniSpecs": {
+      "text": "Please also take into account the specifications of the Med Uni Graz O-IT with regard to:",
+      "links": [
+        {
+          "url": "https://confluence.medunigraz.at/display/ITKB/Ordner-+und+Dateinamen+am+Filesystem",
+          "title": "folders and file names on the file system."
+        }
+      ]
+    }
+  },
+  "cris": "Option currently selected in the CRIS system: {{value}}.",
+  "overview": {
+    "title": "Metadata categories and standards",
+    "introduction": "Be aware that recording and providing rich documentation and metadata that capture essential information about data collection, processing, and analysis are essential and help other researchers to find, understand and reuse your data! Biomedical metadata that should be captured typically includes e.g.:",
+    "metadataCategories": {
+      "reagentMetadata": "Reagent Metadata: Information about the clinical samples, biological reagents (e.g., cell lines, antibodies, siRNAs), and chemical reagents (e.g., drugs) used to generate the data.",
+      "technicalMetadata": "Technical Metadata: Information automatically generated by research instruments and associated software.",
+      "analyticalMetadata": "Analytical Metadata: Information about data analysis methods including software name and version, algorithms for transformation and processing of data, quality control parameters, and output file type details."
+    },
+    "reportingGuidelines": {
+      "description": "If applicable, you might refer to reporting guidelines such as the ",
+      "links": [
+        {
+          "url": "https://mfr.osf.io/render?url=https://osf.io/xfpn4/?direct&mode=render&action=download&mode=render",
+          "title": "MDAR",
+          "text": "guidelines for preclinical research or the "
+        },
+        {
+          "url": "https://www.strobe-statement.org/",
+          "title": "STROBE",
+          "textStrobe": "checklists for clinical trials which help researchers to capture essential information."
+        }
+      ]
+    },
+    "disciplineSpecificStandards": {
+      "description": "For some (omics) disciplines, it is common to use discipline-specific metadata standards.",
+      "standards": [
+        {
+          "url": "http://miaca.sourceforge.net/",
+          "title": "MIACA",
+          "text": "standard for example is used in the genomics research community and part of the "
+        },
+        {
+          "url": "https://www.ebi.ac.uk/training/online/courses/bioinformatics-terrified/what-makes-a-good-bioinformatics-database/minimum-information-standards/",
+          "title": "MIBBI",
+          "textMibbi": "collection."
+        }
+      ]
+    }
+  },
+  "validation": {
+    "title": "Data Quality and Validation",
+    "documentationGuidance": "Indicate and locate all documentation formats (e.g. by indicating the file path or URL) that may help others to understand and reuse your (published) data. Documentation formats you can refer to may include documentation such as lab protocols, standard operating procedures (SOPs), codebooks, readme files etc.",
+    "sharingOptions": {
+      "description": "You might also consider using collaborative and open platforms such as",
+      "links": [
+        {
+          "url": "https://osf.io/",
+          "title": "OSF",
+          "text": " (Open Science Framework) or"
+        },
+        {
+          "url": "http://protocols.io",
+          "title": "protocols.io",
+          "text": "to share lab protocols or methods with other researchers – then you will definitely contribute to open science and transparency in your research process!"
+        }
+      ]
     }
   },
   "upload": {
@@ -649,11 +831,11 @@
       },
       "epl1": {
         "name": "Eclipse Public License 1.0",
-        "description": "This license, made and used by the Eclipse Foundation, isn’t all too stringent and gives both copyright and explicit patent rights. Check the full text of the license to see how liability is accorded."
+        "description": "This license, made and used by the Eclipse Foundation, isn't all too stringent and gives both copyright and explicit patent rights. Check the full text of the license to see how liability is accorded."
       },
       "epl2": {
         "name": "Eclipse Public License 2.0",
-        "description": "This license, made and used by the Eclipse Foundation, isn’t all too stringent and gives both copyright and explicit patent rights. Check the full text of the license to see how liability is accorded."
+        "description": "This license, made and used by the Eclipse Foundation, isn't all too stringent and gives both copyright and explicit patent rights. Check the full text of the license to see how liability is accorded."
       },
       "gpl2": {
         "name": "GNU General Public License v2.0 only",
@@ -701,15 +883,15 @@
       },
       "mpl1": {
         "name": "Mozilla Public License 1.0",
-        "description": "This license has been superseded by 1.1. It is a lenient license used by the Mozilla Corporation that allows you a variety of explicit freedoms with the software so long as you keep modifications under this license and distribute the original source code alongside executables. It is a good midway license; it isn’t very strict and has only straightforward requirements."
+        "description": "This license has been superseded by 1.1. It is a lenient license used by the Mozilla Corporation that allows you a variety of explicit freedoms with the software so long as you keep modifications under this license and distribute the original source code alongside executables. It is a good midway license; it isn't very strict and has only straightforward requirements."
       },
       "mpl1_1": {
         "name": "Mozilla Public License 1.1",
-        "description": "This license has been superseded by 2.0. It is a lenient license used by the Mozilla Corporation that allows you a variety of explicit freedoms with the software so long as you keep modifications under this license and distribute the original source code alongside executables. It is a good midway license; it isn’t very strict and has only straightforward requirements."
+        "description": "This license has been superseded by 2.0. It is a lenient license used by the Mozilla Corporation that allows you a variety of explicit freedoms with the software so long as you keep modifications under this license and distribute the original source code alongside executables. It is a good midway license; it isn't very strict and has only straightforward requirements."
       },
       "mpl2": {
         "name": "Mozilla Public License 2.0",
-        "description": "This is a lenient license used by the Mozilla Corporation that allows you a variety of explicit freedoms with the software so long as you keep modifications under this license and distribute the original source code alongside executables. It is a good midway license; it isn’t very strict and has only straightforward requirements."
+        "description": "This is a lenient license used by the Mozilla Corporation that allows you a variety of explicit freedoms with the software so long as you keep modifications under this license and distribute the original source code alongside executables. It is a good midway license; it isn't very strict and has only straightforward requirements."
       },
       "odbl": {
         "name": "Open Data Commons Open Database License v1.0",
@@ -984,5 +1166,28 @@
     "templateSelection": "Choose preview format",
     "loading": "Loading",
     "requestTemplateSelection": "Please select a template in the dropdown"
+  },
+  "legal": {
+    "aspects": {
+      "dialog": {
+        "title": "Legal and Risk Management Department Team Tech Transfer",
+        "dataOwnership": {
+          "description": "Data ownership must be determined on a case-by-case basis due to varying factors such as funding bodies, contract research, project collaborations, multiple project partners, or specific contractual agreements."
+        },
+        "contact": {
+          "description": "If you have any questions regarding legal aspects, please contact the",
+          "link": "Legal and Risk Management Department or the Team Tech Transfer"
+        },
+        "rdmPolicy": {
+          "description": "For general information, please refer to point 2 on usage rights in our",
+          "link": "RDM-Policy"
+        },
+        "close": "Cancel"
+      }
+    }
+  },
+  "ethical": {
+    "humanParticipants": "The participation may include activities such as interviews, prototype testing, observations, surveys, etc.",
+    "ethicalIssues": "For example: Your research involves human embryos, foetuses, cells or tissues, animals, activities that may adversely affect the environment or the health and safety of involved persons, artificial intelligence, activities outside the EU, or there are dual use or misuse aspects that must be addressed."
   }
 }

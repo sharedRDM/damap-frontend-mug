@@ -2,6 +2,10 @@ import { Component, Input } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 
 import { DataQualityType } from '../../../domain/enum/data-quality-type.enum';
+import { MatDialog } from '@angular/material/dialog';
+import { MetadataDialogInfoComponent } from '../../../shared/question-dialogs/metadata-dialog-info.component';
+import { StructureDialogInfoComponent } from '../../../shared/question-dialogs/structure-dialog-info.component';
+import { ValidationDialogInfoComponent } from '../../../shared/question-dialogs/validation-dialog-info.component';
 
 @Component({
   selector: 'app-dmp-doc-data-quality',
@@ -10,6 +14,29 @@ import { DataQualityType } from '../../../domain/enum/data-quality-type.enum';
 })
 export class DocDataQualityComponent {
   @Input() docDataStep: UntypedFormGroup;
+
+  constructor(private dialog: MatDialog) {}
+
+  openMetadataDialog(): void {
+    this.dialog.open(MetadataDialogInfoComponent, {
+      width: '600px',
+      panelClass: 'custom-dialog-container',
+    });
+  }
+
+  openValidationDialog(): void {
+    this.dialog.open(ValidationDialogInfoComponent, {
+      width: '600px',
+      panelClass: 'custom-dialog-container',
+    });
+  }
+
+  openStructureDialog(): void {
+    this.dialog.open(StructureDialogInfoComponent, {
+      width: '600px',
+      panelClass: 'custom-dialog-container',
+    });
+  }
 
   optionsMetadata: string[] = [
     'We will be using the following domain specific metadata standards:…',

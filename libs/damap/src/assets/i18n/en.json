@@ -8,6 +8,17 @@
     "options": "Select options"
   },
   "languages": "Languages",
+  "info": {
+    "storage": {
+      "guidelines": {
+        "title": "Storage Guidelines",
+        "content": "Please ensure you are using secure file services for storing your research data. For more information, please refer to the following guidelines:",
+        "links": {
+          "dataProtection": "Data Protection Guidelines"
+        }
+      }
+    }
+  },
   "env": {
     "title": "Test environment",
     "text": "This application instance is for development and testing purposes only. Content may be deleted at any point in time without prior notification."
@@ -21,6 +32,11 @@
     "error": {
       "load": "DMPs were not loaded.",
       "save": "DMP was not updated."
+    },
+    "dialog": {
+      "button": {
+        "close": "Close"
+      }
     }
   },
   "dialog": {

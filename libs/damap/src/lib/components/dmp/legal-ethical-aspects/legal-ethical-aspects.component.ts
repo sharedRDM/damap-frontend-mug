@@ -52,8 +52,11 @@ export class LegalEthicalAspectsComponent {
   originalOrder = (): number => 0;
   constructor(public dialog: MatDialog) {}
 
-  openLegalAspectsDialogInfo() {
-    this.dialog.open(LegalAspectsDialogInfoComponent).afterClosed().subscribe();
+  openLegalAspectsDialogInfo(): void {
+    this.dialog.open(LegalAspectsDialogInfoComponent, {
+      width: '600px',
+      panelClass: 'custom-dialog-container',
+    });
   }
 
   get sensitiveDataAccess(): UntypedFormControl {

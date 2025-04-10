@@ -1,8 +1,10 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule, MatIconButton } from '@angular/material/button';
 import { MatDialogActions, MatDialogModule } from '@angular/material/dialog';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 import { CommonModule } from '@angular/common';
+import { HttpBackend } from '@angular/common/http';
 import { InputWrapperComponent } from './input-wrapper/input-wrapper.component';
 import { LegalAspectsDialogInfoComponent } from './question-dialogs/legal-aspects-dialog-info.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -11,9 +13,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MetadataDialogInfoComponent } from './question-dialogs/metadata-dialog-info.component';
 import { NgModule } from '@angular/core';
 import { SearchFieldComponent } from './search-field/search-field.component';
+import { StructureDialogInfoComponent } from './question-dialogs/structure-dialog-info.component';
 import { TextareaWrapperComponent } from './textarea-wrapper/textarea-wrapper.component';
 import { TooltipModule } from '../widgets/tooltip/tooltip.module';
-import { TranslateModule } from '@ngx-translate/core';
 import { ValidationDialogInfoComponent } from './question-dialogs/validation-dialog-info.component';
 
 @NgModule({
@@ -21,9 +23,10 @@ import { ValidationDialogInfoComponent } from './question-dialogs/validation-dia
     InputWrapperComponent,
     TextareaWrapperComponent,
     SearchFieldComponent,
-    LegalAspectsDialogInfoComponent,
     ValidationDialogInfoComponent,
     MetadataDialogInfoComponent,
+    StructureDialogInfoComponent,
+    LegalAspectsDialogInfoComponent,
   ],
   imports: [
     CommonModule,
@@ -51,6 +54,7 @@ import { ValidationDialogInfoComponent } from './question-dialogs/validation-dia
     SearchFieldComponent,
     MetadataDialogInfoComponent,
     ValidationDialogInfoComponent,
+    StructureDialogInfoComponent,
     LegalAspectsDialogInfoComponent,
 
     // Materials
