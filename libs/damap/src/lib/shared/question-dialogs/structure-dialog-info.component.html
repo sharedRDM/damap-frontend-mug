@@ -1,0 +1,25 @@
+<div class="dialog-content">
+  <h2 mat-dialog-title>{{ "structure.title" | translate }}</h2>
+  <mat-dialog-content>
+    <p>{{ "structure.content" | translate }}</p>
+    <p>
+      {{ "structure.bestPractices.text" | translate }}
+      <a
+        [href]="'structure.bestPractices.link.url' | translate"
+        target="_blank">
+        {{ "structure.bestPractices.link.title" | translate }}
+      </a>
+    </p>
+    <p>
+      {{ "structure.medUniSpecs.text" | translate }}
+      <a
+        [href]="'structure.medUniSpecs.links.0.url' | translate"
+        target="_blank">
+        {{ "structure.medUniSpecs.links.0.title" | translate }}
+      </a>
+    </p>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+  </mat-dialog-actions>
+</div>

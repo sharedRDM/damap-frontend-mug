@@ -14,21 +14,21 @@
 </ng-template>
 
 <app-info-message>
-  {{ "info.documentation.repositoryGuidance.start" | translate }}
+  {{ "dmp.steps.repositoryGuidance.start" | translate }}
   <a
     class="info-link-custom"
-    [href]="'info.documentation.repositoryGuidance.links.0.url' | translate"
+    [href]="'dmp.steps.repositoryGuidance.links.0.url' | translate"
     target="_blank">
-    {{ "info.documentation.repositoryGuidance.links.0.title" | translate }}
+    {{ "dmp.steps.repositoryGuidance.links.0.title" | translate }}
   </a>
-  {{ "info.documentation.repositoryGuidance.links.0.text" | translate }}
+  {{ "dmp.steps.repositoryGuidance.links.0.text" | translate }}
   <a
     class="info-link-custom"
-    [href]="'info.documentation.repositoryGuidance.links.1.url' | translate"
+    [href]="'dmp.steps.repositoryGuidance.links.1.url' | translate"
     target="_blank">
-    {{ "info.documentation.repositoryGuidance.links.1.title" | translate }}
+    {{ "dmp.steps.repositoryGuidance.links.1.title" | translate }}
   </a>
-  {{ "info.documentation.repositoryGuidance.links.1.text" | translate }}
+  {{ "dmp.steps.repositoryGuidance.links.1.text" | translate }}
 </app-info-message>
 
 <div *ngIf="repoStep.controls.length" [formGroup]="dmpForm">

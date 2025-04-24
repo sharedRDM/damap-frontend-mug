@@ -50,11 +50,22 @@
           </p>
         </app-info-message>
 
-        <app-textarea-wrapper
-          [label]="'dmp.steps.documentation.question.structure'"
-          [control]="structure"
-          [autocompleteOptions]="optionsStructureAndVersioning">
-        </app-textarea-wrapper>
+        <div class="form-field-hint">
+          <app-textarea-wrapper
+            [label]="'dmp.steps.documentation.question.structure'"
+            [control]="structure"
+            [autocompleteOptions]="optionsStructureAndVersioning">
+          </app-textarea-wrapper>
+          <div class="flex-row-wrap">
+            <app-tooltip
+              [tooltip]="'structure.title' | translate"
+              (click)="openStructureDialog()"
+              class="clickable-info">
+              <mat-icon class="material-icon-primary outline">info</mat-icon>
+              <span class="dialog-indicator">...</span>
+            </app-tooltip>
+          </div>
+        </div>
 
         <div class="form-field-hint">
           <app-textarea-wrapper
@@ -62,18 +73,37 @@
             [control]="metadata"
             [autocompleteOptions]="optionsMetadata">
           </app-textarea-wrapper>
-          <app-tooltip [tooltip]="'info.documentation.metadata'"></app-tooltip>
+          <div class="flex-row-wrap">
+            <app-tooltip
+              [tooltip]="'overview.title' | translate"
+              (click)="openMetadataDialog()"
+              class="clickable-info">
+              <mat-icon class="material-icon-primary outline">info</mat-icon>
+              <span class="dialog-indicator">...</span>
+            </app-tooltip>
+          </div>
         </div>
 
-        <app-textarea-wrapper
-          [label]="'dmp.steps.documentation.question.documentation'"
-          [control]="documentation">
-        </app-textarea-wrapper>
+        <div class="form-field-hint">
+          <app-textarea-wrapper
+            [label]="'dmp.steps.documentation.question.documentation'"
+            [control]="documentation">
+          </app-textarea-wrapper>
+          <div class="flex-row-wrap">
+            <app-tooltip
+              [tooltip]="'validation.title' | translate"
+              (click)="openValidationDialog()"
+              class="clickable-info">
+              <mat-icon class="material-icon-primary outline">info</mat-icon>
+              <span class="dialog-indicator">...</span>
+            </app-tooltip>
+          </div>
+        </div>
 
         <mat-form-field class="full-width" [formGroup]="docDataStep">
-          <mat-label
-            >{{ "dmp.steps.documentation.question.dataQuality" | translate }}
-          </mat-label>
+          <mat-label>{{
+            "dmp.steps.documentation.question.dataQuality" | translate
+          }}</mat-label>
           <mat-select formControlName="dataQuality" multiple #matSelect>
             <mat-option
               *ngFor="

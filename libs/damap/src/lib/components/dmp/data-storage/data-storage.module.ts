@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { DataAccessComponent } from './data-access/data-access.component';
 import { DataStorageInstructionComponent } from './data-storage-instruction/data-storage-instruction.component';
 import { ExternalStorageComponent } from './external-storage/external-storage.component';
+import { InfoMessageModule } from '../../../widgets/info-message/info-message.module';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -15,6 +16,7 @@ import { SharedModule } from '../../../shared/shared.module';
 import { StepIntroModule } from '../../../widgets/step-intro/step-intro.module';
 import { StorageComponent } from './storage/storage.component';
 import { StorageFilterPipe } from './storage/storage-filter.pipe';
+import { StorageGuidelinesDialogComponent } from './storage-dialog/storage-guidelines-dialog.component';
 import { StorageInfoDialogComponent } from './storage-dialog/storage-info-dialog.component';
 import { ToggleButtonsModule } from '../../../widgets/toggle-buttons/toggle-buttons.module';
 import { TranslateModule } from '@ngx-translate/core';
@@ -27,7 +29,6 @@ import { TranslateModule } from '@ngx-translate/core';
     SharedModule,
     StepIntroModule,
     ToggleButtonsModule,
-
     // Materials
     MatExpansionModule,
     MatFormFieldModule,
@@ -38,6 +39,7 @@ import { TranslateModule } from '@ngx-translate/core';
     MatDialogModule,
     MatButtonModule,
     MatFormFieldModule,
+    InfoMessageModule,
   ],
   declarations: [
     DataAccessComponent,
@@ -46,6 +48,7 @@ import { TranslateModule } from '@ngx-translate/core';
     StorageFilterPipe,
     DataStorageInstructionComponent,
     StorageInfoDialogComponent,
+    StorageGuidelinesDialogComponent,
   ],
   exports: [
     CommonModule,
@@ -58,6 +61,7 @@ import { TranslateModule } from '@ngx-translate/core';
     StorageComponent,
     DataStorageInstructionComponent,
     StorageInfoDialogComponent,
+    StorageGuidelinesDialogComponent,
 
     // Materials
     MatExpansionModule,

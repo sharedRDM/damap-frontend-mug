@@ -16,6 +16,7 @@ import { LegalEthicalAspectsModule } from './legal-ethical-aspects/legal-ethical
 import { LicensesModule } from './licenses/licenses.module';
 import { LivePreviewModule } from './live-preview/live-preview.module';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatIconModule } from '@angular/material/icon';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
 import { NgModule } from '@angular/core';
@@ -80,6 +81,7 @@ export function HttpLoaderFactory(http: HttpBackend): MultiTranslateHttpLoader {
     InfoCardComponent,
     // Materials
     MatStepperModule,
+    MatIconModule,
     DmpActionsModule,
   ],
   declarations: [DmpComponent],

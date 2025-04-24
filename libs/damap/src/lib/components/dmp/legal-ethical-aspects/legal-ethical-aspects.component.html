@@ -4,6 +4,51 @@
     id="example-radio-group-label"
     >{{ "dmp.steps.legal.heading" | translate }}</mat-label
   >
+  <app-info-message>
+    {{ "dmp.steps.legal.messageInfo.introduction" | translate }}
+    <div class="legal-links">
+      <a
+        class="info-link-custom"
+        [href]="'dmp.steps.legal.messageInfo.links.rdmPolicy.url' | translate"
+        target="_blank">
+        {{ "dmp.steps.legal.messageInfo.links.rdmPolicy.title" | translate }}
+      </a>
+      {{ "dmp.steps.legal.messageInfo.links.rdmPolicy.text" | translate }}
+      <br />
+      <a
+        class="info-link-custom"
+        [href]="
+          'dmp.steps.legal.messageInfo.links.dataProtection.url' | translate
+        "
+        target="_blank">
+        {{
+          "dmp.steps.legal.messageInfo.links.dataProtection.title" | translate
+        }}
+      </a>
+      {{ "dmp.steps.legal.messageInfo.links.dataProtection.text" | translate }}
+      <br />
+      <a
+        class="info-link-custom"
+        [href]="
+          'dmp.steps.legal.messageInfo.links.dataTransfer.url' | translate
+        "
+        target="_blank">
+        {{ "dmp.steps.legal.messageInfo.links.dataTransfer.title" | translate }}
+      </a>
+      {{ "dmp.steps.legal.messageInfo.links.dataTransfer.text" | translate }}
+      <br />
+      <a
+        class="info-link-custom"
+        [href]="
+          'dmp.steps.legal.messageInfo.links.personalData.url' | translate
+        "
+        target="_blank">
+        {{ "dmp.steps.legal.messageInfo.links.personalData.title" | translate }}
+      </a>
+      {{ "dmp.steps.legal.messageInfo.links.personalData.text" | translate }}
+    </div>
+  </app-info-message>
+
   <mat-card class="legal-ethical-card card-shadow">
     <mat-card-content>
       <div *ngIf="selectedView === 'primaryView'">
@@ -81,12 +126,12 @@
                         }}
                       </mat-option>
                     </mat-select>
+                    <mat-hint>{{
+                      "help.legal.sensitiveDataSecurity" | translate
+                    }}</mat-hint>
                   </mat-form-field>
-                  <app-tooltip
-                    class="tooltip-position"
-                    [tooltip]="'help.legal.sensitiveDataSecurity'"
-                    onkeyup />
                 </div>
+                <br /><br />
                 <ng-container *ngIf="isOtherMeasureSelected">
                   <app-textarea-wrapper
                     [label]="
@@ -95,11 +140,11 @@
                     [control]="otherDataSecurityMeasures"
                     [maxLength]="4000"></app-textarea-wrapper>
                 </ng-container>
-                <app-input-wrapper
+                <app-textarea-wrapper
                   [label]="'dmp.steps.legal.question.sensitiveDataAccess'"
                   [control]="sensitiveDataAccess"
                   [maxLength]="4000"
-                  appearance="fill"></app-input-wrapper>
+                  appearance="fill"></app-textarea-wrapper>
               </div>
             </ng-container>
             <hr />
@@ -183,7 +228,6 @@
                 </ng-container>
               </div>
             </ng-container>
-
             <!--Legal Restrictions-->
             <ng-container
               *ngIf="
@@ -249,11 +293,21 @@
             </ng-container>
             <hr *ngIf="!last" />
           </div>
-
-          <app-textarea-wrapper
-            [label]="'dmp.steps.legal.question.dataRightsAndAccessControl'"
-            [maxLength]="4000"
-            [control]="dataRightsAndAccessControl"></app-textarea-wrapper>
+          <div class="form-field-hint">
+            <app-textarea-wrapper
+              [label]="'dmp.steps.legal.question.dataRightsAndAccessControl'"
+              [maxLength]="4000"
+              [control]="dataRightsAndAccessControl"></app-textarea-wrapper>
+            <div class="flex-row-wrap">
+              <app-tooltip
+                [tooltip]="'legal.aspects.dialog.title' | translate"
+                (click)="openLegalAspectsDialogInfo()"
+                class="clickable-info">
+                <mat-icon class="material-icon-primary outline">info</mat-icon>
+                <span class="dialog-indicator">...</span>
+              </app-tooltip>
+            </div>
+          </div>
         </div>
       </div>
     </mat-card-content>
@@ -266,5 +320,6 @@
     >{{ "dmp.steps.ethical.heading" | translate }}</mat-label
   >
   <app-ethical-aspects
-    [legalEthicalStep]="legalEthicalStep"></app-ethical-aspects>
+    [legalEthicalStep]="legalEthicalStep"
+    [ethicalReportEnabled]="ethicalReportEnabled"></app-ethical-aspects>
 </div>

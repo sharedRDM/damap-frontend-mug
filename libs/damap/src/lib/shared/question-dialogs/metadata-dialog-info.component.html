@@ -1,37 +1,24 @@
+<h2 mat-dialog-title>{{ "overview.title" | translate }}</h2>
 <mat-dialog-content>
   <p>
-    {{ "info.documentation.overview.introduction" | translate }}
+    {{ "overview.introduction" | translate }}
   </p>
   <ul>
     <li>
-      {{
-        "info.documentation.overview.metadataCategories.reagentMetadata"
-          | translate
-      }}
+      {{ "overview.metadataCategories.reagentMetadata" | translate }}
     </li>
     <li>
-      {{
-        "info.documentation.overview.metadataCategories.technicalMetadata"
-          | translate
-      }}
+      {{ "overview.metadataCategories.technicalMetadata" | translate }}
     </li>
     <li>
-      {{
-        "info.documentation.overview.metadataCategories.analyticalMetadata"
-          | translate
-      }}
+      {{ "overview.metadataCategories.analyticalMetadata" | translate }}
     </li>
   </ul>
 
   <p>
-    {{
-      "info.documentation.overview.reportingGuidelines.description" | translate
-    }}
+    {{ "overview.reportingGuidelines.description" | translate }}
     <ng-container
-      *ngFor="
-        let link of 'info.documentation.overview.reportingGuidelines.links'
-          | translate
-      ">
+      *ngFor="let link of 'overview.reportingGuidelines.links' | translate">
       <a class="info-link-custom" [href]="link.url" target="_blank">
         {{ link.title }}
       </a>
@@ -53,13 +40,10 @@
   </p>
 
   <p>
-    {{
-      "info.documentation.overview.disciplineSpecificStandards.description"
-        | translate
-    }}
+    {{ "overview.disciplineSpecificStandards.description" | translate }}
     <ng-container
       *ngFor="
-        let standard of 'info.documentation.overview.disciplineSpecificStandards.standards'
+        let standard of 'overview.disciplineSpecificStandards.standards'
           | translate
       ">
       <a class="info-link-custom" [href]="standard.url" target="_blank">

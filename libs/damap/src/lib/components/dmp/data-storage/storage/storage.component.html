@@ -1,6 +1,46 @@
-<mat-label class="label-title label-title" id="example-radio-group-label">{{
-  "dmp.steps.storage.intro" | translate
-}}</mat-label>
+<app-info-message>
+  {{ "dmp.steps.documentation.messageInfo.fileServices.text" | translate }}
+  <a
+    class="info-link-custom"
+    [href]="
+      'dmp.steps.documentation.messageInfo.fileServices.links.0.url' | translate
+    "
+    target="_blank">
+    {{
+      "dmp.steps.documentation.messageInfo.fileServices.links.0.title"
+        | translate
+    }}</a
+  >
+  {{
+    "dmp.steps.documentation.messageInfo.fileServices.links.0.text" | translate
+  }}
+  <a
+    class="info-link-custom"
+    [href]="
+      'dmp.steps.documentation.messageInfo.fileServices.links.1.url' | translate
+    "
+    target="_blank">
+    {{
+      "dmp.steps.documentation.messageInfo.fileServices.links.1.title"
+        | translate
+    }}</a
+  >
+  {{
+    "dmp.steps.documentation.messageInfo.fileServices.links.1.text" | translate
+  }}
+</app-info-message>
+<mat-label class="label-title label-title" id="example-radio-group-label"
+  >{{ "dmp.steps.storage.intro" | translate }}
+  <app-tooltip
+    [tooltip]="'info.storage.guidelines.title' | translate"
+    (click)="openStorageGuidelinesDialog()"
+    iconType="warning"
+    appearance="raised">
+    <mat-icon class="material-icon-warning">warning</mat-icon>
+    <span class="dialog-indicator">...</span>
+  </app-tooltip>
+</mat-label>
+
 <section class="tu-storage">
   <div class="storage-grid">
     <mat-card
