@@ -1,9 +1,10 @@
 # DMP Tool MUG - Medical University of Graz
 
+## DMP Tool MUG Frontend
+
 This project is based on the DAMAP frontend developed in cooperation between TU Wien and TU Graz but has been adapted to meet the specific needs of the Medical University of Graz. The project uses [Angular](https://angular.io/) as its framework and relies on [NX](https://nx.dev/) as a build system.
 
 For more information about the base DAMAP implementation, visit the [DAMAP frontend repository](https://github.com/tuwien-csd/damap-frontend).
-
 ### Development Server
 
 To run the development server:
