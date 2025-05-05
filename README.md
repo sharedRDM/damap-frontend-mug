@@ -1,7 +1,5 @@
 # DMP Tool MUG - Medical University of Graz
 
-This repository contains the source code for the DMP Tool MUG, developed in collaboration with the Research Data Management team at Graz University of Technology. The tool leverages the principles of machine-actionable Data Management Plans (maDMPs) to streamline the creation and management of data management plans (DMPs) for medical research.
-
 ## Overview
 
 The DMP Tool MUG is designed to integrate seamlessly with the Medical University of Graz's institutional systems, automating the collection of project details, research data, and personnel information. This integration minimizes repetitive data entry and enhances the accuracy and efficiency of DMP creation.
