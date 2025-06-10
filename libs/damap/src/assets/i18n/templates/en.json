@@ -128,7 +128,7 @@
           "button": {
             "add": {
               "manual": "Add dataset manually",
-              "doi": "Find dataset"
+              "doi": "Add dataset"
             }
           },
           "table": {
