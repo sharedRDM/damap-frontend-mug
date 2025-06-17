@@ -52,12 +52,6 @@ For more details, please refer to the [DMP Tool MUG Documentation](https://githu
 
 For customising the DMP Tool MUG frontend, please refer to the [CUSTOMISING](CUSTOMISING.md) page.
 
-## Authors
-
-- David Eckhard
-- Laura Thaci
-- Mojib Wali
-
 ## Screenshots
 
 ![mug-bew](https://github.com/user-attachments/assets/855aa8ad-0525-4f72-8647-8ee666a7f433)
