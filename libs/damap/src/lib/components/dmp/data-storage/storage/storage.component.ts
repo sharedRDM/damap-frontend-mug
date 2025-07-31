@@ -18,6 +18,7 @@ import { loadInternalStorages } from '../../../../store/actions/internal-storage
   selector: 'app-dmp-storage',
   templateUrl: './storage.component.html',
   styleUrls: ['./storage.component.css'],
+  standalone: false,
 })
 export class StorageComponent implements OnInit {
   @Input() dmpForm: UntypedFormGroup;

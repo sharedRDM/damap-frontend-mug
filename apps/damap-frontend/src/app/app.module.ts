@@ -74,13 +74,13 @@ export function HttpLoaderFactory(http: HttpBackend): MultiTranslateHttpLoader {
     ConsentModule,
   ],
   providers: [
-    {
-      provide: APP_INITIALIZER,
-      useFactory: (configService: ConfigService) => () =>
-        configService.initializeApp(),
-      multi: true,
-      deps: [ConfigService],
-    },
+    provideAppInitializer(() => {
+      const initializerFn = (
+        (configService: ConfigService) => () =>
+          configService.initializeApp()
+      )(inject(ConfigService));
+      return initializerFn();
+    }),
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: { appearance: 'outline' },
