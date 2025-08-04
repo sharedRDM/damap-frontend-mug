@@ -115,18 +115,18 @@
             "text": "für Anfragen zum Technologietransfer."
           },
           {
-            "url": "https://muniverse.medunigraz.at/struktur/organisationseinheiten/rdm-policy",
+            "url": "https://www.medunigraz.at/frontend/user_upload/OEs/oe-forschungsmanagement/abt-forschungsdokumentation/FDM_Policy_EN.pdf",
             "title": "RDM-Richtlinien",
             "text": "Abschnitt 2. Nutzungsrechte."
           }
         ]
       },
       "repositoryGuidance": {
-        "description": "Die Datenrepository-Anleitung von Scientific Data könnte Ihnen helfen, ein disziplinspezifisches Repository für Ihre Daten zu finden. Wenn Sie kein geeignetes disziplinspezifisches Repository finden können, empfehlen wir Zenodo, ein einfach zu nutzendes Universal-Repository, das für Datensätze bis zu 50 GB kostenlos ist (mehrere Datensätze erlaubt, größere Datensätze auf Anfrage).",
+        "description": "Die Datenrepository-Anleitung von Springer Nature Scientific Data könnte Ihnen helfen, ein disziplinspezifisches Repository für Ihre Daten zu finden. Wenn Sie kein geeignetes disziplinspezifisches Repository finden können, empfehlen wir Zenodo, ein einfach zu nutzendes Universal-Repository, das für Datensätze bis zu 50 GB kostenlos ist (mehrere Datensätze erlaubt, größere Datensätze auf Anfrage).",
         "links": [
           {
-            "url": "https://www.nature.com/sdata/policies/repositories",
-            "title": "Scientific Data Repository Guidance",
+            "url": "https://www.springernature.com/gp/authors/research-data-policy/recommended-repositories",
+            "title": "Springer Nature Scientific Data Repository Guidance",
             "text": "für disziplinspezifische Repositories."
           },
           {

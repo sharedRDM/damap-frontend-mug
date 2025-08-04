@@ -18,14 +18,33 @@
     <mat-card-content class="scrollable-content">
       <p>
         {{ "dashboard.dmp.text.prefix" | translate }}
-        <a [href]="'dashboard.dmp.text.dmp.link' | translate" target="_blank">
-          {{ "dashboard.dmp.text.dmp.text" | translate }}</a
-        >{{ "dashboard.dmp.text.middle" | translate }}
         <a
-          [href]="'dashboard.dmp.text.fairprinciples.link' | translate"
+          class="info-link-custom"
+          [href]="'dashboard.dmp.text.gsp.link' | translate"
           target="_blank">
-          {{ "dashboard.dmp.text.fairprinciples.text" | translate }}</a
-        >{{ "dashboard.dmp.text.suffix" | translate }}
+          {{ "dashboard.dmp.text.gsp.text" | translate }}</a
+        >{{ "dashboard.dmp.text.gsp.body" | translate }}
+        <a
+          class="info-link-custom"
+          [href]="'dashboard.dmp.text.openScience.link' | translate"
+          target="_blank">
+          {{ "dashboard.dmp.text.openScience.title" | translate }}</a
+        >{{ "dashboard.dmp.text.openScience.body" | translate }}
+        <a
+          class="info-link-custom"
+          [href]="'dashboard.dmp.text.rdmPolicy.link' | translate"
+          target="_blank">
+          {{ "dashboard.dmp.text.rdmPolicy.title" | translate }}</a
+        >{{ "dashboard.dmp.text.rdmPolicy.body" | translate }}
+      </p>
+      <p>
+        {{ "dashboard.dmp.text.planningText" | translate }}
+        <a
+          class="info-link-custom"
+          [href]="'dashboard.dmp.text.here.link' | translate"
+          target="_blank">
+          {{ "dashboard.dmp.text.here.text" | translate }}</a
+        >{{ "dashboard.dmp.text.here.body" | translate }}
       </p>
 
       <mat-card-subtitle>

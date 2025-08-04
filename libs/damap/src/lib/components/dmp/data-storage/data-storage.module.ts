@@ -42,6 +42,7 @@ import { MatSlideToggle } from '@angular/material/slide-toggle';
     MatFormFieldModule,
     InfoMessageModule,
     MatSlideToggle,
+    StorageGuidelinesDialogComponent,
   ],
   declarations: [
     DataAccessComponent,
@@ -50,7 +51,6 @@ import { MatSlideToggle } from '@angular/material/slide-toggle';
     StorageFilterPipe,
     DataStorageInstructionComponent,
     StorageInfoDialogComponent,
-    StorageGuidelinesDialogComponent,
   ],
   exports: [
     CommonModule,

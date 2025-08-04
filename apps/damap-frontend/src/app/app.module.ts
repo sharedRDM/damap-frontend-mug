@@ -1,4 +1,9 @@
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import {
+  APP_INITIALIZER,
+  NgModule,
+  inject,
+  provideAppInitializer,
+} from '@angular/core';
 import { AuthGuard, EnvBannerModule } from '@damap/core';
 import { HttpBackend, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
