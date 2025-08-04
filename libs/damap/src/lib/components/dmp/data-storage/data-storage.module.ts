@@ -42,6 +42,7 @@ import { TranslateModule } from '@ngx-translate/core';
     MatFormFieldModule,
     InfoMessageModule,
     MatSlideToggle,
+    StorageGuidelinesDialogComponent,
   ],
   declarations: [
     DataAccessComponent,
@@ -50,7 +51,6 @@ import { TranslateModule } from '@ngx-translate/core';
     StorageFilterPipe,
     DataStorageInstructionComponent,
     StorageInfoDialogComponent,
-    StorageGuidelinesDialogComponent,
   ],
   exports: [
     CommonModule,

@@ -1,7 +1,11 @@
+// App imports
+import { AppBannerModule, EnvBannerModule } from '@damap/core';
+
 import { CommonModule } from '@angular/common';
-import { EnvBannerModule } from '@damap/core';
 import { LayoutComponent } from './layout.component';
+// Material imports
 import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
@@ -11,40 +15,41 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
-import { AppBannerModule } from '../../../../../../libs/damap/src/lib/widgets/app-banner/app-banner.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    TranslateModule,
     RouterModule,
+    TranslateModule,
     EnvBannerModule,
+    AppBannerModule,
 
-    // Materials
-    MatSidenavModule,
-    MatMenuModule,
+    // Material modules
     MatButtonModule,
+    MatDividerModule,
     MatIconModule,
     MatListModule,
+    MatMenuModule,
+    MatSidenavModule,
     MatToolbarModule,
     MatTooltipModule,
-    AppBannerModule,
   ],
   declarations: [LayoutComponent],
   exports: [
     CommonModule,
-    TranslateModule,
     RouterModule,
+    TranslateModule,
     EnvBannerModule,
+    AppBannerModule,
     LayoutComponent,
 
-    // Materials
-    MatSidenavModule,
-    MatMenuModule,
+    // Material modules
     MatButtonModule,
+    MatDividerModule,
     MatIconModule,
     MatListModule,
+    MatMenuModule,
+    MatSidenavModule,
     MatToolbarModule,
     MatTooltipModule,
   ],

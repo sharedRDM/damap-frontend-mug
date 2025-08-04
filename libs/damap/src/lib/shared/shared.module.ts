@@ -1,6 +1,4 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule, MatIconButton } from '@angular/material/button';
-import { MatDialogActions, MatDialogModule } from '@angular/material/dialog';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 import { CommonModule } from '@angular/common';
@@ -8,6 +6,8 @@ import { HttpBackend } from '@angular/common/http';
 import { InputWrapperComponent } from './input-wrapper/input-wrapper.component';
 import { LegalAspectsDialogInfoComponent } from './question-dialogs/legal-aspects-dialog-info.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MetadataDialogInfoComponent } from './question-dialogs/metadata-dialog-info.component';
@@ -23,10 +23,6 @@ import { ValidationDialogInfoComponent } from './question-dialogs/validation-dia
     InputWrapperComponent,
     TextareaWrapperComponent,
     SearchFieldComponent,
-    ValidationDialogInfoComponent,
-    MetadataDialogInfoComponent,
-    StructureDialogInfoComponent,
-    LegalAspectsDialogInfoComponent,
   ],
   imports: [
     CommonModule,
@@ -41,7 +37,10 @@ import { ValidationDialogInfoComponent } from './question-dialogs/validation-dia
     MatInputModule,
     MatAutocompleteModule,
     MatDialogModule,
-    MatIconButton,
+    ValidationDialogInfoComponent,
+    MetadataDialogInfoComponent,
+    StructureDialogInfoComponent,
+    LegalAspectsDialogInfoComponent,
   ],
   exports: [
     CommonModule,

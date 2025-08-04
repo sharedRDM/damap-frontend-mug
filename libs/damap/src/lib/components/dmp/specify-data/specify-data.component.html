@@ -44,7 +44,7 @@
       <mat-label>{{
         "dmp.steps.documentation.question.datageneration" | translate
       }}</mat-label>
-      <input matInput #input maxlength="4000" />
+      <input matInput #input maxlength="4000" [formControl]="dataGeneration" />
       <mat-hint align="end">{{ input.value.length }}/4000</mat-hint>
     </mat-form-field>
   </ng-container>
