@@ -30,7 +30,8 @@
             "prefix": "app",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "@angular-eslint/prefer-standalone": "off"
       }
     },
     {
@@ -41,7 +42,7 @@
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
-        "@nrwl/nx/enforce-module-boundaries": [
+        "@nx/enforce-module-boundaries": [
           "error",
           {
             "enforceBuildableLibDependency": true,
@@ -57,5 +58,5 @@
       }
     }
   ],
-  "plugins": ["@typescript-eslint", "@nrwl/nx", "@angular-eslint"]
+  "plugins": ["@typescript-eslint", "@nx", "@angular-eslint"]
 }

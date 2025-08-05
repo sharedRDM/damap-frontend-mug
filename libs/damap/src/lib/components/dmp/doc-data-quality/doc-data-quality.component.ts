@@ -11,6 +11,7 @@ import { ValidationDialogInfoComponent } from '../../../shared/question-dialogs/
   selector: 'app-dmp-doc-data-quality',
   templateUrl: './doc-data-quality.component.html',
   styleUrls: ['./doc-data-quality.component.css'],
+  standalone: false,
 })
 export class DocDataQualityComponent {
   @Input() docDataStep: UntypedFormGroup;

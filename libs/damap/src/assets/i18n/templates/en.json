@@ -2,12 +2,17 @@
   "dmp": {
     "steps": {
       "project": {
+        "success": "Updated project information!",
         "input": {
           "title": "Project title",
           "description": "Project description",
-          "button": "Update project",
-          "acronym": "Update acronym",
-          "date": "Enter start and end date",
+          "info": "Project information",
+          "button": {
+            "existing": "Update project info",
+            "new": "Add project"
+          },
+          "acronym": "Acronym",
+          "date": "Start and end date",
           "datehint": "DD/MM/YYYY – DD/MM/YYYY"
         },
         "manual.input": "Input project manually",
@@ -37,6 +42,7 @@
         "search.service": "Search service",
         "general.search": "Find Contributors",
         "general.recommendations": "Recommended contributors:",
+        "general.addAll": "Add all contributors",
         "contributor": {
           "search": "Search contributor",
           "add": "Add as contributor",
@@ -61,7 +67,7 @@
           },
           "id": {
             "title": "persistent identifier",
-            "link": "https://www.tuwien.at/en/research/rti-support/research-data/rdm-infos-tips/persistent-identifiers",
+            "link": "https://www.tuwien.at/bibliothek/digital-scholarship/persistente-identifikatoren-an-der-tu-wien",
             "text": "(such as DOI for journal articles) that connects researchers and research (output) permanently. "
           },
           "prefix": "We generally recommend, to register for an ",
@@ -128,7 +134,7 @@
           "button": {
             "add": {
               "manual": "Add dataset manually",
-              "doi": "Find dataset"
+              "doi": "Add dataset"
             }
           },
           "table": {
@@ -245,7 +251,7 @@
                 "text": " provided by the Organizational Unit Information Technology (O-IT). Additionally, we encourage you to familiarize yourself with our institutional "
               },
               {
-                "url": "https://confluence.medunigraz.at/pages/viewpage.action?pageId=6439211",
+                "url": "https://confluence.medunigraz.at/pages/viewpage.action?pageId=64392119",
                 "title": "Guidelines for data protection and IT security",
                 "text": ", as well as the IT-Knowledge Base, which offers comprehensive information on all available IT-services."
               }
@@ -268,6 +274,7 @@
           "add": "Add other storage location",
           "remove": "Remove external storage",
           "question": {
+            "isManagedInternally": "Is this storage provided by a department or service unit of your institution?",
             "name": "Storage Name",
             "location": "Storage Location",
             "backup": {
@@ -371,7 +378,7 @@
               "text": "Your research plan may require ethical review. Inform yourself by consulting your ",
               "researchEthics": {
                 "text": "institution's code of conduct",
-                "link": "https://www.medunigraz.at/frontend/user_upload/themen-forschung/pdf/Richtlinie_Good_Scientific_Practice_EN.pdf"
+                "link": "https://www.medunigraz.at/frontend/user_upload/themen-forschung/pdf/rl_standards_gute_wissenschaftliche_praxis.pdf"
               }
             },
             "committeeReviewed": {
@@ -389,8 +396,8 @@
         "start": "The ",
         "links": [
           {
-            "url": "https://www.nature.com/sdata/policies/repositories",
-            "title": "Data Repository Guidance by Scientific Data",
+            "url": "https://www.springernature.com/gp/authors/research-data-policy/recommended-repositories",
+            "title": "Data Repository Guidance from Springer Nature Scientific Data",
             "text": "might also help you to find a domain-specific repository for your data. If you can not find a suitable disciplinary repository, we recommend "
           },
           {
@@ -558,18 +565,19 @@
           }
         },
         "storage": {
-          "nonestored": "No (produced) datasets to be stored.",
-          "nodata": "No data defined yet.",
-          "alldata": "All (produced) datasets are stored.",
-          "missingexplanation": " Usage explanation is missing."
+          "allinfo": "All information necessary provided.",
+          "nonestored": "No datasets will be stored, as no produced or reused datasets have been specified.",
+          "missingstorage": "Some datasets do not have storages assigned.",
+          "missingexplanation": " Explanation for using external storage is missing."
         },
         "licensing": {
           "complete": "All information necessary provided.",
-          "incomplete": "Some information is missing."
+          "incomplete": "Some information is missing.",
+          "noproduceddata": "No produced dataset has been specified."
         },
         "repositories": {
           "nodata": "No data to be deposited.",
-          "nodataspecified": "No data defined yet.",
+          "noproduceddata": "No produced dataset has been specified.",
           "deposited": {
             "incomplete": "Not all data deposited yet.",
             "complete": "All data are deposited."
@@ -581,7 +589,8 @@
         }
       }
     },
-    "nodatasets": "Please define datasets first.",
+    "nodatasets": "Please declare any new or existing dataset first.",
+    "nonewdataset": "Please declare a produced (i.e. new) dataset first.",
     "success": {
       "update": "DMP was updated!",
       "save": "DMP was saved!",
@@ -711,6 +720,7 @@
     }
   },
   "license.wizard": {
+    "legalWarning": "This is not legal advice. Please choose your license carefully.",
     "select": "Select license with license selector",
     "title": "Choose a License",
     "info": "More info",
@@ -741,6 +751,14 @@
       "library": "Library"
     },
     "license": {
+      "nolicense": {
+        "name": "No License",
+        "description": "This should be selected when no license is granted."
+      },
+      "custom": {
+        "name": "Custom License",
+        "description": "This should be selected when a custom license is granted."
+      },
       "agpl1": {
         "name": "Affero General Public License v1.0 only",
         "description": "The GNU Affero General Public License is a free, copyleft license for software and other kinds of works, specifically designed to ensure cooperation with the community in the case of network server software."
@@ -1028,6 +1046,7 @@
     "agreement": {
       "CONSORTIUM_AGREEMENT": "consortium agreement",
       "DATA_PROCESSING_AGREEMENT": "data processing agreement",
+      "DATA_TRANSFER_AGREEMENT": "data transfer agreement",
       "JOINT_CONTROL_AGREEMENT": "joint control agreement",
       "CONFIDENTIALITY_AGREEMENT": "confidentiality agreement",
       "OTHER": "other"
