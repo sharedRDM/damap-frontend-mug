@@ -23,7 +23,7 @@
         "planningText": "When planning the data management for your project, ensure you are familiar with our institutional policies and procedures, as well as relevant national and international standards, policies, and requirements. ",
         "here": {
           "text": "Here",
-          "link": "https://muniverse.medunigraz.at/forschung/forschungsdatenmanagement/richtlinien",
+          "link": "https://confluence.medunigraz.at/spaces/FKB/pages/162041970/RDM+Policies+Regulations+Data+Protection",
           "body": ", you will find the key policies and standards to guide you."
         }
       }
@@ -92,10 +92,10 @@
       "heading": "Further help?",
       "prefix": "In",
       "MUni": {
-        "title": "MUniverse",
-        "link": "https://muniverse.medunigraz.at/forschung/forschungsdatenmanagement/dm-plan"
+        "title": "RDM Knowledge Base",
+        "link": "https://confluence.medunigraz.at/spaces/FKB/pages/162041760/Data+Management+Planning+DMP"
       },
-      "body": "In MUniverse you will find further help for your DMP creation. You will find a 30 minute DMP tutorial, our quick help for creating a FWF-DMP, public example DMPs as well as information regarding DMP training courses. If you would like feedback on your DMP or if you have further questions please write an email to rdmsupport@medunigraz.at"
+      "body": "In our RDM Knowledge Base you will find further help for your DMP creation. You will find a 30 minute DMP tutorial, our quick help for creating a FWF-DMP, public example DMPs as well as information regarding DMP training courses. If you would like feedback on your DMP or if you have further questions please write an email to rdmsupport@medunigraz.at"
     }
   }
 }

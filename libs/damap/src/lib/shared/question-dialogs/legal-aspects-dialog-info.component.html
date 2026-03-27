@@ -7,16 +7,24 @@
     <p>
       {{ "legal.aspects.dialog.contact.description" | translate }}
       <a
-        href="https://muniverse.medunigraz.at/forschung/technologietransfer"
+        [href]="'legal.aspects.dialog.contact.link1.url' | translate"
         target="_blank">
-        {{ "legal.aspects.dialog.contact.link" | translate }}
+        {{ "legal.aspects.dialog.contact.link1.text" | translate }}
+      </a>
+      {{ "legal.aspects.dialog.contact.connector" | translate }}
+      <a
+        [href]="'legal.aspects.dialog.contact.link2.url' | translate"
+        target="_blank">
+        {{ "legal.aspects.dialog.contact.link2.text" | translate }}
       </a>
     </p>
     <p>
       {{ "legal.aspects.dialog.rdmPolicy.description" | translate }}
-      <a href="#" target="_blank">{{
-        "legal.aspects.dialog.rdmPolicy.link" | translate
-      }}</a>
+      <a
+        [href]="'legal.aspects.dialog.rdmPolicy.url' | translate"
+        target="_blank"
+        >{{ "legal.aspects.dialog.rdmPolicy.link" | translate }}</a
+      >
     </p>
   </mat-dialog-content>
   <mat-dialog-actions align="end">

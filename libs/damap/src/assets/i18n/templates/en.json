@@ -382,10 +382,10 @@
               }
             },
             "committeeReviewed": {
-              "prefix": " Please note that you must address (potential) ethical issues in separate documents according to the requirements of the relevant funding body. The DMP only serves to help identify some ethical issues.\nPlease contact your ",
+              "prefix": " Please note that you must address (potential) ethical issues in separate documents according to the requirements of the relevant funding body. The DMP only serves to help identify some ethical issues.\nPlease contact ",
               "mail": {
-                "text": "institution's Ethic's Committee",
-                "link": "https://muniverse.medunigraz.at/struktur/kommissionen-und-vertretungen/ethikkommission"
+                "text": "ethikkommission@medunigraz.at",
+                "link": "ethikkommission@medunigraz.at"
               },
               "suffix": " for additional information and support. You must do so if your planned research involves any human participation."
             }
@@ -667,7 +667,7 @@
       "description": "If applicable, you might refer to reporting guidelines such as the ",
       "links": [
         {
-          "url": "https://mfr.osf.io/render?url=https://osf.io/xfpn4/?direct&mode=render&action=download&mode=render",
+          "url": "https://osf.io/xfpn4",
           "title": "MDAR",
           "text": "guidelines for preclinical research or the "
         },
@@ -703,7 +703,7 @@
         {
           "url": "https://osf.io/",
           "title": "OSF",
-          "text": " (Open Science Framework) or"
+          "text": " or"
         },
         {
           "url": "http://protocols.io",
@@ -1195,11 +1195,20 @@
         },
         "contact": {
           "description": "If you have any questions regarding legal aspects, please contact the",
-          "link": "Legal and Risk Management Department or the Team Tech Transfer"
+          "link1": {
+            "text": "Legal and Risk Management Department",
+            "url": "https://muniverse.medunigraz.at/struktur/organisationseinheiten/recht-risikomanagement?language=DE"
+          },
+          "connector": "or the",
+          "link2": {
+            "text": "Team Tech Transfer.",
+            "url": "https://muniverse.medunigraz.at/forschung/technologietransfer"
+          }
         },
         "rdmPolicy": {
           "description": "For general information, please refer to point 2 on usage rights in our",
-          "link": "RDM-Policy"
+          "link": "RDM-Policy",
+          "url": "https://www.medunigraz.at/frontend/user_upload/OEs/oe-forschungsmanagement/abt-forschungsdokumentation/FDM_Policy_EN.pdf"
         },
         "close": "Cancel"
       }

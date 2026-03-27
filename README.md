@@ -9,7 +9,7 @@ For more information about the base DAMAP implementation, visit the [DAMAP front
 To run the development server:
 
 ```bash
-ng serve damap-frontend
+npm start
 ```
 
 This will start the dev server, and the app will be accessible at `http://localhost:4200/`. Any changes made to the source files will trigger automatic reloading.
@@ -19,7 +19,7 @@ This will start the dev server, and the app will be accessible at `http://localh
 To build the project for production:
 
 ```bash
-ng build damap-frontend
+npm run build
 ```
 
 The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
@@ -28,16 +28,10 @@ The build artifacts will be stored in the `dist/` directory. Use the `--prod` fl
 
 To run the unit tests:
 
-- For the DAMAP library:
-
-  ```bash
-  ng test damap
-  ```
-
 - For the DMP Tool MUG frontend:
 
   ```bash
-  ng test damap-frontend
+  npm test
   ```
 
 ### Running with Docker

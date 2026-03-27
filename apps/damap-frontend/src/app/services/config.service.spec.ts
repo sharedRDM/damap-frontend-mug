@@ -6,6 +6,7 @@ import { NO_ERRORS_SCHEMA, isDevMode } from '@angular/core';
 
 import { Config } from '@damap/core';
 import { ConfigService } from './config.service';
+import { FeedbackService } from '@damap/core';
 import { OAuthService } from 'angular-oauth2-oidc';
 import { Router } from '@angular/router';
 import { TestBed } from '@angular/core/testing';
@@ -28,6 +29,10 @@ describe('ConfigService', () => {
     ]);
 
     const routerSpy = jasmine.createSpyObj('Router', ['navigateByUrl']);
+    const feedbackSpy = jasmine.createSpyObj('FeedbackService', [
+      'success',
+      'error',
+    ]);
 
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
@@ -36,6 +41,7 @@ describe('ConfigService', () => {
         ConfigService,
         { provide: OAuthService, useValue: oauthSpy },
         { provide: Router, useValue: routerSpy },
+        { provide: FeedbackService, useValue: feedbackSpy },
       ],
     });
 
@@ -88,6 +94,7 @@ describe('ConfigService', () => {
         scope: mockConfig.authScope,
         responseType: 'code',
         showDebugInformation: isDevMode(),
+        requireHttps: mockConfig.env === 'PROD',
       });
 
       expect(mockOAuthService.setupAutomaticSilentRefresh).toHaveBeenCalled();
