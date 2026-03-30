@@ -14,7 +14,6 @@ import { Component, Input } from '@angular/core';
       }
     `,
   ],
-  styleUrls: ['./tooltip.component.css'],
   standalone: false,
 })
 export class TooltipComponent {

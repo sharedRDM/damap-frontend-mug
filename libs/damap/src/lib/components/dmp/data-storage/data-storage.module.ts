@@ -10,7 +10,6 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
-import { MatSlideToggle } from '@angular/material/slide-toggle';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../../../shared/shared.module';
@@ -21,6 +20,7 @@ import { StorageGuidelinesDialogComponent } from './storage-dialog/storage-guide
 import { StorageInfoDialogComponent } from './storage-dialog/storage-info-dialog.component';
 import { ToggleButtonsModule } from '../../../widgets/toggle-buttons/toggle-buttons.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { MatSlideToggle } from '@angular/material/slide-toggle';
 
 @NgModule({
   imports: [
@@ -42,7 +42,6 @@ import { TranslateModule } from '@ngx-translate/core';
     MatFormFieldModule,
     InfoMessageModule,
     MatSlideToggle,
-    StorageGuidelinesDialogComponent,
   ],
   declarations: [
     DataAccessComponent,
@@ -51,6 +50,7 @@ import { TranslateModule } from '@ngx-translate/core';
     StorageFilterPipe,
     DataStorageInstructionComponent,
     StorageInfoDialogComponent,
+    StorageGuidelinesDialogComponent,
   ],
   exports: [
     CommonModule,

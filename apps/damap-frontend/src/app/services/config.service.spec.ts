@@ -10,12 +10,12 @@ import { OAuthService } from 'angular-oauth2-oidc';
 import { Router } from '@angular/router';
 import { TestBed } from '@angular/core/testing';
 import { environment } from '../../environments/environment';
+import { FeedbackService } from '@damap/core';
 
 describe('ConfigService', () => {
   let service: ConfigService;
   let httpMock: HttpTestingController;
   let mockOAuthService: jasmine.SpyObj<OAuthService>;
-  let mockRouter: jasmine.SpyObj<Router>;
 
   beforeEach(() => {
     spyOn(console, 'warn'); // Set up the spy only once.
@@ -29,6 +29,10 @@ describe('ConfigService', () => {
     ]);
 
     const routerSpy = jasmine.createSpyObj('Router', ['navigateByUrl']);
+    const feedbackSpy = jasmine.createSpyObj('FeedbackService', [
+      'success',
+      'error',
+    ]);
 
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
@@ -37,6 +41,7 @@ describe('ConfigService', () => {
         ConfigService,
         { provide: OAuthService, useValue: oauthSpy },
         { provide: Router, useValue: routerSpy },
+        { provide: FeedbackService, useValue: feedbackSpy },
       ],
     });
 
@@ -54,12 +59,12 @@ describe('ConfigService', () => {
   describe('#initializeApp', () => {
     it('should load config and set up OAuthService correctly', async () => {
       const mockConfig: Config = {
-        authUrl: 'https://auth-url',
-        authClient: 'client-id',
-        authScope: 'scope',
+        issuer: 'https://auth-url',
+        clientID: 'client-id',
+        scope: 'scope',
+        userIdClaim: '',
         env: 'test-env',
         appTitle: 'Test App Title',
-        authUser: '',
         personSearchServiceConfigs: [],
         fitsServiceAvailable: false,
         livePreviewAvailable: true,
@@ -81,14 +86,15 @@ describe('ConfigService', () => {
       await initializePromise;
 
       expect(mockOAuthService.configure).toHaveBeenCalledWith({
-        issuer: mockConfig.authUrl,
-        clientId: mockConfig.authClient,
+        issuer: mockConfig.issuer,
+        clientId: mockConfig.clientID,
         redirectUri: window.location.origin,
         logoutUrl: window.location.origin,
         oidc: true,
-        scope: mockConfig.authScope,
+        scope: mockConfig.scope,
         responseType: 'code',
         showDebugInformation: isDevMode(),
+        requireHttps: mockConfig.env === 'PROD',
       });
 
       expect(mockOAuthService.setupAutomaticSilentRefresh).toHaveBeenCalled();
@@ -96,15 +102,16 @@ describe('ConfigService', () => {
 
     it('should log a warning if appTitle is missing', async () => {
       const mockConfig = {
-        authUrl: 'https://auth-url',
-        authClient: 'client-id',
-        authScope: 'scope',
+        issuer: 'https://auth-url',
+        clientID: 'client-id',
+        scope: 'scope',
+        userIdClaim: '',
         env: 'test-env',
         appTitle: null,
-        authUser: '',
         personSearchServiceConfigs: [],
         fitsServiceAvailable: false,
         livePreviewAvailable: true,
+        ethicalReportEnabled: true,
       };
 
       mockOAuthService.loadDiscoveryDocumentAndTryLogin.and.returnValue(
@@ -128,12 +135,12 @@ describe('ConfigService', () => {
   describe('#getAppTitle', () => {
     it('should return the appTitle from the loaded config', () => {
       const mockConfig: Config = {
-        authUrl: 'https://auth-url',
-        authClient: 'client-id',
-        authScope: 'scope',
+        issuer: 'https://auth-url',
+        clientID: 'client-id',
+        scope: 'scope',
+        userIdClaim: '',
         env: 'test-env',
         appTitle: 'Test App Title',
-        authUser: '',
         personSearchServiceConfigs: [],
         fitsServiceAvailable: false,
         livePreviewAvailable: true,

@@ -1,8 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { LandingPageComponent } from './landing-page.component';
+
 import { ActivatedRoute } from '@angular/router';
-import { of } from 'rxjs';
+import { ConfigService } from '../../services/config.service';
+import { LandingPageComponent } from './landing-page.component';
 import { TranslateTestingModule } from '@damap/core';
+import { of } from 'rxjs';
 
 describe('LandingPageComponent', () => {
   let component: LandingPageComponent;
@@ -13,12 +15,16 @@ describe('LandingPageComponent', () => {
       imports: [LandingPageComponent, TranslateTestingModule],
       providers: [
         {
+          provide: ConfigService,
+          useValue: { isBackendDown: () => of(false) },
+        },
+        {
           provide: ActivatedRoute,
           useValue: {
-            paramMap: of({ get: (key: string) => 'mockValue' }),
+            paramMap: of({ get: () => 'mockValue' }),
             snapshot: {
               paramMap: {
-                get: (key: string) => 'mockValue',
+                get: () => 'mockValue',
               },
             },
           },

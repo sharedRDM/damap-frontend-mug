@@ -10,7 +10,7 @@
       },
       "id": {
         "title": "dauerhafte Kennung",
-        "link": "https://www.tuwien.at/en/research/rti-support/research-data/rdm-infos-tips/persistent-identifiers",
+        "link": "",
         "text": "(wie DOI für Fachartikel), die Forscher und Forschungsergebnisse dauerhaft verbindet. "
       },
       "endPrefix": "Im Falle eines Projekts mit mehreren Partnern weisen Sie kurz die Verantwortlichkeiten für das Datenmanagement den Projektteilnehmern zu und stellen Sie sicher, dass jede Daten- oder Materialübertragung an externe Projektpartner in einem Datenübertragungsabkommen (DTA) und/oder Materialübertragungsabkommen (MTA) dokumentiert ist, sofern nicht anders im Konsortialvertrag festgelegt. Für weitere Informationen zur Datenweitergabe an Dritte siehe ",
@@ -24,7 +24,7 @@
         "prefix": " Eine informierte Einwilligung zur Teilnahme (zusätzlich zu einer Einwilligung zur Datenverarbeitung) ist erforderlich. Für weitere Informationen kontaktieren Sie bitte unsere ",
         "researchEthicsCoordination": {
           "text": "lokale Ethikkommission.",
-          "link": "https://muniverse.medunigraz.at/struktur/kommissionen-und-vertretungen/ethikkommission?language=DE"
+          "link": "mailto:ethikkommission@medunigraz.at"
         }
       },
       "ethicalIssues": {
@@ -91,7 +91,7 @@
             {
               "url": "https://osf.io/",
               "title": "OSF",
-              "text": "(Open Science Framework) oder"
+              "text": "oder"
             },
             {
               "url": "http://protocols.io",

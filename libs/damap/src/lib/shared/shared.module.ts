@@ -23,6 +23,10 @@ import { ValidationDialogInfoComponent } from './question-dialogs/validation-dia
     InputWrapperComponent,
     TextareaWrapperComponent,
     SearchFieldComponent,
+    ValidationDialogInfoComponent,
+    MetadataDialogInfoComponent,
+    StructureDialogInfoComponent,
+    LegalAspectsDialogInfoComponent,
   ],
   imports: [
     CommonModule,
@@ -37,10 +41,6 @@ import { ValidationDialogInfoComponent } from './question-dialogs/validation-dia
     MatInputModule,
     MatAutocompleteModule,
     MatDialogModule,
-    ValidationDialogInfoComponent,
-    MetadataDialogInfoComponent,
-    StructureDialogInfoComponent,
-    LegalAspectsDialogInfoComponent,
   ],
   exports: [
     CommonModule,

@@ -45,7 +45,7 @@
         "body": "Sie müssen nicht alle Schritte auf einmal erledigen, speichern Sie einfach den Status und fahren Sie später fort. Sie können jederzeit zurückgehen und zwischen den Schritten wechseln. Sie können sogar Kollegen Ihrer Institution einladen, Informationen hinzuzufügen. Wenn Sie möchten, können Sie Ihren DMP versionieren.",
         "text": {
           "prefix": "Wenn Sie die Datenverwaltung für Ihr Projekt planen, stellen Sie sicher, dass Sie mit den institutionellen Richtlinien und Verfahren sowie nationalen und internationalen Standards, Richtlinien und Anforderungen vertraut sind und entsprechend handeln! ",
-          "link": "https://muniverse.medunigraz.at/forschung/forschungsdatenmanagement/richtlinien",
+          "link": "https://confluence.medunigraz.at/spaces/FKB/pages/162041970/RDM+Policies+Regulations+Data+Protection",
           "title": "Hier",
           "endPrefix": "finden Sie die relevanten Richtlinien und Standards."
         }
@@ -67,8 +67,8 @@
       "heading": "Weitere Hilfe?",
       "prefix": "In",
       "MUni": {
-        "title": "MUniverse",
-        "link": "https://muniverse.medunigraz.at/forschung/forschungsdatenmanagement/richtlinien"
+        "title": "RDM Knowledge Base",
+        "link": "https://confluence.medunigraz.at/spaces/FKB/pages/162041760/Data+Management+Planning+DMP"
       },
       "body": "finden Sie weitere Hilfe zur Erstellung Ihres DMP. Hier finden Sie ein 30-minütiges DMP-Tutorial, unsere Schnellhilfe zur Erstellung eines FWF-DMP, öffentliche Beispiel-DMPs sowie Informationen zu DMP-Schulungen. Wenn Sie Feedback zu Ihrem DMP wünschen oder weitere Fragen haben, schreiben Sie bitte eine E-Mail an",
       "endPrefix": {
