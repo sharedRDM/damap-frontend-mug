@@ -1,17 +1,10 @@
 import { Component, Inject } from '@angular/core';
-import {
-  MAT_DIALOG_DATA,
-  MatDialogRef,
-  MatDialogModule,
-} from '@angular/material/dialog';
-import { MatButtonModule } from '@angular/material/button';
-import { TranslateModule } from '@ngx-translate/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-storage-guidelines-dialog',
   templateUrl: './storage-guidelines-dialog.component.html',
-  standalone: true,
-  imports: [MatDialogModule, MatButtonModule, TranslateModule],
+  standalone: false,
 })
 export class StorageGuidelinesDialogComponent {
   constructor(

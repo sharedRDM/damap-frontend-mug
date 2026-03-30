@@ -40,7 +40,7 @@
         "intro": "In this step, you add people involved in the project and provide additional info about them, e.g., their role. In this example, the project leader's info has already been added and marked as the contact person (note icon with person and envelope next to their name). You can add more contributors via the search field (ensure you select the appropriate database, e.g., ORCID), or manually via the \"Add contributor manually button\". Please provide a minimum of one contact person as well as a data manager (it can be the same person).",
         "search": "Search for person...",
         "search.service": "Search service",
-        "general.search": "Find Contributors",
+        "general.search": "Find Contributors:",
         "general.recommendations": "Recommended contributors:",
         "general.addAll": "Add all contributors",
         "contributor": {
@@ -67,7 +67,7 @@
           },
           "id": {
             "title": "persistent identifier",
-            "link": "https://www.tuwien.at/bibliothek/digital-scholarship/persistente-identifikatoren-an-der-tu-wien",
+            "link": "",
             "text": "(such as DOI for journal articles) that connects researchers and research (output) permanently. "
           },
           "prefix": "We generally recommend, to register for an ",
@@ -246,12 +246,12 @@
             "text": "In general, we strongly recommend utilizing the secure, centrally managed, and automatically backed-up",
             "links": [
               {
-                "url": "https://confluence.medunigraz.at/display/ITKB/Datenablage+-+Fileservices",
+                "url": "https://confluence.medunigraz.at/spaces/ITKB/overview",
                 "title": "file services",
                 "text": " provided by the Organizational Unit Information Technology (O-IT). Additionally, we encourage you to familiarize yourself with our institutional "
               },
               {
-                "url": "https://confluence.medunigraz.at/pages/viewpage.action?pageId=64392119",
+                "url": "https://confluence.medunigraz.at/pages/viewpage.action?pageId=6439211",
                 "title": "Guidelines for data protection and IT security",
                 "text": ", as well as the IT-Knowledge Base, which offers comprehensive information on all available IT-services."
               }
@@ -371,21 +371,21 @@
               "prefix": " An informed consent for participation (in addition to an informed consent to data processing) is required. For more information, please contact our  ",
               "researchEthicsCoordination": {
                 "text": "local ethics committee.",
-                "link": "https://muniverse.medunigraz.at/struktur/kommissionen-und-vertretungen/ethikkommission"
+                "link": "mailto:ethikkommission@medunigraz.at"
               }
             },
             "ethicalIssues": {
               "text": "Your research plan may require ethical review. Inform yourself by consulting your ",
               "researchEthics": {
                 "text": "institution's code of conduct",
-                "link": "https://www.medunigraz.at/frontend/user_upload/themen-forschung/pdf/rl_standards_gute_wissenschaftliche_praxis.pdf"
+                "link": "https://www.medunigraz.at/frontend/user_upload/themen-forschung/pdf/Richtlinie_Good_Scientific_Practice_EN.pdf"
               }
             },
             "committeeReviewed": {
               "prefix": " Please note that you must address (potential) ethical issues in separate documents according to the requirements of the relevant funding body. The DMP only serves to help identify some ethical issues.\nPlease contact your ",
               "mail": {
                 "text": "institution's Ethic's Committee",
-                "link": "https://muniverse.medunigraz.at/struktur/kommissionen-und-vertretungen/ethikkommission"
+                "link": "mailto:ethikkommission@medunigraz.at"
               },
               "suffix": " for additional information and support. You must do so if your planned research involves any human participation."
             }
@@ -396,8 +396,8 @@
         "start": "The ",
         "links": [
           {
-            "url": "https://www.springernature.com/gp/authors/research-data-policy/recommended-repositories",
-            "title": "Data Repository Guidance from Springer Nature Scientific Data",
+            "url": "https://www.nature.com/sdata/policies/repositories",
+            "title": "Data Repository Guidance by Scientific Data",
             "text": "might also help you to find a domain-specific repository for your data. If you can not find a suitable disciplinary repository, we recommend "
           },
           {
@@ -490,7 +490,7 @@
           "description": "Researchers are encouraged to consider costs arising from data management activities. Data management costs are eligible for many funders and are thus relevant for the proposals. Please follow this",
           "links": [
             {
-              "url": "https://www.tuwien.at/en/research/rti-support/research-data/rdm-infos-tips/cost-calculation",
+              "url": "https://www.tuwien.at/en/research/rti-support/research-data/info-and-guidelines/cost-calculation",
               "title": "Data Management Costs Link",
               "text": " to find out more about possible data management costs that may also be eligible for funding."
             }
@@ -667,7 +667,7 @@
       "description": "If applicable, you might refer to reporting guidelines such as the ",
       "links": [
         {
-          "url": "https://mfr.osf.io/render?url=https://osf.io/xfpn4/?direct&mode=render&action=download&mode=render",
+          "url": "https://osf.io/xfpn4",
           "title": "MDAR",
           "text": "guidelines for preclinical research or the "
         },
@@ -703,7 +703,7 @@
         {
           "url": "https://osf.io/",
           "title": "OSF",
-          "text": " (Open Science Framework) or"
+          "text": " or"
         },
         {
           "url": "http://protocols.io",
@@ -1195,7 +1195,9 @@
         },
         "contact": {
           "description": "If you have any questions regarding legal aspects, please contact the",
-          "link": "Legal and Risk Management Department or the Team Tech Transfer"
+          "linkLegal": "Legal and Risk Management Department",
+          "or": " or the ",
+          "linkTechTransfer": "Team Tech Transfer"
         },
         "rdmPolicy": {
           "description": "For general information, please refer to point 2 on usage rights in our",

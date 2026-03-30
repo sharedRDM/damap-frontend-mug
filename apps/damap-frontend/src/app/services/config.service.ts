@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable, lastValueFrom } from 'rxjs';
 import { Injectable, isDevMode } from '@angular/core';
 
 import { Config } from '@damap/core';
+import { FeedbackService } from '@damap/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
@@ -13,16 +14,23 @@ import { environment } from '../../environments/environment';
 export class ConfigService {
   private config: Config;
   private configSubject = new BehaviorSubject<Config | null>(null);
+  private backendDown$ = new BehaviorSubject<boolean>(true);
+  private firstAttempt = true;
 
   constructor(
     private http: HttpClient,
     private oauthService: OAuthService,
     private router: Router,
+    private feedbackService: FeedbackService,
   ) {}
 
   public initializeApp(): Promise<boolean> {
     return this.loadConfig()
       .then((config: Config) => {
+        if (!this.firstAttempt) {
+          this.feedbackService.success('landing-page.servers-up');
+        }
+        this.backendDown$.next(false);
         if (!config) {
           // eslint-disable-next-line no-console
           console.warn('Config is missing!');
@@ -36,15 +44,16 @@ export class ConfigService {
           }
           this.configSubject.next(config);
           const authConfig: AuthConfig = {
-            issuer: config.authUrl,
-            clientId: config.authClient,
+            issuer: config.issuer,
+            clientId: config.clientID,
             redirectUri: window.location.origin,
             logoutUrl: window.location.origin,
             oidc: true,
-            scope: config.authScope,
+            scope: config.scope,
             // useSilentRefresh: true,
             responseType: 'code',
             showDebugInformation: isDevMode(),
+            requireHttps: !isDevMode() && config.env === 'PROD',
             // sessionChecksEnabled: true,
           };
           this.oauthService.configure(authConfig);
@@ -73,9 +82,25 @@ export class ConfigService {
 
         console.log('Backend: ' + environment.backendurl);
         console.error(error);
-        /* eslint-disable no-console */
+
+        this.backendDown$.next(true);
+
+        if (this.firstAttempt) {
+          this.firstAttempt = false;
+          this.feedbackService.error('landing-page.servers-down-retrying');
+          setTimeout(() => {
+            this.initializeApp();
+          }, 10000);
+        } else {
+          this.feedbackService.error('landing-page.servers-down', undefined, 0);
+        }
+
         return new Promise<boolean>(resolve => resolve(false));
       });
+  }
+
+  public isBackendDown(): Observable<boolean> {
+    return this.backendDown$;
   }
 
   public getEnvironment() {

@@ -1,11 +1,8 @@
-// App imports
-import { AppBannerModule, EnvBannerModule } from '@damap/core';
-
+import { AppBannerModule } from '../../../../../../libs/damap/src/lib/widgets/app-banner/app-banner.module';
 import { CommonModule } from '@angular/common';
+import { EnvBannerModule } from '@damap/core';
 import { LayoutComponent } from './layout.component';
-// Material imports
 import { MatButtonModule } from '@angular/material/button';
-import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
@@ -19,37 +16,34 @@ import { TranslateModule } from '@ngx-translate/core';
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule,
     TranslateModule,
+    RouterModule,
     EnvBannerModule,
-    AppBannerModule,
 
-    // Material modules
+    // Materials
+    MatSidenavModule,
+    MatMenuModule,
     MatButtonModule,
-    MatDividerModule,
     MatIconModule,
     MatListModule,
-    MatMenuModule,
-    MatSidenavModule,
     MatToolbarModule,
     MatTooltipModule,
+    AppBannerModule,
   ],
   declarations: [LayoutComponent],
   exports: [
     CommonModule,
-    RouterModule,
     TranslateModule,
+    RouterModule,
     EnvBannerModule,
-    AppBannerModule,
     LayoutComponent,
 
-    // Material modules
+    // Materials
+    MatSidenavModule,
+    MatMenuModule,
     MatButtonModule,
-    MatDividerModule,
     MatIconModule,
     MatListModule,
-    MatMenuModule,
-    MatSidenavModule,
     MatToolbarModule,
     MatTooltipModule,
   ],
