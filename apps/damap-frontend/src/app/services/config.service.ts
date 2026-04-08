@@ -44,16 +44,16 @@ export class ConfigService {
           }
           this.configSubject.next(config);
           const authConfig: AuthConfig = {
-            issuer: config.issuer,
-            clientId: config.clientID,
+            issuer: config.authUrl || config.issuer,
+            clientId: config.authClient || config.clientID,
             redirectUri: window.location.origin,
             logoutUrl: window.location.origin,
             oidc: true,
-            scope: config.scope,
+            scope: config.authScope || config.scope,
             // useSilentRefresh: true,
             responseType: 'code',
             showDebugInformation: isDevMode(),
-            requireHttps: !isDevMode() && config.env === 'PROD',
+            requireHttps: config.env === 'PROD',
             // sessionChecksEnabled: true,
           };
           this.oauthService.configure(authConfig);
