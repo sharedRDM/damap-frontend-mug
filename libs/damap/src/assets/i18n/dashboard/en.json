@@ -38,7 +38,13 @@
           "text": "FAIR Principles",
           "link": "https://www.go-fair.org/fair-principles/"
         },
-        "suffix": ", and defining rights and responsibilities in a research project involving several researchers or institutions."
+        "suffix": ", and defining rights and responsibilities in a research project involving several researchers or institutions.",
+        "planningText": "When planning the data management for your project make sure that you are familiar with our institutional policies and procedures as well as national and international standards, policies and requirements and that you act accordingly! ",
+        "here": {
+          "link": "https://confluence.medunigraz.at/spaces/FKB/pages/162041970/RDM+Policies+Regulations+Data+Protection",
+          "text": "Here",
+          "body": " you will find relevant policies and standards."
+        }
       }
     },
     "tool": {
@@ -108,7 +114,7 @@
         "title": "RDM Knowledge Base",
         "link": "https://confluence.medunigraz.at/spaces/FKB/pages/162041760/Data+Management+Planning+DMP"
       },
-      "body": "You will find further help for your DMP creation. You will find a 30 minute DMP tutorial, our quick help for creating a FWF-DMP, public example DMPs as well as information regarding DMP training courses. If you would like feedback on your DMP or if you have further questions please write an email to rdmsupport@medunigraz.at"
+      "body": "In our RDM Knowledge Base you will find further help for your DMP creation. You will find a 30-minute DMP tutorial, our quick help for creating a FWF-DMP, public example DMPs as well as information regarding DMP training courses. If you would like feedback on your DMP or if you have further questions please write an email to rdmsupport@medunigraz.at."
     }
   }
 }

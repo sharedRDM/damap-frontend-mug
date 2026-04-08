@@ -300,7 +300,10 @@
               [control]="dataRightsAndAccessControl"></app-textarea-wrapper>
             <div class="flex-row-wrap">
               <app-tooltip
-                [tooltip]="'legal.aspects.dialog.title' | translate"
+                [tooltip]="
+                  'dmp.steps.legal.question.dataRightsAndAccessControl'
+                    | translate
+                "
                 (click)="openLegalAspectsDialogInfo()"
                 class="clickable-info">
                 <mat-icon class="material-icon-primary outline">info</mat-icon>

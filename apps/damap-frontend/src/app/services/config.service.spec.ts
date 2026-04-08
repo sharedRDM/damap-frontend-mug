@@ -59,10 +59,13 @@ describe('ConfigService', () => {
   describe('#initializeApp', () => {
     it('should load config and set up OAuthService correctly', async () => {
       const mockConfig: Config = {
+        authUrl: 'https://auth-url',
+        authClient: 'client-id',
+        authScope: 'scope',
+        authUser: '',
         issuer: 'https://auth-url',
         clientID: 'client-id',
         scope: 'scope',
-        userIdClaim: '',
         env: 'test-env',
         appTitle: 'Test App Title',
         personSearchServiceConfigs: [],
@@ -135,10 +138,13 @@ describe('ConfigService', () => {
   describe('#getAppTitle', () => {
     it('should return the appTitle from the loaded config', () => {
       const mockConfig: Config = {
+        authUrl: 'https://auth-url',
+        authClient: 'client-id',
+        authScope: 'scope',
+        authUser: '',
         issuer: 'https://auth-url',
         clientID: 'client-id',
         scope: 'scope',
-        userIdClaim: '',
         env: 'test-env',
         appTitle: 'Test App Title',
         personSearchServiceConfigs: [],

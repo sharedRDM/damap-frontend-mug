@@ -253,7 +253,12 @@
               {
                 "url": "https://confluence.medunigraz.at/pages/viewpage.action?pageId=6439211",
                 "title": "Guidelines for data protection and IT security",
-                "text": ", as well as the IT-Knowledge Base, which offers comprehensive information on all available IT-services."
+                "text": ", as well as the "
+              },
+              {
+                "url": "https://confluence.medunigraz.at/spaces/ITKB/overview",
+                "title": "IT-Knowledge Base",
+                "text": ", which offers comprehensive information on all available IT-services."
               }
             ]
           }
@@ -353,7 +358,7 @@
             "prefix": "Was your research plan reviewed by an ethics committee, the ",
             "researchCommittee": {
               "text": "Ethics Committee of your institution",
-              "link": "https://muniverse.medunigraz.at/struktur/kommissionen-und-vertretungen/ethikkommission?language=DE"
+              "link": "mailto:ethikkommission@medunigraz.at"
             },
             "suffix": ", or a similar body?"
           },
