@@ -17,7 +17,7 @@
       "infoDashboard": "You can create a new DMP by clicking the 'Create New DMP' button"
     },
     "logout": "Logout",
-    "version": "Version",
+    "version": "DAMAP version",
     "baseVersion": " (based on DAMAP v4.7.0)",
     "logo": {
       "text": "Go back to main page",
@@ -29,15 +29,15 @@
     },
     "dataprotection": {
       "text": "Data Protection Declaration",
-      "link": "https://www.medunigraz.at"
+      "link": "https://muniverse.medunigraz.at/uploads/Datenschutzerklaerung_Med_Uni_Graz_DMP_Tool_DE_EN_v1_f233dcefba.pdf"
     },
     "impressum": {
       "text": "Impressum",
       "link": "https://www.medunigraz.at"
     },
     "termsandconditions": {
-      "text": "Terms and Conditions",
-      "link": "https://www.medunigraz.at"
+      "text": "Quick-Guide",
+      "link": "https://muniverse.medunigraz.at/uploads/Quick_Guide_Med_Uni_Graz_DMP_Tool_eng_v1_0_7c74c562aa.pdf"
     },
     "icon": {
       "dataAlert": "Expand the menu to access legal information"

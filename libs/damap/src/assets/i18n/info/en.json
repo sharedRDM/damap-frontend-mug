@@ -31,7 +31,7 @@
         "text": "Your research plan may require ethical review. Inform yourself by consulting your ",
         "researchEthics": {
           "text": "institution's code of conduct",
-          "link": "https://muniverse.medunigraz.at/uploads/rl_standards_for_good_scientific_practice_fc13707260.pdf"
+          "link": "https://www.medunigraz.at/frontend/user_upload/themen-forschung/pdf/rl_standards_gute_wissenschaftliche_praxis.pdf"
         }
       },
       "committeeReviewed": {
@@ -70,7 +70,7 @@
       "start": "The ",
       "links": [
         {
-          "url": "https://www.nature.com/sdata/policies/repositories",
+          "url": "https://www.springernature.com/gp/authors/research-data-policy/recommended-repositories",
           "title": "Data Repository Guidance by Scientific Data",
           "text": "might also help you to find a domain-specific repository for your data. If you can not find a suitable disciplinary repository, we recommend "
         },
@@ -85,12 +85,12 @@
       "description": "The IT-Knowledge Base of our IT-department provides detailed specifications (e.g., regarding backup and storage capacity by default) on all storage options at Med Uni Graz. Also make sure that you store data according to our institutional Guidelines for data protection and IT security.",
       "links": [
         {
-          "url": "https://confluence.medunigraz.at/spaces/ITKB/overview",
-          "title": "IT-Knowledge Base",
+          "url": "https://confluence.medunigraz.at/spaces/ITKB/pages/14385599/Datenablage+-+Fileservices",
+          "title": "file services",
           "text": "for detailed specifications on storage options."
         },
         {
-          "url": "https://confluence.medunigraz.at/pages/viewpage.action?pageId=64392119",
+          "url": "https://confluence.medunigraz.at/spaces/ITKB/pages/64392119/Richtlinie+f%C3%BCr+Datenschutz+und+IT-Sicherheit",
           "title": "Guidelines for data protection and IT security",
           "text": "to ensure data is stored securely according to institutional guidelines."
         }

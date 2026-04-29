@@ -31,7 +31,7 @@
         "text": "Ihr Forschungsplan kann eine ethische Prüfung erfordern. Informieren Sie sich durch Konsultation Ihres ",
         "researchEthics": {
           "text": "institutionellen Verhaltenskodex",
-          "link": "https://www.tuwien.at/index.php?eID=dms&s=4&path=Richtlinien%20und%20Verordnungen/Code%20of%20Conduct%20fuer%20wissenschaftliches%20Arbeiten.pdf"
+          "link": "https://www.medunigraz.at/frontend/user_upload/themen-forschung/pdf/rl_standards_gute_wissenschaftliche_praxis.pdf"
         }
       },
       "committeeReviewed": {
@@ -140,12 +140,12 @@
         "description": "Die IT-Wissensdatenbank unserer IT-Abteilung bietet detaillierte Spezifikationen (z. B. bezüglich Backup- und Speicherkapazität standardmäßig) zu allen Speicheroptionen an der Med Uni Graz. Stellen Sie außerdem sicher, dass Sie Daten gemäß unseren institutionellen Richtlinien zum Datenschutz und zur IT-Sicherheit speichern.",
         "links": [
           {
-            "url": "https://confluence.medunigraz.at/display/ITKB/Datenablage+-+Fileservices",
+            "url": "https://confluence.medunigraz.at/spaces/ITKB/pages/14385599/Datenablage+-+Fileservices",
             "title": "IT-Wissensdatenbank",
             "text": "für detaillierte Spezifikationen zu Speicheroptionen."
           },
           {
-            "url": "https://confluence.medunigraz.at/pages/viewpage.action?pageId=64392119",
+            "url": "https://confluence.medunigraz.at/spaces/ITKB/pages/64392119/Richtlinie+f%C3%BCr+Datenschutz+und+IT-Sicherheit",
             "title": "Richtlinien für Datenschutz und IT-Sicherheit",
             "text": "um sicherzustellen, dass Daten sicher gemäß institutionellen Richtlinien gespeichert werden."
           }
