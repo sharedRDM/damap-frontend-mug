@@ -4,25 +4,25 @@
     "dmp": {
       "heading": "What is a Data Management Plan (DMP)?",
       "text": {
-        "prefix": "A data managment plan (DMP) translates data aspects of ",
+        "prefix": "A data management plan (DMP) translates the data-related aspects of our ",
         "dmp": {
           "text": "DMP",
           "link": "https://www.tuwien.at/index.php?id=2819&L=1"
         },
         "gsp": {
-          "text": "Good Scientific Practice",
-          "link": "https://muniverse.medunigraz.at/page/227",
-          "body": " (GSP) as well as general concepts of "
+          "text": "Good Scientific Practice (GSP) guidelines",
+          "link": "https://www.medunigraz.at/frontend/user_upload/themen-forschung/pdf/rl_standards_gute_wissenschaftliche_praxis.pdf",
+          "body": ", the general principles of "
         },
         "openScience": {
           "title": "Open Science",
-          "link": "https://www.fosteropenscience.eu/resources",
-          "body": " and our institutional "
+          "link": "https://link.springer.com/chapter/10.1007/978-3-319-00026-8_2",
+          "body": ", and our institutional "
         },
         "rdmPolicy": {
-          "title": "RDM-Policy",
+          "title": "Research Data Management (RDM) policy",
           "link": "https://muniverse.medunigraz.at/uploads/rl_research_data_mgmt_policy_3ac6a2cb94.pdf",
-          "body": " into actions. It's a living document that describes how your research data will be created, managed, analyzed, stored and shared with others or - if sharing is not possible - justifying any access restrictions that have to be applied."
+          "body": " into actionable steps. It is a dynamic, living document that outlines how your research data will be generated, organized, analyzed, stored, and shared with others — or, if sharing is not possible - justifying any access restrictions that have to be applied."
         },
         "rdm": {
           "prefix": "A DMP is your essential tool for sustainable ",
