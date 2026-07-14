@@ -12,6 +12,7 @@ import { SearchFieldComponent } from './search-field/search-field.component';
 import { MatButtonModule, MatIconButton } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MetadataDialogInfoComponent } from './question-dialogs/metadata-dialog-info.component';
+import { StructureDialogInfoComponent } from './question-dialogs/structure-dialog-info.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MetadataDialogInfoComponent } from './question-dialogs/metadata-dialog-
     TextareaWrapperComponent,
     SearchFieldComponent,
     MetadataDialogInfoComponent,
+    StructureDialogInfoComponent,
   ],
   imports: [
     CommonModule,
@@ -45,6 +47,7 @@ import { MetadataDialogInfoComponent } from './question-dialogs/metadata-dialog-
     TooltipModule,
     SearchFieldComponent,
     MetadataDialogInfoComponent,
+    StructureDialogInfoComponent,
 
     // Materials
     MatFormFieldModule,
