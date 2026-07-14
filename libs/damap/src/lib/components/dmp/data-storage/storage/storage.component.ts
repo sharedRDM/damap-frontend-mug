@@ -10,6 +10,7 @@ import { AppState } from '../../../../store/states/app.state';
 import { InternalStorage } from '../../../../domain/internal-storage';
 import { LoadingState } from '../../../../domain/enum/loading-state.enum';
 import { MatDialog } from '@angular/material/dialog';
+import { StorageGuidelinesDialogComponent } from '../storage-dialog/storage-guidelines-dialog.component';
 import { StorageInfoDialogComponent } from '../storage-dialog/storage-info-dialog.component';
 import { loadInternalStorages } from '../../../../store/actions/internal-storage.actions';
 import { TranslateService } from '@ngx-translate/core';
@@ -92,6 +93,13 @@ export class StorageComponent implements OnInit {
         description: translation.description,
         link: storage.url,
       },
+    });
+  }
+
+  openStorageGuidelinesDialog(): void {
+    this.dialog.open(StorageGuidelinesDialogComponent, {
+      width: '600px',
+      panelClass: 'custom-dialog-container',
     });
   }
 }

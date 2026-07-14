@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>{{ "mug.dialog.storageGuidelines.title" | translate }}</h2>
+<mat-dialog-content>
+  <p>{{ "mug.dialog.storageGuidelines.content1" | translate }}</p>
+  <p>{{ "mug.dialog.storageGuidelines.content2" | translate }}</p>
+  <p>{{ "mug.dialog.storageGuidelines.content3" | translate }}</p>
+  <p>
+    <a
+      class="info-link-custom"
+      href="https://confluence.medunigraz.at/spaces/ITKB/pages/64392119/Richtlinie+f%C3%BCr+Datenschutz+und+IT-Sicherheit"
+      target="_blank">
+      {{ "mug.dialog.storageGuidelines.linkTitle" | translate }}
+    </a>
+  </p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onNoClick()">
+    {{ "Cancel" | translate }}
+  </button>
+</mat-dialog-actions>

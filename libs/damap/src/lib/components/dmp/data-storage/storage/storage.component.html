@@ -1,6 +1,11 @@
-<mat-label class="label-title label-title" id="example-radio-group-label">{{
-  "dmp.steps.storage.intro" | translate
-}}</mat-label>
+<mat-label class="label-title label-title" id="example-radio-group-label"
+  >{{ "dmp.steps.storage.intro" | translate }}
+  <app-tooltip
+    [tooltip]="'mug.dialog.storageGuidelines.title'"
+    (click)="openStorageGuidelinesDialog()"
+    iconType="warning"
+    class="clickable-info"></app-tooltip>
+</mat-label>
 <section class="tu-storage">
   <div class="storage-grid">
     <mat-card

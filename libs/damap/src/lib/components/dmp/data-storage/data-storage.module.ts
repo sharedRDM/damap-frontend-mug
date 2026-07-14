@@ -15,6 +15,7 @@ import { SharedModule } from '../../../shared/shared.module';
 import { StepIntroModule } from '../../../widgets/step-intro/step-intro.module';
 import { StorageComponent } from './storage/storage.component';
 import { StorageFilterPipe } from './storage/storage-filter.pipe';
+import { StorageGuidelinesDialogComponent } from './storage-dialog/storage-guidelines-dialog.component';
 import { StorageInfoDialogComponent } from './storage-dialog/storage-info-dialog.component';
 import { ToggleButtonsModule } from '../../../widgets/toggle-buttons/toggle-buttons.module';
 import { TranslateModule } from '@ngx-translate/core';
@@ -48,6 +49,7 @@ import { MatSlideToggle } from '@angular/material/slide-toggle';
     StorageFilterPipe,
     DataStorageInstructionComponent,
     StorageInfoDialogComponent,
+    StorageGuidelinesDialogComponent,
   ],
   exports: [
     CommonModule,
@@ -60,6 +62,7 @@ import { MatSlideToggle } from '@angular/material/slide-toggle';
     StorageComponent,
     DataStorageInstructionComponent,
     StorageInfoDialogComponent,
+    StorageGuidelinesDialogComponent,
 
     // Materials
     MatExpansionModule,
