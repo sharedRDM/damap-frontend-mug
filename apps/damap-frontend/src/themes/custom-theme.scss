@@ -46,23 +46,23 @@ $app-light-theme: mat.define-theme(
 );
 
 @font-face {
-  font-family: Roboto;
-  src: url(../assets/fonts/Roboto/Roboto-Bold.ttf);
+  font-family: OpenSans;
+  src: url(../assets/fonts/OpenSans/OpenSans-Bold.ttf);
   font-weight: 700;
 }
 @font-face {
-  font-family: Roboto;
-  src: url(../assets/fonts/Roboto/Roboto-Medium.ttf);
+  font-family: OpenSans;
+  src: url(../assets/fonts/OpenSans/OpenSans-Medium.ttf);
   font-weight: 500;
 }
 @font-face {
-  font-family: Roboto;
-  src: url(../assets/fonts/Roboto/Roboto-Regular.ttf);
+  font-family: OpenSans;
+  src: url(../assets/fonts/OpenSans/OpenSans-Regular.ttf);
   font-weight: 400;
 }
 @font-face {
-  font-family: Roboto;
-  src: url(../assets/fonts/Roboto/Roboto-Light.ttf);
+  font-family: OpenSans;
+  src: url(../assets/fonts/OpenSans/OpenSans-Light.ttf);
   font-weight: 300;
 }
 
@@ -83,7 +83,7 @@ html {
         primary: $app-primary,
         tertiary: $app-accent,
       ),
-      typography: Roboto,
+      typography: OpenSans,
       density: 0,
     )
   );
