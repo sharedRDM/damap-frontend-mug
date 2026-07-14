@@ -13,6 +13,7 @@ import { MatButtonModule, MatIconButton } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MetadataDialogInfoComponent } from './question-dialogs/metadata-dialog-info.component';
 import { StructureDialogInfoComponent } from './question-dialogs/structure-dialog-info.component';
+import { ValidationDialogInfoComponent } from './question-dialogs/validation-dialog-info.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { StructureDialogInfoComponent } from './question-dialogs/structure-dialo
     SearchFieldComponent,
     MetadataDialogInfoComponent,
     StructureDialogInfoComponent,
+    ValidationDialogInfoComponent,
   ],
   imports: [
     CommonModule,
@@ -48,6 +50,7 @@ import { StructureDialogInfoComponent } from './question-dialogs/structure-dialo
     SearchFieldComponent,
     MetadataDialogInfoComponent,
     StructureDialogInfoComponent,
+    ValidationDialogInfoComponent,
 
     // Materials
     MatFormFieldModule,
