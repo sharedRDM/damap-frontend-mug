@@ -54,4 +54,18 @@
       </mat-card-content>
     </mat-card>
   </div>
+  <div class="flex-grid-item">
+    <mat-card appearance="outlined" class="dashboard-card mat-icon-shadow">
+      <mat-card-content>
+        <div class="flip-card-container">
+          <app-flip-card
+            [relinkUrl]="'mug.dashboard.help.link' | translate"
+            iconCard="help"
+            frontContent="{{ 'mug.dashboard.help.heading' | translate }}"
+            backContent="{{ 'mug.dashboard.help.body' | translate }}">
+          </app-flip-card>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>

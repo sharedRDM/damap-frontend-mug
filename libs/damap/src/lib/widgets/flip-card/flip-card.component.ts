@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
 export class FlipCardComponent {
   @Input() frontContent: string;
   @Input() backContent: string;
-  @Input() navigateRoute: string;
+  @Input() navigateRoute?: string;
+  @Input() relinkUrl?: string;
   @Input() iconCard: string;
 
   constructor(private router: Router) {}
@@ -19,6 +20,8 @@ export class FlipCardComponent {
   navigateTo() {
     if (this.navigateRoute) {
       this.router.navigate([this.navigateRoute]);
+    } else if (this.relinkUrl) {
+      window.open(this.relinkUrl, '_blank');
     }
   }
 
