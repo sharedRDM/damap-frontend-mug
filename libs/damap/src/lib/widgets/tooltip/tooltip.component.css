@@ -2,3 +2,7 @@
   font-size: 1.3rem;
   vertical-align: text-bottom;
 }
+
+.material-icon-warning {
+  color: darkorange;
+}

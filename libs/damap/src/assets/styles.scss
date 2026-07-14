@@ -217,3 +217,24 @@ mat-dialog-content mat-form-field,
 mat-tab-body mat-form-field {
   margin-top: 5px !important;
 }
+
+.clickable-info {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.dialog-indicator {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-left: 2px;
+}
+
+.info-link-custom {
+  color: var(--secondary);
+  font-weight: bold;
+}

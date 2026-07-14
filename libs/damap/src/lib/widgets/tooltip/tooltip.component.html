@@ -1,6 +1,7 @@
 <mat-icon
   class="material-icon-primary outline"
+  [class.material-icon-warning]="iconType === 'warning'"
   matTooltip="{{ tooltip | translate }}"
   matTooltipPosition="above"
-  >info</mat-icon
+  >{{ iconType === "warning" ? "warning" : "info" }}</mat-icon
 >
