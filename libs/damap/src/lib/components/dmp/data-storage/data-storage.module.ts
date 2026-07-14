@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { DataAccessComponent } from './data-access/data-access.component';
 import { DataStorageInstructionComponent } from './data-storage-instruction/data-storage-instruction.component';
 import { ExternalStorageComponent } from './external-storage/external-storage.component';
+import { InfoMessageModule } from '../../../widgets/info-message/info-message.module';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -29,6 +30,7 @@ import { MatSlideToggle } from '@angular/material/slide-toggle';
     SharedModule,
     StepIntroModule,
     ToggleButtonsModule,
+    InfoMessageModule,
 
     // Materials
     MatExpansionModule,
