@@ -9,12 +9,18 @@
     class="card-selected responsive-card card-shadow">
     <mat-card-content>
       <div class="mat-card-container">
-        <app-textarea-wrapper
-          [label]="'dmp.steps.documentation.question.short.structure'"
-          [longLabel]="'dmp.steps.documentation.question.long.structure'"
-          [control]="structure"
-          [autocompleteOptions]="optionsStructureAndVersioning">
-        </app-textarea-wrapper>
+        <div class="form-field-hint">
+          <app-textarea-wrapper
+            [label]="'dmp.steps.documentation.question.short.structure'"
+            [longLabel]="'dmp.steps.documentation.question.long.structure'"
+            [control]="structure"
+            [autocompleteOptions]="optionsStructureAndVersioning">
+          </app-textarea-wrapper>
+          <app-tooltip
+            [tooltip]="'mug.dialog.structure.title'"
+            (click)="openStructureDialog()"
+            class="clickable-info"></app-tooltip>
+        </div>
 
         <div class="form-field-hint">
           <app-textarea-wrapper
@@ -24,14 +30,22 @@
             [autocompleteOptions]="optionsMetadata">
           </app-textarea-wrapper>
           <app-tooltip
-            [tooltip]="'dmp.steps.documentation.info.metadata'"></app-tooltip>
+            [tooltip]="'mug.dialog.metadata.title'"
+            (click)="openMetadataDialog()"
+            class="clickable-info"></app-tooltip>
         </div>
 
-        <app-textarea-wrapper
-          [label]="'dmp.steps.documentation.question.short.documentation'"
-          [longLabel]="'dmp.steps.documentation.question.long.documentation'"
-          [control]="documentation">
-        </app-textarea-wrapper>
+        <div class="form-field-hint">
+          <app-textarea-wrapper
+            [label]="'dmp.steps.documentation.question.short.documentation'"
+            [longLabel]="'dmp.steps.documentation.question.long.documentation'"
+            [control]="documentation">
+          </app-textarea-wrapper>
+          <app-tooltip
+            [tooltip]="'mug.dialog.validation.title'"
+            (click)="openValidationDialog()"
+            class="clickable-info"></app-tooltip>
+        </div>
 
         <div class="data-quality-question">
           <mat-hint>{{
