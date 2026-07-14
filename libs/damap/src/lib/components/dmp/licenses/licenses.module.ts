@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { DataDeletionModule } from '../data-deletion/data-deletion.module';
+import { InfoMessageModule } from '../../../widgets/info-message/info-message.module';
 import { LicenseWizardModule } from '../../../widgets/license-wizard/license-wizard.module';
 import { LicensesComponent } from './licenses.component';
 import {
@@ -28,6 +29,7 @@ import {
     LicenseWizardModule,
     StepIntroModule,
     DataDeletionModule,
+    InfoMessageModule,
 
     // Materials
     MatSelectModule,
