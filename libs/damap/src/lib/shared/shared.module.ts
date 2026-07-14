@@ -9,13 +9,16 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { TooltipModule } from '../widgets/tooltip/tooltip.module';
 import { SearchFieldComponent } from './search-field/search-field.component';
-import { MatIconButton } from '@angular/material/button';
+import { MatButtonModule, MatIconButton } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MetadataDialogInfoComponent } from './question-dialogs/metadata-dialog-info.component';
 
 @NgModule({
   declarations: [
     InputWrapperComponent,
     TextareaWrapperComponent,
     SearchFieldComponent,
+    MetadataDialogInfoComponent,
   ],
   imports: [
     CommonModule,
@@ -29,6 +32,8 @@ import { MatIconButton } from '@angular/material/button';
     MatInputModule,
     MatAutocompleteModule,
     MatIconButton,
+    MatButtonModule,
+    MatDialogModule,
   ],
   exports: [
     CommonModule,
@@ -39,11 +44,13 @@ import { MatIconButton } from '@angular/material/button';
     TextareaWrapperComponent,
     TooltipModule,
     SearchFieldComponent,
+    MetadataDialogInfoComponent,
 
     // Materials
     MatFormFieldModule,
     MatInputModule,
     MatAutocompleteModule,
+    MatDialogModule,
   ],
 })
 export class SharedModule {}
