@@ -7,6 +7,8 @@ import {
 
 import { Agreement } from '../../../domain/enum/agreement.enum';
 import { ComplianceType } from '../../../domain/enum/compliance-type.enum';
+import { LegalAspectsDialogInfoComponent } from '../../../shared/question-dialogs/legal-aspects-dialog-info.component';
+import { MatDialog } from '@angular/material/dialog';
 import { SecurityMeasure } from '../../../domain/enum/security-measure.enum';
 
 @Component({
@@ -26,6 +28,15 @@ export class LegalEthicalAspectsComponent {
   translateSecurityPrefixEnum = 'enum.securitymeasure.';
 
   selectedView: 'primaryView' | 'secondaryView' = 'primaryView';
+
+  constructor(public dialog: MatDialog) {}
+
+  openLegalAspectsDialogInfo(): void {
+    this.dialog.open(LegalAspectsDialogInfoComponent, {
+      width: '600px',
+      panelClass: 'custom-dialog-container',
+    });
+  }
 
   optionsLinksEthics: string[] = [
     'Guidelines on Safeguarding Good Scientific Practice',

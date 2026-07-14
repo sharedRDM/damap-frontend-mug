@@ -4,6 +4,39 @@
     id="example-radio-group-label"
     >{{ "dmp.steps.legal.view.button.legal" | translate }}</mat-label
   >
+  <app-info-message>
+    {{ "mug.info.legal.introduction" | translate }}
+    <div class="legal-links">
+      <a
+        class="info-link-custom"
+        href="https://www.medunigraz.at/frontend/user_upload/OEs/oe-forschungsmanagement/abt-forschungsdokumentation/FDM_Policy_EN.pdf"
+        target="_blank">
+        {{ "mug.info.legal.rdmPolicy.title" | translate }}
+      </a>
+      {{ "mug.info.legal.rdmPolicy.text" | translate }}
+      <br />
+      <a
+        class="info-link-custom"
+        href="https://confluence.medunigraz.at/spaces/ITKB/pages/64392119/Richtlinie+f%C3%BCr+Datenschutz+und+IT-Sicherheit"
+        target="_blank">
+        {{ "mug.info.legal.dataProtection.title" | translate }}
+      </a>
+      <br />
+      <a
+        class="info-link-custom"
+        href="https://muniverse.medunigraz.at/forschung/forschungsdatenmanagement/datenweitergabe?language=DE"
+        target="_blank">
+        {{ "mug.info.legal.dataTransfer.title" | translate }}
+      </a>
+      <br />
+      <a
+        class="info-link-custom"
+        href="https://muniverse.medunigraz.at/uploads/Positionspapier_Datenweitergabe_f249bb2446.pdf"
+        target="_blank">
+        {{ "mug.info.legal.personalData.title" | translate }}
+      </a>
+    </div>
+  </app-info-message>
   <mat-card class="legal-ethical-card card-shadow">
     <mat-card-content>
       <div *ngIf="selectedView === 'primaryView'">
@@ -268,15 +301,21 @@
             <hr *ngIf="!last" />
           </div>
 
-          <app-textarea-wrapper
-            [label]="
-              'dmp.steps.legal.question.short.dataRightsAndAccessControl'
-            "
-            [longLabel]="
-              'dmp.steps.legal.question.long.dataRightsAndAccessControl'
-            "
-            [maxLength]="4000"
-            [control]="dataRightsAndAccessControl"></app-textarea-wrapper>
+          <div class="form-field-hint">
+            <app-textarea-wrapper
+              [label]="
+                'dmp.steps.legal.question.short.dataRightsAndAccessControl'
+              "
+              [longLabel]="
+                'dmp.steps.legal.question.long.dataRightsAndAccessControl'
+              "
+              [maxLength]="4000"
+              [control]="dataRightsAndAccessControl"></app-textarea-wrapper>
+            <app-tooltip
+              [tooltip]="'mug.dialog.legalAspects.title'"
+              (click)="openLegalAspectsDialogInfo()"
+              class="clickable-info"></app-tooltip>
+          </div>
         </div>
       </div>
     </mat-card-content>
