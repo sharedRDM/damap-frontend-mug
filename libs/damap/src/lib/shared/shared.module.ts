@@ -14,6 +14,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MetadataDialogInfoComponent } from './question-dialogs/metadata-dialog-info.component';
 import { StructureDialogInfoComponent } from './question-dialogs/structure-dialog-info.component';
 import { ValidationDialogInfoComponent } from './question-dialogs/validation-dialog-info.component';
+import { LegalAspectsDialogInfoComponent } from './question-dialogs/legal-aspects-dialog-info.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ValidationDialogInfoComponent } from './question-dialogs/validation-dia
     MetadataDialogInfoComponent,
     StructureDialogInfoComponent,
     ValidationDialogInfoComponent,
+    LegalAspectsDialogInfoComponent,
   ],
   imports: [
     CommonModule,
@@ -51,6 +53,7 @@ import { ValidationDialogInfoComponent } from './question-dialogs/validation-dia
     MetadataDialogInfoComponent,
     StructureDialogInfoComponent,
     ValidationDialogInfoComponent,
+    LegalAspectsDialogInfoComponent,
 
     // Materials
     MatFormFieldModule,
