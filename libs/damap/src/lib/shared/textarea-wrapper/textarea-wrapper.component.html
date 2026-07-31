@@ -1,16 +1,18 @@
+<div class="question-long-hint">
+  {{ longLabel | translate }}
+  <ng-container *ngFor="let set of labelDatasets; last as last">
+    "{{ set.title }}"<span *ngIf="!last">, </span> <span *ngIf="last">.</span>
+  </ng-container>
+  <ng-container *ngIf="labelSuffix"> {{ labelSuffix }} </ng-container>
+</div>
 <mat-form-field
   [appearance]="appearance"
   class="mat-textarea-density"
+  subscriptSizing="dynamic"
   floatLabel="auto">
   <!-- inline style is a temporary solution for an issue where the * for required would be rendered after a line break -->
   <!-- this will hopefully be fixed with the next angular version, lets pray -->
-  <mat-label style="display: inline-flex"
-    >{{ label | translate }}
-    <ng-container *ngFor="let set of labelDatasets; last as last">
-      "{{ set.title }}"<span *ngIf="!last">, </span>.
-    </ng-container>
-    <ng-container *ngIf="labelSuffix"> {{ labelSuffix }} </ng-container>
-  </mat-label>
+  <mat-label style="display: inline-flex">{{ label | translate }} </mat-label>
 
   <ng-template #standard>
     <textarea
@@ -31,7 +33,6 @@
       >{{ message.value.length }} / {{ maxLength }}
     </mat-hint>
   </ng-template>
-
   <!-- AUTOCOMPLETE -->
   <ng-container
     *ngIf="autocompleteOptions?.length && isAutocompleteOpen; else standard">
@@ -73,21 +74,25 @@
       </mat-option>
     </mat-autocomplete>
   </ng-container>
-
-  <!-- ERROR MESSAGES -->
+  <!-- ERROR -->
   <mat-error *ngIf="!control?.errors?.required && control?.errors?.empty">
-    {{ "form.error.empty" | translate }}
+    {{ "validation.error.invalidValue" | translate }}
   </mat-error>
   <mat-error *ngIf="control?.errors?.required">
-    {{ "form.error.required" | translate }}
+    {{ "validation.error.required" | translate }}
   </mat-error>
   <mat-error *ngIf="control?.errors?.maxlength">
     {{
-      "form.error.maxlength"
+      "validation.error.maxLength"
         | translate: { value: control.errors.maxlength?.requiredLength }
     }}
+    <!-- "maxlength": { "requiredLength": 255, "actualLength": 273 } -->
   </mat-error>
   <mat-error *ngIf="control?.errors?.pattern">
-    {{ "form.error.pattern.currency" | translate }}
+    {{ "validation.error.currencyFormat" | translate }}
+
+    <!-- { "pattern": { "requiredPattern": "^[0-9]*.?[0-9]{0,2}$", "actualValue": "123,345" } } false -->
   </mat-error>
 </mat-form-field>
+<!--{{control.errors | json}}-->
+<!--{{control.valid}}-->

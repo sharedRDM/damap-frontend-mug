@@ -2,6 +2,8 @@ import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { By } from '@angular/platform-browser';
@@ -11,8 +13,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { OAuthService } from 'angular-oauth2-oidc';
-import { TranslateTestingModule } from '@damap/core';
+import { AuthService, TranslateTestingModule } from '@damap/core';
 import { of } from 'rxjs';
+import { ImageThemeService } from '../../services/image-theme.service';
 
 @Component({
   template: '',
@@ -55,8 +58,27 @@ describe('LayoutComponent', () => {
     oauthSpy.getIdentityClaims.and.returnValue({ name: 'name' });
     oauthSpy.getAccessToken.and.returnValue(mockToken);
 
-    const configSpy = jasmine.createSpyObj('ConfigService', ['getEnvironment']);
+    const authServiceSpy = jasmine.createSpyObj('AuthService', [
+      'isAdmin',
+      'getDisplayName',
+    ]);
+    authServiceSpy.isAdmin.and.returnValue(true);
+    authServiceSpy.getDisplayName.and.returnValue('John Doe');
+
+    const configSpy = jasmine.createSpyObj('ConfigService', [
+      'getEnvironment',
+      'getGivenNameClaim',
+      'getFamilyNameClaim',
+      'getNameClaim',
+      'getEmailClaim',
+      'getUserRolesClaimPath',
+    ]);
     configSpy.getEnvironment.and.returnValue('DEV');
+    configSpy.getGivenNameClaim.and.returnValue('given_name');
+    configSpy.getFamilyNameClaim.and.returnValue('family_name');
+    configSpy.getNameClaim.and.returnValue('name');
+    configSpy.getEmailClaim.and.returnValue('email');
+    configSpy.getUserRolesClaimPath.and.returnValue('roles');
 
     const breakpointObserverSpy = jasmine.createSpyObj('BreakpointObserver', [
       'observe',
@@ -75,11 +97,22 @@ describe('LayoutComponent', () => {
       declarations: [LayoutComponent, DummyComponent],
       schemas: [NO_ERRORS_SCHEMA],
       providers: [
+        provideHttpClient(),
+        provideHttpClientTesting(),
         { provide: OAuthService, useValue: oauthSpy },
+        { provide: AuthService, useValue: authServiceSpy },
         { provide: ConfigService, useValue: configSpy },
         { provide: BreakpointObserver, useValue: breakpointObserverSpy },
         { provide: Router, useValue: mockRouter },
         { provide: RouterOutlet, useValue: mockRouterOutlet },
+        {
+          provide: ImageThemeService,
+          useValue: {
+            getImage: jasmine
+              .createSpy('getImage')
+              .and.returnValue('mock-logo-url'),
+          },
+        },
       ],
     }).compileComponents();
     breakpointObserver = TestBed.inject(BreakpointObserver);

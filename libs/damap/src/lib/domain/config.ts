@@ -1,17 +1,32 @@
 import { ServiceConfig } from './config-services';
+import { ColorTheme } from './color-theme';
+import { BackendImage } from './backend-image';
 
 export interface Config {
-  readonly authUrl: string;
-  readonly authClient: string;
-  readonly authScope: string;
-  readonly authUser: string;
   readonly issuer: string;
   readonly clientID: string;
   readonly scope: string;
+  readonly userIdClaim: string;
+  readonly nameClaim: string;
+  readonly givenNameClaim: string;
+  readonly familyNameClaim: string;
+  readonly emailClaim: string;
+  readonly responseType: string;
+  readonly userRolesClaimPath: string;
+  readonly affiliationClaim: string;
+  readonly adminRoleName: string;
   readonly env: string;
   readonly appTitle: string;
   readonly personSearchServiceConfigs: ServiceConfig[];
-  readonly fitsServiceAvailable: boolean;
+  readonly projectSearchServiceConfig: string;
   readonly livePreviewAvailable: boolean;
   readonly ethicalReportEnabled: boolean;
+  readonly evaluationAvailable: boolean;
+  readonly images: BackendImage[];
+  readonly colorTheme: ColorTheme;
+  readonly multitenancyEnabled: boolean;
+  readonly tenants: string[];
+  readonly templates: any[];
+  readonly publicAvailable: boolean;
+  readonly consentFormEnabled: boolean;
 }

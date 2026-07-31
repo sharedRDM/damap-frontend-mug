@@ -1,25 +1,25 @@
-<div class="dialog-content">
-  <h2 mat-dialog-title>{{ "structure.title" | translate }}</h2>
-  <mat-dialog-content>
-    <p>{{ "structure.content" | translate }}</p>
-    <p>
-      {{ "structure.bestPractices.text" | translate }}
-      <a
-        [href]="'structure.bestPractices.link.url' | translate"
-        target="_blank">
-        {{ "structure.bestPractices.link.title" | translate }}
-      </a>
-    </p>
-    <p>
-      {{ "structure.medUniSpecs.text" | translate }}
-      <a
-        [href]="'structure.medUniSpecs.links.0.url' | translate"
-        target="_blank">
-        {{ "structure.medUniSpecs.links.0.title" | translate }}
-      </a>
-    </p>
-  </mat-dialog-content>
-  <mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close>Cancel</button>
-  </mat-dialog-actions>
-</div>
+<h2 mat-dialog-title>{{ "mug.dialog.structure.title" | translate }}</h2>
+<mat-dialog-content>
+  <p>{{ "mug.dialog.structure.content" | translate }}</p>
+  <p>
+    {{ "mug.dialog.structure.bestPractices.text" | translate }}
+    <a
+      class="info-link-custom"
+      href="https://exadox.com/files/pdf/en/Folder-File-Naming-Convention-10Rules-Best-Practice.pdf"
+      target="_blank">
+      {{ "mug.dialog.structure.bestPractices.linkTitle" | translate }}
+    </a>
+  </p>
+  <p>
+    {{ "mug.dialog.structure.medUniSpecs.text" | translate }}
+    <a
+      class="info-link-custom"
+      [href]="'mug.link.fileNaming.url' | translate"
+      target="_blank">
+      {{ "mug.dialog.structure.medUniSpecs.linkTitle" | translate }}
+    </a>
+  </p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>{{ "Cancel" | translate }}</button>
+</mat-dialog-actions>

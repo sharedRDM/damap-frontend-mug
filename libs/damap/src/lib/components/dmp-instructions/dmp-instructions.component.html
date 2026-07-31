@@ -1,9 +1,6 @@
 <div class="container">
   <div class="action-buttons">
-    <button
-      mat-raised-button
-      class="button-color-primary"
-      [routerLink]="'/dashboard'">
+    <button mat-flat-button [routerLink]="'/dashboard'">
       <mat-icon class="outline">Home</mat-icon>
       {{ "Home" | translate }}
     </button>
@@ -17,38 +14,36 @@
     </mat-card-header>
     <mat-card-content class="scrollable-content">
       <p>
-        {{ "dashboard.dmp.text.prefix" | translate }}
+        {{ "info.how-to-create.dmp.text.prefix" | translate }}
         <a
-          class="info-link-custom"
-          [href]="'dashboard.dmp.text.gsp.link' | translate"
+          [href]="'info.how-to-create.dmp.text.gsp.link' | translate"
           target="_blank">
-          {{ "dashboard.dmp.text.gsp.text" | translate }}</a
-        >{{ "dashboard.dmp.text.gsp.body" | translate }}
+          {{ "info.how-to-create.dmp.text.gsp.text" | translate }}</a
+        >{{ "info.how-to-create.dmp.text.middle1" | translate }}
         <a
-          class="info-link-custom"
-          [href]="'dashboard.dmp.text.openScience.link' | translate"
+          [href]="'info.how-to-create.dmp.text.openScience.link' | translate"
           target="_blank">
-          {{ "dashboard.dmp.text.openScience.title" | translate }}</a
-        >{{ "dashboard.dmp.text.openScience.body" | translate }}
+          {{ "info.how-to-create.dmp.text.openScience.text" | translate }}</a
+        >{{ "info.how-to-create.dmp.text.middle2" | translate }}
         <a
-          class="info-link-custom"
-          [href]="'dashboard.dmp.text.rdmPolicy.link' | translate"
+          [href]="'info.how-to-create.dmp.text.rdm.link' | translate"
           target="_blank">
-          {{ "dashboard.dmp.text.rdmPolicy.title" | translate }}</a
-        >{{ "dashboard.dmp.text.rdmPolicy.body" | translate }}
+          {{ "info.how-to-create.dmp.text.rdm.text" | translate }}</a
+        >{{ "info.how-to-create.dmp.text.suffix" | translate }}
       </p>
       <p>
-        {{ "dashboard.dmp.text.planningText" | translate }}
+        {{ "info.how-to-create.dmp.paragraph2.prefix" | translate }}
         <a
-          class="info-link-custom"
-          [href]="'dashboard.dmp.text.here.link' | translate"
+          [href]="'info.how-to-create.dmp.paragraph2.here.link' | translate"
           target="_blank">
-          {{ "dashboard.dmp.text.here.text" | translate }}</a
-        >{{ "dashboard.dmp.text.here.body" | translate }}
+          {{ "info.how-to-create.dmp.paragraph2.here.text" | translate }}</a
+        >{{ "info.how-to-create.dmp.paragraph2.suffix" | translate }}
       </p>
 
       <mat-card-subtitle>
-        <h4 class="middle" translate>dashboard.instructions.heading</h4>
+        <h4 class="middle" translate>
+          dashboard.cards.how-to-create.front-side
+        </h4>
       </mat-card-subtitle>
 
       <mat-accordion>
@@ -61,10 +56,10 @@
               <mat-icon class="list-icon material-icon-primary outline"
                 >list_alt</mat-icon
               >
-              <h4 translate>dashboard.instructions.steps.heading</h4>
+              <h4 translate>info.how-to-create.instructions.steps.heading</h4>
             </mat-panel-title>
           </mat-expansion-panel-header>
-          <p translate>dashboard.instructions.steps.body</p>
+          <p translate>info.how-to-create.instructions.steps.body</p>
           <mat-action-row>
             <button mat-button (click)="nextStep()">Next</button>
           </mat-action-row>
@@ -78,10 +73,10 @@
               <mat-icon class="list-icon material-icon-primary outline"
                 >export_notes</mat-icon
               >
-              <h4 translate>dashboard.instructions.export.heading</h4>
+              <h4 translate>info.how-to-create.instructions.export.heading</h4>
             </mat-panel-title>
           </mat-expansion-panel-header>
-          <p translate>dashboard.instructions.export.body</p>
+          <p translate>info.how-to-create.instructions.export.body</p>
           <mat-action-row>
             <button mat-button (click)="prevStep()">Previous</button>
             <button mat-button (click)="nextStep()">Next</button>
@@ -96,10 +91,12 @@
               <mat-icon class="list-icon material-icon-primary outline"
                 >edit_document</mat-icon
               >
-              <h4 translate>dashboard.instructions.finalise.heading</h4>
+              <h4 translate>
+                info.how-to-create.instructions.finalise.heading
+              </h4>
             </mat-panel-title>
           </mat-expansion-panel-header>
-          <p translate>dashboard.instructions.finalise.body</p>
+          <p translate>info.how-to-create.instructions.finalise.body</p>
           <mat-action-row>
             <button mat-button (click)="prevStep()">Previous</button>
             <button mat-button (click)="nextStep()">Next</button>
@@ -114,10 +111,10 @@
               <mat-icon class="list-icon material-icon-primary outline"
                 >add_notes</mat-icon
               >
-              <h4 translate>dashboard.instructions.update.heading</h4>
+              <h4 translate>info.how-to-create.instructions.update.heading</h4>
             </mat-panel-title>
           </mat-expansion-panel-header>
-          <p translate>dashboard.instructions.update.body</p>
+          <p translate>info.how-to-create.instructions.update.body</p>
           <mat-action-row>
             <button mat-button (click)="prevStep()">Previous</button>
             <button mat-button (click)="nextStep()">Next</button>

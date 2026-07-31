@@ -1,8 +1,7 @@
 <section class="tu-storage">
   <div class="storage-grid">
     <button
-      mat-raised-button
-      class="button-color-primary"
+      mat-flat-button
       (click)="addExternalStorage()"
       [style]="'margin: 5px; font-weight: normal'">
       {{ "dmp.steps.storage.external.add" | translate }}
@@ -88,7 +87,8 @@
       *ngIf="externalStorageStep?.controls.length && anyNonInternalStorage()"
       class="storage-textarea">
       <app-textarea-wrapper
-        [label]="'dmp.steps.storage.external.question.info'"
+        [label]="'dmp.steps.storage.external.question.short.info'"
+        [longLabel]="'dmp.steps.storage.external.question.long.info'"
         [control]="externalStorageInfo">
       </app-textarea-wrapper>
     </div>

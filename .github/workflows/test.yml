@@ -1,8 +1,13 @@
 name: test
 
+permissions:
+  contents: read
+  checks: write
+
 env:
   is-next-mug-branch: ${{ github.ref == 'refs/heads/next-mug' }}
   is-next-branch: ${{ github.ref == 'refs/heads/next' }}
+  is-migrate-branch: ${{ github.ref == 'refs/heads/migrate-v5' }}
   is-pull-request: ${{ github.event_name == 'pull_request' }}
 
 on:
@@ -10,11 +15,13 @@ on:
     branches:
       - next
       - next-mug
+      - migrate-v5
   pull_request:
   workflow_dispatch:
 
 jobs:
-  build:
+  ci:
+    name: continuous-integration
     runs-on: ubuntu-latest
 
     steps:
@@ -32,15 +39,15 @@ jobs:
       - run: npm run format:check
 
       - name: Merge - Lint all projects
-        if: ${{ env.is-next-mug-branch == 'true' || env.is-next-branch == 'true' }}
+        if: ${{ env.is-next-mug-branch == 'true' || env.is-next-branch == 'true' || env.is-migrate-branch == 'true' }}
         run: npm run ci:lint
 
       - name: Merge - Build all projects
-        if: ${{ env.is-next-mug-branch == 'true' || env.is-next-branch == 'true' }}
+        if: ${{ env.is-next-mug-branch == 'true' || env.is-next-branch == 'true' || env.is-migrate-branch == 'true' }}
         run: npm run ci:build
 
       - name: Merge - Test all projects
-        if: ${{ env.is-next-mug-branch == 'true' || env.is-next-branch == 'true' }}
+        if: ${{ env.is-next-mug-branch == 'true' || env.is-next-branch == 'true' || env.is-migrate-branch == 'true' }}
         run: npm run ci:test
 
       - name: Publish Linting Report

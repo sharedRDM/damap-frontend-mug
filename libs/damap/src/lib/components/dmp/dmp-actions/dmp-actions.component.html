@@ -2,7 +2,7 @@
   <mat-expansion-panel class="mobile-panel">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        {{ "button.actions" | translate }}
+        {{ "actions-bar.mobile.title" | translate }}
       </mat-panel-title>
     </mat-expansion-panel-header>
     <div id="save-dmp">
@@ -12,28 +12,28 @@
         [routerLink]="'/plans'"
         [disabled]="!formChanged"
         routerLinkActive="active">
-        {{ "button.discard" | translate }}
+        {{ "actions-bar.buttons.discard" | translate }}
       </button>
       <button
-        class="action-button button-color-primary"
-        mat-raised-button
+        class="action-button"
+        mat-flat-button
         (click)="saveDmp()"
         [disabled]="dmpForm.invalid || !this.formChanged || this.savingDmp">
-        {{ "button.save" | translate }}
+        {{ "actions-bar.buttons.save" | translate }}
       </button>
       <button
-        class="action-button button-color-primary"
-        mat-raised-button
+        class="action-button"
+        mat-flat-button
         (click)="saveDmpVersion()"
         [disabled]="dmpForm.invalid || this.savingDmp">
-        {{ "button.version" | translate }}
+        {{ "actions-bar.buttons.version" | translate }}
       </button>
       <button
-        class="action-button button-color-primary"
-        mat-raised-button
+        class="action-button"
+        mat-flat-button
         (click)="exportDmpTemplate()"
         [disabled]="dmpForm.invalid || this.savingDmp">
-        {{ "button.export" | translate }}
+        {{ "actions-bar.buttons.export" | translate }}
       </button>
     </div>
   </mat-expansion-panel>
@@ -48,40 +48,42 @@
       [routerLink]="'/plans'"
       [disabled]="!this.formChanged"
       routerLinkActive="active">
-      {{ "button.discard" | translate }}
+      {{ "actions-bar.buttons.discard" | translate }}
     </button>
     <button
-      class="action-button button-color-primary"
-      mat-raised-button
+      class="action-button"
+      mat-flat-button
       (click)="saveDmp()"
       [disabled]="dmpForm.invalid || !this.formChanged || this.savingDmp">
-      {{ "button.save" | translate }}
+      {{ "actions-bar.buttons.save" | translate }}
     </button>
     <button
-      class="action-button button-color-primary"
-      mat-raised-button
+      class="action-button"
+      mat-flat-button
       (click)="saveDmpVersion()"
       [disabled]="dmpForm.invalid || this.savingDmp">
-      {{ "button.version" | translate }}
+      {{ "actions-bar.buttons.version" | translate }}
     </button>
     <div
       *ngIf="preview"
-      matTooltip="{{ 'button.preview.tooltipDisabled' | translate }}"
+      matTooltip="{{
+        'actions-bar.buttons.preview.hintWhenDisabled' | translate
+      }}"
       [matTooltipDisabled]="previewEnabled()">
       <button
-        class="action-button button-color-primary"
-        mat-raised-button
+        class="action-button"
+        mat-flat-button
         [disabled]="!previewEnabled()"
         (click)="showPreview()">
-        {{ "button.preview.content" | translate }}
+        {{ "actions-bar.buttons.preview.label" | translate }}
       </button>
     </div>
     <button
-      class="action-button button-color-primary"
-      mat-raised-button
+      class="action-button"
+      mat-flat-button
       (click)="exportDmpTemplate()"
       [disabled]="dmpForm.invalid || this.savingDmp">
-      {{ "button.export" | translate }}
+      {{ "actions-bar.buttons.export" | translate }}
     </button>
   </div>
 </div>

@@ -1,19 +1,29 @@
 import { AuthConfig, OAuthService } from 'angular-oauth2-oidc';
-import { BehaviorSubject, Observable, lastValueFrom } from 'rxjs';
-import { Injectable, isDevMode } from '@angular/core';
+import {
+  BehaviorSubject,
+  catchError,
+  Observable,
+  lastValueFrom,
+  throwError,
+} from 'rxjs';
+import { inject, Injectable, isDevMode } from '@angular/core';
 
 import { Config } from '@damap/core';
 import { FeedbackService } from '@damap/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
-
+import { ColorThemeService } from './color-theme.service';
+import { ImageThemeService } from './image-theme.service';
+import { TranslateService } from '@ngx-translate/core';
 @Injectable({
   providedIn: 'root',
 })
 export class ConfigService {
+  private colorThemeService = inject(ColorThemeService);
+  private imageThemeService = inject(ImageThemeService);
+
   private config: Config;
-  private configSubject = new BehaviorSubject<Config | null>(null);
   private backendDown$ = new BehaviorSubject<boolean>(true);
   private firstAttempt = true;
 
@@ -22,13 +32,14 @@ export class ConfigService {
     private oauthService: OAuthService,
     private router: Router,
     private feedbackService: FeedbackService,
+    private translate: TranslateService,
   ) {}
 
   public initializeApp(): Promise<boolean> {
     return this.loadConfig()
       .then((config: Config) => {
         if (!this.firstAttempt) {
-          this.feedbackService.success('landing-page.servers-up');
+          this.feedbackService.success('landing.servers-up');
         }
         this.backendDown$.next(false);
         if (!config) {
@@ -36,41 +47,63 @@ export class ConfigService {
           console.warn('Config is missing!');
           return new Promise<boolean>(resolve => resolve(false));
         } else {
+          console.log(config);
           this.config = config;
+          this.colorThemeService.applyTheming(config);
+          this.imageThemeService.applyTheming(config);
           const appTitle = config.appTitle;
           if (!appTitle) {
             // eslint-disable-next-line no-console
             console.warn('App title is missing in the config');
           }
-          this.configSubject.next(config);
           const authConfig: AuthConfig = {
-            issuer: config.authUrl || config.issuer,
-            clientId: config.authClient || config.clientID,
+            issuer: config.issuer,
+            clientId: config.clientID,
             redirectUri: window.location.origin,
             logoutUrl: window.location.origin,
+            responseType: config.responseType,
             oidc: true,
-            scope: config.authScope || config.scope,
-            // useSilentRefresh: true,
-            responseType: 'code',
+            scope: config.scope,
             showDebugInformation: isDevMode(),
-            requireHttps: config.env === 'PROD',
-            // sessionChecksEnabled: true,
           };
           this.oauthService.configure(authConfig);
           this.oauthService.setupAutomaticSilentRefresh();
           return this.oauthService
             .loadDiscoveryDocumentAndTryLogin()
-            .then(() => {
+            .then(async () => {
               if (
                 this.oauthService.hasValidIdToken() &&
                 this.oauthService.hasValidAccessToken()
               ) {
-                const url = decodeURIComponent(this.oauthService.state);
+                const tenantConfig = await this.loadConfig();
+                this.config = tenantConfig;
+                console.log(this.config);
+                this.colorThemeService.applyTheming(tenantConfig);
+                this.imageThemeService.applyTheming(tenantConfig);
+                for (const lang of this.translate.langs) {
+                  this.translate.resetLang(lang);
+                }
+                const appTitle = config.appTitle;
+                if (!appTitle) {
+                  // eslint-disable-next-line no-console
+                  console.warn('App title is missing in the config');
+                }
+
+                const url = decodeURIComponent(this.oauthService.state!);
                 if (url !== '') {
                   return this.router.navigateByUrl(url);
                 }
               }
-              return new Promise<boolean>(resolve => resolve(true));
+              return true;
+            })
+            .catch(error => {
+              // TODO: Use the same error handling mechanism as the main config call
+              /* eslint-disable no-console */
+              console.error(
+                'Failed to load tenant specific config after login - please make sure your backend is up and running!',
+              );
+              console.error(error);
+              return false;
             });
         }
       })
@@ -87,15 +120,15 @@ export class ConfigService {
 
         if (this.firstAttempt) {
           this.firstAttempt = false;
-          this.feedbackService.error('landing-page.servers-down-retrying');
+          this.feedbackService.error('landing.servers-down-retrying');
           setTimeout(() => {
             this.initializeApp();
           }, 10000);
         } else {
-          this.feedbackService.error('landing-page.servers-down', undefined, 0);
+          this.feedbackService.error('landing.servers-down', undefined, 0);
         }
 
-        return new Promise<boolean>(resolve => resolve(false));
+        return false;
       });
   }
 
@@ -111,15 +144,86 @@ export class ConfigService {
     return this.config?.appTitle || 'DAMAP Frontend';
   }
 
-  public getConfig$(): Observable<Config> {
-    return this.configSubject.asObservable();
+  public getUserIdClaim(): string {
+    return this.config?.userIdClaim || null;
+  }
+
+  public getNameClaim(): string {
+    return this.config?.nameClaim || null;
+  }
+
+  public getGivenNameClaim(): string {
+    return this.config?.givenNameClaim || null;
+  }
+
+  public getFamilyNameClaim(): string {
+    return this.config?.familyNameClaim || null;
+  }
+
+  public getEmailClaim(): string {
+    return this.config?.emailClaim || null;
+  }
+
+  public getUserRolesClaimPath(): string {
+    return this.config?.userRolesClaimPath || null;
+  }
+
+  public getAffiliationClaim(): string {
+    return this.config?.affiliationClaim || null;
+  }
+
+  public getAdminRoleName(): string {
+    return this.config?.adminRoleName || null;
+  }
+
+  public getProjectService(): string {
+    return this.config?.projectSearchServiceConfig || null;
+  }
+
+  public getConfig(): Config {
+    return this.config;
   }
 
   private async loadConfig(): Promise<Config> {
     const host = environment.backendurl;
     const config$ = this.http.get<Config>(`${host}config`);
-    const config = await lastValueFrom(config$);
-    this.configSubject.next(config);
-    return config;
+    let rawConfig = await lastValueFrom(config$);
+    return rawConfig;
+  }
+
+  public async refreshConfig(): Promise<Config> {
+    const host = environment.backendurl;
+
+    return lastValueFrom(
+      this.http.get<Config>(`${host}config`).pipe(
+        catchError(err => {
+          this.feedbackService.error('landing.servers-down');
+          return throwError(() => err);
+        }),
+      ),
+    ).then(rawConfig => {
+      this.config = rawConfig;
+      return rawConfig;
+    });
+  }
+
+  public getTenants(): string[] {
+    return this.config?.tenants ?? [];
+  }
+
+  public isMultitenancyEnabled(): boolean {
+    return this.config?.multitenancyEnabled ?? false;
+  }
+
+  public getActiveTemplates(): any[] {
+    return this.config?.templates?.filter(t => t.active) || [];
+  }
+
+  public isPublicAvailable(): boolean {
+    return this.config?.publicAvailable || false;
+  }
+
+  public isConsentFormEnabled(): boolean {
+    return this.config?.consentFormEnabled || false;
   }
 }

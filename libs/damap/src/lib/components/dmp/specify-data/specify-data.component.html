@@ -2,7 +2,6 @@
   <div *ngIf="selectedView === 'primaryView'">
     <app-created-data
       *ngIf="selectedView === 'primaryView'"
-      [fitsServiceAvailable$]="fitsServiceAvailable$"
       [specifyDataStep]="specifyDataStep"
       [datasets]="datasets"
       [fileUpload]="fileUpload"
@@ -28,7 +27,8 @@
       specifyDataStep.value['reusedKind'] === dataKind.NONE
     ">
     <app-textarea-wrapper
-      [label]="'dmp.steps.data.specify.question.nodata'"
+      [label]="'dmp.steps.data.specify.question.short.noData'"
+      [longLabel]="'dmp.steps.data.specify.question.long.noData'"
       [control]="explanation">
     </app-textarea-wrapper>
   </ng-container>
@@ -40,12 +40,13 @@
       (selectedView === 'secondaryView' &&
         specifyDataStep.value['reusedKind'] === dataKind.SPECIFY)
     ">
-    <mat-form-field hintLabel="Max 4000 characters" [style]="'width: 100%'">
-      <mat-label>{{
-        "dmp.steps.documentation.question.datageneration" | translate
-      }}</mat-label>
-      <input matInput #input maxlength="4000" [formControl]="dataGeneration" />
-      <mat-hint align="end">{{ input.value.length }}/4000</mat-hint>
-    </mat-form-field>
   </ng-container>
 </div>
+
+<mat-hint>{{
+  "dmp.steps.data.specify.question.long.dataGeneration" | translate
+}}</mat-hint>
+<app-textarea-wrapper
+  [label]="'dmp.steps.data.specify.question.short.dataGeneration'"
+  [control]="dataGeneration">
+</app-textarea-wrapper>

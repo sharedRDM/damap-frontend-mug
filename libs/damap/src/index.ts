@@ -2,8 +2,6 @@
 export * from './lib/damap.module';
 export * from './lib/testing/translate-testing/translate-testing.module';
 export * from './lib/widgets/env-banner/env-banner.module';
-export * from './lib/widgets/app-banner/app-banner.module';
-export * from './lib/widgets/app-banner/app-banner.component';
 export * from './lib/widgets/env-banner/env-banner.component';
 export * from './lib/components/dashboard';
 export * from './lib/components/dmp/dmp.module';
@@ -29,13 +27,19 @@ export * from './lib/store/actions/internal-storage.actions';
 
 // Services & Guards
 export * from './lib/guards/auth.guard';
+export * from './lib/guards/tenant.guard';
 export * from './lib/auth/auth.service';
 export * from './lib/services/backend.service';
+export * from './lib/services/backend-translate-loader';
 export * from './lib/services/feedback.service';
+export * from './lib/services/translation-loader.service';
 
 // Models
 export * from './lib/domain/access';
+export * from './lib/domain/backend-image';
 export * from './lib/domain/config';
+export * from './lib/domain/color-theme';
+export * from './lib/domain/image-keys';
 export * from './lib/domain/consent';
 export * from './lib/domain/contributor';
 export * from './lib/domain/cost';
@@ -51,6 +55,7 @@ export * from './lib/domain/license-details';
 export * from './lib/domain/project';
 export * from './lib/domain/repository';
 export * from './lib/domain/repository-details';
+export * from './lib/domain/recommended-repository';
 export * from './lib/domain/search/pagination';
 export * from './lib/domain/search/search';
 export * from './lib/domain/search/search-result';
