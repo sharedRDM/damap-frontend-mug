@@ -49,6 +49,7 @@ import { ToggleButtonsModule } from '../../../widgets/toggle-buttons/toggle-butt
     OrcidModule,
     PersonSearchModule,
     PeopleComponent,
+    InfoMessageModule,
     PeopleInstructionComponent,
 
     // Materials

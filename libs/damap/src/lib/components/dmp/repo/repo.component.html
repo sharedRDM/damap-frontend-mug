@@ -28,6 +28,24 @@
     [datasets]="datasets"></app-retention-period>
 </ng-template>
 
+<app-info-message>
+  {{ "dmp.steps.repositoryGuidance.start" | translate }}
+  <a
+    class="info-link-custom"
+    [href]="'dmp.steps.repositoryGuidance.links.0.url' | translate"
+    target="_blank">
+    {{ "dmp.steps.repositoryGuidance.links.0.title" | translate }}
+  </a>
+  {{ "dmp.steps.repositoryGuidance.links.0.text" | translate }}
+  <a
+    class="info-link-custom"
+    [href]="'dmp.steps.repositoryGuidance.links.1.url' | translate"
+    target="_blank">
+    {{ "dmp.steps.repositoryGuidance.links.1.title" | translate }}
+  </a>
+  {{ "dmp.steps.repositoryGuidance.links.1.text" | translate }}
+</app-info-message>
+
 <div *ngIf="repoStep.controls.length" [formGroup]="dmpForm">
   <mat-label
     class="label-title mat-title-large"

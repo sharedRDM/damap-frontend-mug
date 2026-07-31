@@ -4,16 +4,18 @@ import { EthicalAspectsComponent } from './ethical-aspects/ethical-aspects.compo
 import { InfoMessageModule } from '../../../widgets/info-message/info-message.module';
 import { LegalEthicalAspectsComponent } from './legal-ethical-aspects.component';
 import { LegalEthicalInstructionComponent } from './legal-ethical-instruction/legal-ethical-instruction.component';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../../../shared/shared.module';
 import { StepIntroModule } from '../../../widgets/step-intro/step-intro.module';
+import { TextFieldModule } from '@angular/cdk/text-field';
 import { ToggleButtonsModule } from '../../../widgets/toggle-buttons/toggle-buttons.module';
 import { TooltipModule } from '../../../widgets/tooltip/tooltip.module';
 import { TranslateModule } from '@ngx-translate/core';
-import { TextFieldModule } from '@angular/cdk/text-field';
 
 @NgModule({
   imports: [
@@ -23,7 +25,9 @@ import { TextFieldModule } from '@angular/cdk/text-field';
     StepIntroModule,
     CrisTagModule,
     TooltipModule,
+    MatDialogModule,
     InfoMessageModule,
+    MatButtonModule,
     ToggleButtonsModule,
 
     // Materials
@@ -41,7 +45,9 @@ import { TextFieldModule } from '@angular/cdk/text-field';
     TranslateModule,
     SharedModule,
     StepIntroModule,
+    MatDialogModule,
     CrisTagModule,
+    MatButtonModule,
     TooltipModule,
     InfoMessageModule,
     LegalEthicalAspectsComponent,

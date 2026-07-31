@@ -33,7 +33,7 @@ describe('ReusedDataComponent', () => {
     component.specifyDataStep = new UntypedFormGroup({
       reusedKind: new UntypedFormControl(undefined),
     });
-    component.datasets = new UntypedFormArray([]); // Initialize the datasets FormArray
+    component.datasets = new UntypedFormArray([]);
     fixture.detectChanges();
   });
 

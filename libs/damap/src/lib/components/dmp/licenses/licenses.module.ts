@@ -13,6 +13,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StepIntroModule } from '../../../widgets/step-intro/step-intro.module';
+import { TooltipModule } from '../../../widgets/tooltip/tooltip.module';
 import { TranslateModule } from '@ngx-translate/core';
 import {
   MAT_MOMENT_DATE_ADAPTER_OPTIONS,
@@ -28,6 +29,8 @@ import {
     TranslateModule,
     LicenseWizardModule,
     StepIntroModule,
+    TooltipModule,
+    InfoMessageModule,
     DataDeletionModule,
     InfoMessageModule,
 
@@ -43,6 +46,8 @@ import {
     ReactiveFormsModule,
     LicenseWizardModule,
     StepIntroModule,
+    TooltipModule,
+    InfoMessageModule,
     DataDeletionModule,
     LicensesComponent,
 

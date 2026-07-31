@@ -64,9 +64,11 @@
 .title,
 .description {
   font-weight: 300;
-  margin: 10px;
 }
 
+.title {
+  margin: 10px;
+}
 @media (max-width: 768px) {
   .flip-card-container {
     display: flex;
