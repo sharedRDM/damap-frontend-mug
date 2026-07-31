@@ -1,73 +1,71 @@
-<h2 mat-dialog-title>{{ "overview.title" | translate }}</h2>
+<h2 mat-dialog-title>{{ "mug.dialog.metadata.title" | translate }}</h2>
 <mat-dialog-content>
   <p>
-    {{ "overview.introduction" | translate }}
+    {{ "mug.dialog.metadata.introduction" | translate }}
   </p>
   <ul>
     <li>
-      {{ "overview.metadataCategories.reagentMetadata" | translate }}
+      {{ "mug.dialog.metadata.categories.reagent" | translate }}
     </li>
     <li>
-      {{ "overview.metadataCategories.technicalMetadata" | translate }}
+      {{ "mug.dialog.metadata.categories.technical" | translate }}
     </li>
     <li>
-      {{ "overview.metadataCategories.analyticalMetadata" | translate }}
+      {{ "mug.dialog.metadata.categories.analytical" | translate }}
     </li>
   </ul>
 
   <p>
-    {{ "overview.reportingGuidelines.description" | translate }}
-    <ng-container
-      *ngFor="let link of 'overview.reportingGuidelines.links' | translate">
-      <a class="info-link-custom" [href]="link.url" target="_blank">
-        {{ link.title }}
-      </a>
-      <ng-container *ngIf="link.title === 'MDAR'">
-        (<span style="font-weight: bold">M</span>aterials,
-        <span style="font-weight: bold">D</span>esign,
-        <span style="font-weight: bold">A</span>nalysis,
-        <span style="font-weight: bold">R</span>eporting)
-        {{ link.text }}
-      </ng-container>
-      <ng-container *ngIf="link.title === 'STROBE'">
-        (<span style="font-weight: bold">ST</span>rengthening the
-        <span style="font-weight: bold">R</span>eporting of
-        <span style="font-weight: bold">OB</span>servational studies in
-        <span style="font-weight: bold">E</span>pidemiology)
-        {{ link.textStrobe }}
-      </ng-container>
-    </ng-container>
+    {{ "mug.dialog.metadata.reportingGuidelines.description" | translate }}
+    <a class="info-link-custom" href="https://osf.io/xfpn4" target="_blank">
+      MDAR
+    </a>
+    (<span style="font-weight: bold">M</span>aterials,
+    <span style="font-weight: bold">D</span>esign,
+    <span style="font-weight: bold">A</span>nalysis,
+    <span style="font-weight: bold">R</span>eporting)
+    {{ "mug.dialog.metadata.reportingGuidelines.mdar" | translate }}
+    <a
+      class="info-link-custom"
+      href="https://www.strobe-statement.org/"
+      target="_blank">
+      STROBE
+    </a>
+    (<span style="font-weight: bold">ST</span>rengthening the
+    <span style="font-weight: bold">R</span>eporting of
+    <span style="font-weight: bold">OB</span>servational studies in
+    <span style="font-weight: bold">E</span>pidemiology)
+    {{ "mug.dialog.metadata.reportingGuidelines.strobe" | translate }}
   </p>
 
   <p>
-    {{ "overview.disciplineSpecificStandards.description" | translate }}
-    <ng-container
-      *ngFor="
-        let standard of 'overview.disciplineSpecificStandards.standards'
-          | translate
-      ">
-      <a class="info-link-custom" [href]="standard.url" target="_blank">
-        {{ standard.title }}
-      </a>
-      <ng-container *ngIf="standard.title === 'MIACA'">
-        (<span style="font-weight: bold">M</span>inimum
-        <span style="font-weight: bold">I</span>nformation
-        <span style="font-weight: bold">A</span>bout a
-        <span style="font-weight: bold">C</span>ellular
-        <span style="font-weight: bold">A</span>ssay)
-        {{ standard.text }}
-      </ng-container>
-      <ng-container *ngIf="standard.title === 'MIBBI'">
-        (<span style="font-weight: bold">M</span>inimum
-        <span style="font-weight: bold">I</span>nformation about a
-        <span style="font-weight: bold">B</span>iomedical or
-        <span style="font-weight: bold">B</span>iological
-        <span style="font-weight: bold">I</span>nvestigation)
-        {{ standard.textMibbi }}
-      </ng-container>
-    </ng-container>
+    {{ "mug.dialog.metadata.disciplineStandards.description" | translate }}
+    <a
+      class="info-link-custom"
+      href="http://miaca.sourceforge.net/"
+      target="_blank">
+      MIACA
+    </a>
+    (<span style="font-weight: bold">M</span>inimum
+    <span style="font-weight: bold">I</span>nformation
+    <span style="font-weight: bold">A</span>bout a
+    <span style="font-weight: bold">C</span>ellular
+    <span style="font-weight: bold">A</span>ssay)
+    {{ "mug.dialog.metadata.disciplineStandards.miaca" | translate }}
+    <a
+      class="info-link-custom"
+      href="https://www.ebi.ac.uk/training/online/courses/bioinformatics-terrified/what-makes-a-good-bioinformatics-database/minimum-information-standards/"
+      target="_blank">
+      MIBBI
+    </a>
+    (<span style="font-weight: bold">M</span>inimum
+    <span style="font-weight: bold">I</span>nformation about a
+    <span style="font-weight: bold">B</span>iomedical or
+    <span style="font-weight: bold">B</span>iological
+    <span style="font-weight: bold">I</span>nvestigation)
+    {{ "mug.dialog.metadata.disciplineStandards.mibbi" | translate }}
   </p>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button mat-dialog-close>{{ "Cancel" | translate }}</button>
 </mat-dialog-actions>

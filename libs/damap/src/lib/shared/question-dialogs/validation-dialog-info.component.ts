@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'validation-dialog-info',
+  selector: 'app-validation-dialog-info',
   templateUrl: './validation-dialog-info.component.html',
   standalone: false,
 })

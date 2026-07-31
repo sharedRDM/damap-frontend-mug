@@ -1,59 +1,44 @@
-# DMP Tool MUG - Medical University of Graz
+# DAMAP — MUG Fork
 
-## DMP Tool MUG Frontend
+This is the **Medical University of Graz (MUG)** fork of the DAMAP frontend. It is based on core [damap-org/damap-frontend](https://github.com/damap-org/damap-frontend) **v5.0.1** plus a small set of MUG-specific commits (custom info dialogs, Med Uni info boxes, OpenSans branding, nginx/deploy config). See [docs/MIGRATION-MUG.md](docs/MIGRATION-MUG.md) for the exact delta, the required backend translation seed, and the release/tagging conventions.
 
-This project is based on the DAMAP frontend developed in cooperation between TU Wien and TU Graz but has been adapted to meet the specific needs of the Medical University of Graz. The project uses [Angular](https://angular.io/) as its framework and relies on [NX](https://nx.dev/) as a build system.
+# DAMAP
 
-For more information about the base DAMAP implementation, visit the [DAMAP frontend repository](https://github.com/tuwien-csd/damap-frontend).
+DAMAP is an open source tool co-developed by TU Wien and TU Graz that supports researchers in managing both data and code along the research data lifecycle. It is based on the concept of machine-actionable data management plans (maDMPs) and aims to simplify the creation of data management plans (DMPs) for researchers.
 
-### Development Server
+The tool integrates with an institution's existing databases — such as project management and HR systems (CRIS applications) — to automatically pull relevant information into a DMP, increasing accuracy and reducing the effort required to complete one. This saves DMP authors from having to enter the same data multiple times.
 
-To run the development server:
+DAMAP guides users through all sections of a DMP in ten steps by asking questions, suggesting text, and providing helpful information. It exports a pre-filled DMP as a Word document that can be customized and submitted to European and national research funders. Supported export templates include FWF, Horizon Europe, and Science Europe. Additionally, DAMAP is compatible with the [RDA recommendation on machine-actionable DMPs](https://doi.org/10.15497/rda00039) and offers a JSON export.
 
-```bash
-nx serve damap-frontend
-```
+The content and structure of DAMAP is based on [Science Europe's Core Requirements for Data Management Plans](https://doi.org/10.5281/zenodo.4915861).
 
-This will start the dev server, and the app will be accessible at `http://localhost:4200/`. Any changes made to the source files will trigger automatic reloading.
+DAMAP is available under the MIT license and can be self-hosted by any institution. Alternatively, TU Wien offers a cloud-hosted version of DAMAP, allowing institutions to get started without running their own infrastructure. For more information on both options, visit [damap.org](https://damap.org/).
+
+## Damap Project and Documentation
+
+For an overview and instructions for running the whole damap package (backend and frontend),
+refer to the [damap-backend](https://github.com/damap-org/damap-backend) project.
+
+## Damap Frontend
+
+This repository contains the source code for the frontend of DAMAP and needs to be run
+with [damap-backend](https://github.com/damap-org/damap-backend).
+The project is based on [Angular](https://angular.io/) and uses the standard Angular CLI as a build system.
+
+### Development server
+
+Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload
+if you change any of the source files.
 
 ### Build
 
-To build the project for production:
+Run `npm build` to build the project. The build artifacts will be stored in the `dist/` directory. For a production build, use `--configuration=production`.
 
-```bash
-nx build damap-frontend
-```
+### Running unit tests
 
-The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `npm test` to execute the unit tests for the application.
 
-### Running Unit Tests
+### Run the project with docker
 
-To run the unit tests:
-
-- For the DAMAP library:
-
-  ```bash
-  nx test damap
-  ```
-
-- For the DMP Tool MUG frontend:
-
-  ```bash
-  nx test damap-frontend
-  ```
-
-### Running with Docker
-
-To run the frontend and backend together in a dockerized setup, please refer to the [DMP Tool MUG backend repository](https://github.com/sharedRDM/damap-backend) for further instructions.
-
-### Documentation
-
-For more details, please refer to the [DMP Tool MUG Documentation](https://github.com/sharedRDM/dmp-mug-docs).
-
-### Customisation
-
-For customising the DMP Tool MUG frontend, please refer to the [CUSTOMISING](CUSTOMISING.md) page.
-
-## Screenshots
-
-![mug-bew](https://github.com/user-attachments/assets/855aa8ad-0525-4f72-8647-8ee666a7f433)
+For running the project in conjunction with the backend in a dockerized setup or on kubernetes,
+please refer to the [damap-backend](https://github.com/tuwien-csd/damap-backend) project.

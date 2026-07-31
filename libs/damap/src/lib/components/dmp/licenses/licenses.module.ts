@@ -32,6 +32,7 @@ import {
     TooltipModule,
     InfoMessageModule,
     DataDeletionModule,
+    InfoMessageModule,
 
     // Materials
     MatSelectModule,

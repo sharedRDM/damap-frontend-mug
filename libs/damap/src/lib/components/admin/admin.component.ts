@@ -16,6 +16,7 @@ import { BannerDialogComponent } from './banner-dialog/banner-dialog.component';
 import { DeleteStorageWarningDialogComponent } from '../../widgets/internal-storage-table/dialog/delete-storage-warning-dialog.component';
 import { DeleteBannerWarningDialogComponent } from './banner-dialog/delete-banner-warning-dialog.component';
 import validator from 'validator';
+import { InstanceConfig } from '../../domain/instance-config';
 
 @Component({
   selector: 'damap-admin',
@@ -28,6 +29,7 @@ export class AdminComponent implements OnInit {
     private backendService: BackendService,
     private dialog: MatDialog,
     private feedbackService: FeedbackService,
+    private router: Router,
   ) {}
 
   showOnlyActive = true;
@@ -35,6 +37,8 @@ export class AdminComponent implements OnInit {
   internalStorageTranslations: InternalStorageTranslation[] = [];
   selectedInternalStorageId: number;
   selectedInternalStorageUrl: string;
+
+  instanceConfig: InstanceConfig | null = null;
 
   appBanner: Banner | null = null;
 
@@ -48,6 +52,19 @@ export class AdminComponent implements OnInit {
 
     this.backendService.getAppBanner().subscribe(banner => {
       this.appBanner = banner;
+    });
+
+    this.backendService.getInstanceConfig().subscribe({
+      next: config => {
+        this.instanceConfig = config;
+      },
+      error: error => {
+        if (error.error?.message) {
+          this.feedbackService.error(error.error.message);
+        } else {
+          this.feedbackService.error(error.message);
+        }
+      },
     });
   }
 
@@ -235,5 +252,69 @@ export class AdminComponent implements OnInit {
 
   refreshPage() {
     window.location.reload();
+  }
+
+  navigateTo(path: string) {
+    this.router.navigate([path]);
+  }
+
+  onPublicAvailabilityToggle(publicAvailable: boolean) {
+    if (!this.instanceConfig) {
+      return;
+    }
+
+    const updatedConfig: InstanceConfig = {
+      ...this.instanceConfig,
+      publicAvailable,
+    };
+
+    this.backendService.updateInstanceConfig(updatedConfig).subscribe({
+      next: config => {
+        this.instanceConfig = config;
+        this.feedbackService.success('http.success.instance-config.update');
+      },
+      error: error => {
+        if (error.error?.message) {
+          this.feedbackService.error(error.error.message);
+        } else {
+          this.feedbackService.error(error.message);
+        }
+
+        this.instanceConfig = {
+          ...this.instanceConfig!,
+          publicAvailable: !publicAvailable,
+        };
+      },
+    });
+  }
+
+  onConsentFormEnabledToggle(consentFormEnabled: boolean) {
+    if (!this.instanceConfig) {
+      return;
+    }
+
+    const updatedConfig: InstanceConfig = {
+      ...this.instanceConfig,
+      consentFormEnabled,
+    };
+
+    this.backendService.updateInstanceConfig(updatedConfig).subscribe({
+      next: config => {
+        this.instanceConfig = config;
+        this.feedbackService.success('http.success.instance-config.update');
+      },
+      error: error => {
+        if (error.error?.message) {
+          this.feedbackService.error(error.error.message);
+        } else {
+          this.feedbackService.error(error.message);
+        }
+
+        this.instanceConfig = {
+          ...this.instanceConfig!,
+          consentFormEnabled: !consentFormEnabled,
+        };
+      },
+    });
   }
 }

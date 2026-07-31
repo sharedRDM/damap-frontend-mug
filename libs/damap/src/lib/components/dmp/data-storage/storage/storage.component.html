@@ -1,60 +1,35 @@
 <app-info-message>
-  {{ "dmp.steps.documentation.messageInfo.fileServices.text" | translate }}
+  {{ "mug.info.fileServices.text" | translate }}
   <a
     class="info-link-custom"
-    [href]="
-      'dmp.steps.documentation.messageInfo.fileServices.links.0.url' | translate
-    "
+    href="https://confluence.medunigraz.at/spaces/ITKB/pages/14385599/Datenablage+-+Fileservices"
     target="_blank">
-    {{
-      "dmp.steps.documentation.messageInfo.fileServices.links.0.title"
-        | translate
-    }}</a
+    {{ "mug.info.fileServices.links.0.title" | translate }}</a
   >
-  {{
-    "dmp.steps.documentation.messageInfo.fileServices.links.0.text" | translate
-  }}
+  {{ "mug.info.fileServices.links.0.text" | translate }}
   <a
     class="info-link-custom"
-    [href]="
-      'dmp.steps.documentation.messageInfo.fileServices.links.1.url' | translate
-    "
+    href="https://confluence.medunigraz.at/spaces/ITKB/pages/64392119/Richtlinie+f%C3%BCr+Datenschutz+und+IT-Sicherheit"
     target="_blank">
-    {{
-      "dmp.steps.documentation.messageInfo.fileServices.links.1.title"
-        | translate
-    }}</a
+    {{ "mug.info.fileServices.links.1.title" | translate }}</a
   >
-  {{
-    "dmp.steps.documentation.messageInfo.fileServices.links.1.text" | translate
-  }}
+  {{ "mug.info.fileServices.links.1.text" | translate }}
   <a
     class="info-link-custom"
-    [href]="
-      'dmp.steps.documentation.messageInfo.fileServices.links.2.url' | translate
-    "
+    href="https://confluence.medunigraz.at/spaces/ITKB/overview"
     target="_blank">
-    {{
-      "dmp.steps.documentation.messageInfo.fileServices.links.2.title"
-        | translate
-    }}</a
+    {{ "mug.info.fileServices.links.2.title" | translate }}</a
   >
-  {{
-    "dmp.steps.documentation.messageInfo.fileServices.links.2.text" | translate
-  }}
+  {{ "mug.info.fileServices.links.2.text" | translate }}
 </app-info-message>
 <mat-label class="label-title label-title" id="example-radio-group-label"
   >{{ "dmp.steps.storage.intro" | translate }}
   <app-tooltip
-    [tooltip]="'info.storage.guidelines.title' | translate"
+    [tooltip]="'mug.dialog.storageGuidelines.title'"
     (click)="openStorageGuidelinesDialog()"
     iconType="warning"
-    appearance="raised">
-    <mat-icon class="material-icon-warning">warning</mat-icon>
-    <span class="dialog-indicator">...</span>
-  </app-tooltip>
+    class="clickable-info"></app-tooltip>
 </mat-label>
-
 <section class="tu-storage">
   <div class="storage-grid">
     <mat-card

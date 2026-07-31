@@ -5,25 +5,22 @@
     >{{ "dmp.steps.people.general.search" | translate }}</mat-label
   >
 
-  <app-info-message iconName="info-link-custom"
-    >{{ "dmp.steps.people.contact.prefix" | translate }}
+  <app-info-message
+    >{{ "mug.info.peopleContact.prefix" | translate }}
 
-    <a
-      class="info-link-custom"
-      [href]="'dmp.steps.people.contact.orcid.link' | translate"
-      target="_blank">
-      {{ "dmp.steps.people.contact.orcid.title" | translate }}</a
+    <a class="info-link-custom" href="https://orcid.org/" target="_blank">
+      {{ "mug.info.peopleContact.orcid.title" | translate }}</a
     >
-    {{ "dmp.steps.people.contact.orcid.text" | translate }}
-    {{ "dmp.steps.people.contact.id.title" | translate }}
-    {{ "dmp.steps.people.contact.id.text" | translate }}
+    {{ "mug.info.peopleContact.orcid.text" | translate }}
+    {{ "mug.info.peopleContact.id.title" | translate }}
+    {{ "mug.info.peopleContact.id.text" | translate }}
     <p>
-      {{ "dmp.steps.people.contact.endPrefix" | translate }}
+      {{ "mug.info.peopleContact.endPrefix" | translate }}
       <a
         class="info-link-custom"
-        [href]="'dmp.steps.people.contact.mUni.link' | translate"
+        href="https://muniverse.medunigraz.at/forschung/forschungsdatenmanagement/datenweitergabe?language=DE"
         target="_blank">
-        {{ "dmp.steps.people.contact.mUni.title" | translate }}</a
+        {{ "mug.info.peopleContact.mUni.title" | translate }}</a
       >
     </p>
   </app-info-message>
@@ -117,16 +114,20 @@
           <div class="mat-card-right">
             <button
               mat-raised-button
+              class="white-button"
               *ngIf="member.universityId"
               (click)="changeContactPerson(member)"
               title="{{ 'dmp.steps.people.contact.add' | translate }}">
-              <mat-icon>contact_mail</mat-icon>
+              <mat-icon class="material-icon-primary">contact_mail</mat-icon>
             </button>
             <button
               mat-raised-button
+              class="white-button"
               (click)="addContributor(member)"
               title="{{ 'dmp.steps.people.contributor.add' | translate }}">
-              <mat-icon class="person-icon">person_add</mat-icon>
+              <mat-icon class="person-icon material-icon-primary"
+                >person_add</mat-icon
+              >
             </button>
           </div>
         </div>
@@ -246,15 +247,15 @@
               <mat-icon>contact_mail</mat-icon>
             </button>
             <button
-              class="button-position button-color-primary"
-              mat-raised-button
+              class="button-position"
+              mat-flat-button
               [disabled]="form.invalid"
               (click)="updateContributorDetails(i)">
               {{ "dmp.steps.people.contact.update" | translate }}
             </button>
             <button
-              class="button-position button-color-primary"
-              mat-raised-button
+              class="button-position"
+              mat-flat-button
               (click)="cancelUpdateContributorDetails()">
               {{ "dmp.steps.people.contact.cancel" | translate }}
             </button>
@@ -379,15 +380,15 @@
           </div>
           <div class="form-buttons">
             <button
-              class="button-position button-color-primary"
-              mat-raised-button
+              class="button-position"
+              mat-flat-button
               [disabled]="form.invalid"
               (click)="updateContributorDetails(i)">
               {{ "dmp.steps.people.contact.update" | translate }}
             </button>
             <button
-              class="button-position button-color-primary"
-              mat-raised-button
+              class="button-position"
+              mat-flat-button
               (click)="cancelUpdateContributorDetails()">
               {{ "dmp.steps.people.contact.cancel" | translate }}
             </button>

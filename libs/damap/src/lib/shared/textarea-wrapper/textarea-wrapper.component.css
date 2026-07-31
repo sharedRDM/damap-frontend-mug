@@ -4,6 +4,7 @@
 
 mat-form-field {
   width: 100%;
+  padding-bottom: 20px;
 }
 
 .no-resize {
@@ -12,7 +13,7 @@ mat-form-field {
 
 .suggestions-label {
   font-size: 14px;
-  color: var(--primary);
+  color: var(--mdc-theme-primary);
   margin-left: 10px;
 }
 
@@ -20,7 +21,7 @@ mat-form-field {
   background-color: var(--mdc-filled-text-field-container-color);
   padding: 0%;
   border-radius: 30%;
-  border: var(--primary);
+  border: var(--mdc-theme-primary);
 }
 
 .cdk-overlay-container {
@@ -34,6 +35,11 @@ mat-form-field mat-label {
   display: block;
   max-width: 100%;
   line-height: normal;
+}
+
+.question-long-hint {
+  padding-top: 5px;
+  padding-bottom: 10px;
 }
 
 @media (max-width: 960px) {

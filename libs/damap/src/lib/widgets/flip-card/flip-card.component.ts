@@ -11,9 +11,9 @@ import { Router } from '@angular/router';
 export class FlipCardComponent {
   @Input() frontContent: string;
   @Input() backContent: string;
-  @Input() iconCard: string;
   @Input() navigateRoute?: string;
   @Input() relinkUrl?: string;
+  @Input() iconCard: string;
 
   constructor(private router: Router) {}
 

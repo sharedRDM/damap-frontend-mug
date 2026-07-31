@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
-
 import { DataQualityType } from '../../../domain/enum/data-quality-type.enum';
 import { MatDialog } from '@angular/material/dialog';
 import { MetadataDialogInfoComponent } from '../../../shared/question-dialogs/metadata-dialog-info.component';
@@ -25,15 +24,15 @@ export class DocDataQualityComponent {
     });
   }
 
-  openValidationDialog(): void {
-    this.dialog.open(ValidationDialogInfoComponent, {
+  openStructureDialog(): void {
+    this.dialog.open(StructureDialogInfoComponent, {
       width: '600px',
       panelClass: 'custom-dialog-container',
     });
   }
 
-  openStructureDialog(): void {
-    this.dialog.open(StructureDialogInfoComponent, {
+  openValidationDialog(): void {
+    this.dialog.open(ValidationDialogInfoComponent, {
       width: '600px',
       panelClass: 'custom-dialog-container',
     });

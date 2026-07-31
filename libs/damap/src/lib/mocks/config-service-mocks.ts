@@ -16,7 +16,7 @@ export const configMockData: Config = {
   env: '',
   appTitle: '',
   personSearchServiceConfigs: serviceConfigMockData,
-  fitsServiceAvailable: true,
   livePreviewAvailable: true,
   ethicalReportEnabled: true,
+  evaluationAvailable: true,
 };

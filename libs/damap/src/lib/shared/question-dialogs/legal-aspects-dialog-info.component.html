@@ -1,33 +1,34 @@
-<div class="dialog-content">
-  <h2 mat-dialog-title>{{ "legal.aspects.dialog.title" | translate }}</h2>
-  <mat-dialog-content>
-    <p>
-      {{ "legal.aspects.dialog.dataOwnership.description" | translate }}
-    </p>
-    <p>
-      {{ "legal.aspects.dialog.contact.description" | translate }}
-      <a
-        href="https://muniverse.medunigraz.at/struktur/organisationseinheiten/recht-risikomanagement?language=DE"
-        target="_blank">
-        {{ "legal.aspects.dialog.contact.linkLegal" | translate }}
-      </a>
-      {{ "legal.aspects.dialog.contact.or" | translate }}
-      <a
-        href="https://muniverse.medunigraz.at/forschung/technologietransfer"
-        target="_blank">
-        {{ "legal.aspects.dialog.contact.linkTechTransfer" | translate }}
-      </a>
-    </p>
-    <p>
-      {{ "legal.aspects.dialog.rdmPolicy.description" | translate }}
-      <a
-        href="https://www.medunigraz.at/frontend/user_upload/OEs/oe-forschungsmanagement/abt-forschungsdokumentation/FDM_Policy_EN.pdf"
-        target="_blank"
-        >{{ "legal.aspects.dialog.rdmPolicy.link" | translate }}</a
-      >
-    </p>
-  </mat-dialog-content>
-  <mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close>Cancel</button>
-  </mat-dialog-actions>
-</div>
+<h2 mat-dialog-title>{{ "mug.dialog.legalAspects.title" | translate }}</h2>
+<mat-dialog-content>
+  <p>
+    {{ "mug.dialog.legalAspects.dataOwnership" | translate }}
+  </p>
+  <p>
+    {{ "mug.dialog.legalAspects.contact.description" | translate }}
+    <a
+      class="info-link-custom"
+      href="https://muniverse.medunigraz.at/struktur/organisationseinheiten/recht-risikomanagement?language=DE"
+      target="_blank">
+      {{ "mug.dialog.legalAspects.contact.linkLegal" | translate }}
+    </a>
+    {{ "mug.dialog.legalAspects.contact.or" | translate }}
+    <a
+      class="info-link-custom"
+      href="https://muniverse.medunigraz.at/forschung/technologietransfer"
+      target="_blank">
+      {{ "mug.dialog.legalAspects.contact.linkTechTransfer" | translate }}
+    </a>
+  </p>
+  <p>
+    {{ "mug.dialog.legalAspects.rdmPolicy.description" | translate }}
+    <a
+      class="info-link-custom"
+      href="https://www.medunigraz.at/frontend/user_upload/OEs/oe-forschungsmanagement/abt-forschungsdokumentation/FDM_Policy_EN.pdf"
+      target="_blank"
+      >{{ "mug.dialog.legalAspects.rdmPolicy.linkTitle" | translate }}</a
+    >
+  </p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>{{ "Cancel" | translate }}</button>
+</mat-dialog-actions>

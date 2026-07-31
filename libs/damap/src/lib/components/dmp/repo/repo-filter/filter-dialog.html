@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>{{'dmp.steps.repositories.filter' | translate}}</h1>
+<h1 mat-dialog-title>{{'dmp.steps.repositories.filter.label' | translate}}</h1>
 <mat-dialog-content>
   <app-tree-select-form-field
     [label]="'Subjects'"
@@ -58,12 +58,9 @@
 </mat-dialog-content>
 <mat-dialog-actions>
   <button mat-button (click)="onNoClick()">
-    {{'dmp.dialog.button.cancel' | translate}}
+    {{'dmp.steps.repositories.filter.cancel' | translate}}
   </button>
-  <button
-    mat-raised-button
-    class="button-color-primary"
-    [mat-dialog-close]="filter">
+  <button mat-flat-button [mat-dialog-close]="filter">
     {{'dmp.steps.repositories.filter.find' | translate}}
   </button>
 </mat-dialog-actions>

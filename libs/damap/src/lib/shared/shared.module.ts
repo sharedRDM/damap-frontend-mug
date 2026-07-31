@@ -1,31 +1,29 @@
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-
-import { CommonModule } from '@angular/common';
-import { HttpBackend } from '@angular/common/http';
-import { InputWrapperComponent } from './input-wrapper/input-wrapper.component';
-import { LegalAspectsDialogInfoComponent } from './question-dialogs/legal-aspects-dialog-info.component';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MetadataDialogInfoComponent } from './question-dialogs/metadata-dialog-info.component';
 import { NgModule } from '@angular/core';
-import { SearchFieldComponent } from './search-field/search-field.component';
-import { StructureDialogInfoComponent } from './question-dialogs/structure-dialog-info.component';
+import { CommonModule } from '@angular/common';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InputWrapperComponent } from './input-wrapper/input-wrapper.component';
 import { TextareaWrapperComponent } from './textarea-wrapper/textarea-wrapper.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { TranslateModule } from '@ngx-translate/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { TooltipModule } from '../widgets/tooltip/tooltip.module';
+import { SearchFieldComponent } from './search-field/search-field.component';
+import { MatButtonModule, MatIconButton } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MetadataDialogInfoComponent } from './question-dialogs/metadata-dialog-info.component';
+import { StructureDialogInfoComponent } from './question-dialogs/structure-dialog-info.component';
 import { ValidationDialogInfoComponent } from './question-dialogs/validation-dialog-info.component';
+import { LegalAspectsDialogInfoComponent } from './question-dialogs/legal-aspects-dialog-info.component';
 
 @NgModule({
   declarations: [
     InputWrapperComponent,
     TextareaWrapperComponent,
     SearchFieldComponent,
-    ValidationDialogInfoComponent,
     MetadataDialogInfoComponent,
     StructureDialogInfoComponent,
+    ValidationDialogInfoComponent,
     LegalAspectsDialogInfoComponent,
   ],
   imports: [
@@ -34,12 +32,13 @@ import { ValidationDialogInfoComponent } from './question-dialogs/validation-dia
     ReactiveFormsModule,
     TranslateModule,
     TooltipModule,
-    MatButtonModule,
 
     // Materials
     MatFormFieldModule,
     MatInputModule,
     MatAutocompleteModule,
+    MatIconButton,
+    MatButtonModule,
     MatDialogModule,
   ],
   exports: [
@@ -52,15 +51,15 @@ import { ValidationDialogInfoComponent } from './question-dialogs/validation-dia
     TooltipModule,
     SearchFieldComponent,
     MetadataDialogInfoComponent,
-    ValidationDialogInfoComponent,
     StructureDialogInfoComponent,
+    ValidationDialogInfoComponent,
     LegalAspectsDialogInfoComponent,
 
     // Materials
     MatFormFieldModule,
-    MatDialogModule,
     MatInputModule,
     MatAutocompleteModule,
+    MatDialogModule,
   ],
 })
 export class SharedModule {}

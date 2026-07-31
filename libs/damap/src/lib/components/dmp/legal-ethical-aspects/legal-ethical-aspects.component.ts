@@ -29,6 +29,15 @@ export class LegalEthicalAspectsComponent {
 
   selectedView: 'primaryView' | 'secondaryView' = 'primaryView';
 
+  constructor(public dialog: MatDialog) {}
+
+  openLegalAspectsDialogInfo(): void {
+    this.dialog.open(LegalAspectsDialogInfoComponent, {
+      width: '600px',
+      panelClass: 'custom-dialog-container',
+    });
+  }
+
   optionsLinksEthics: string[] = [
     'Guidelines on Safeguarding Good Scientific Practice',
   ];
@@ -51,14 +60,6 @@ export class LegalEthicalAspectsComponent {
   agreementOptions: any = Agreement;
 
   originalOrder = (): number => 0;
-  constructor(public dialog: MatDialog) {}
-
-  openLegalAspectsDialogInfo(): void {
-    this.dialog.open(LegalAspectsDialogInfoComponent, {
-      width: '600px',
-      panelClass: 'custom-dialog-container',
-    });
-  }
 
   get sensitiveDataAccess(): UntypedFormControl {
     return this.legalEthicalStep.get(

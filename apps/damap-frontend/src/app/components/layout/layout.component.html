@@ -1,6 +1,5 @@
 <mat-sidenav-container autosize>
   <mat-sidenav
-    class="mat-sidenav-divider-grey"
     #sidenav
     [mode]="isSmallScreen && !isCollapsed ? 'over' : 'side'"
     [opened]="true"
@@ -13,7 +12,7 @@
       <div class="mm-navbar">
         <button
           mat-icon-button
-          title="{{ 'layout.menu.mobile.close' | translate }}"
+          title="{{ 'sidebar.header.button.hint' | translate }}"
           class="sidenav-btn"
           (click)="toggleMenu()">
           <mat-icon class="material-icon-white outline">{{
@@ -23,12 +22,13 @@
 
         <div class="logo mat-headline-large">
           <a
-            title="DMP Tool"
+            title="Damap"
             id="damap-logo"
             class="mat-focus-indicator"
             [routerLink]="'/dashboard'">
-            {{ "title" | translate }}
-            <span *ngIf="!isCollapsed">{{ "title" | translate }}</span>
+            <span *ngIf="!isCollapsed">{{
+              "sidebar.header.title" | translate
+            }}</span>
           </a>
         </div>
       </div>
@@ -41,12 +41,21 @@
       <div class="languageElement-desktop">
         <button
           mat-button
-          class="mm-navbar-button material-btn-text-primary-lightest"
+          class="h-full material-btn-text-primary-lightest"
           [matMenuTriggerFor]="language">
           {{ lang }}
         </button>
         <mat-menu #language="matMenu">
-          <button mat-menu-item (click)="useLanguage('en')">EN</button>
+          <button
+            mat-menu-item
+            *ngFor="let language of availableLanguages"
+            (click)="useLanguage(language)"
+            [disabled]="language.toUpperCase() === lang">
+            @if (language.toUpperCase() === lang) {
+              <mat-icon style="transform: scale(0.85)">check</mat-icon>
+            }
+            {{ language.toUpperCase() }}
+          </button>
         </mat-menu>
       </div>
     </div>
@@ -60,7 +69,7 @@
           [routerLinkActiveOptions]="{ exact: true }">
           <mat-icon class="menu-icon-size outline">home</mat-icon>
           <span *ngIf="!isCollapsed" class="menu-icon-text">{{
-            "layout.menu.home" | translate
+            "sidebar.navigation.home" | translate
           }}</span>
         </a>
         <a
@@ -70,7 +79,7 @@
           [routerLinkActiveOptions]="{ exact: true }">
           <mat-icon class="menu-icon-size outline">table_view</mat-icon>
           <span *ngIf="!isCollapsed" class="menu-icon-text">{{
-            "layout.menu.plans" | translate
+            "sidebar.navigation.dmps" | translate
           }}</span>
         </a>
         <a
@@ -81,7 +90,7 @@
           [routerLinkActiveOptions]="{ exact: true }">
           <mat-icon class="menu-icon-size outline">shield_person</mat-icon>
           <span *ngIf="!isCollapsed" class="menu-icon-text">{{
-            "layout.menu.admin" | translate
+            "sidebar.navigation.admin" | translate
           }}</span>
         </a>
       </div>
@@ -93,7 +102,7 @@
           mat-icon-button
           id="logout"
           class="material-icon-on-secondary-container"
-          [attr.aria-label]="'layout.logout' | translate"
+          [attr.aria-label]="'sidebar.navigation.logout' | translate"
           (click)="logout()">
           <mat-icon class="outline">logout</mat-icon>
         </button>
@@ -102,45 +111,38 @@
     <div *ngIf="!isCollapsed" class="footer mat-title-small">
       <div class="info">
         <a
-          [href]="'layout.impressum.link' | translate"
+          [href]="'sidebar.footer.impressum.link' | translate"
           rel="noopener"
-          target="_blank"
-          >{{ "layout.impressum.text" | translate }}</a
-        >
+          target="_blank">
+          {{ "sidebar.footer.impressum.label" | translate }}
+        </a>
         <a
-          [href]="'layout.termsandconditions.link' | translate"
+          [href]="'sidebar.footer.terms-and-conditions.link' | translate"
           rel="noopener"
-          target="_blank"
-          >{{ "layout.termsandconditions.text" | translate }}</a
-        >
+          target="_blank">
+          {{ "sidebar.footer.terms-and-conditions.label" | translate }}
+        </a>
         <a
-          [href]="'layout.dataprotection.link' | translate"
+          [href]="'sidebar.footer.data-protection-declaration.link' | translate"
           rel="noopener"
-          target="_blank"
-          >{{ "layout.dataprotection.text" | translate }}</a
-        >
+          target="_blank">
+          {{ "sidebar.footer.data-protection-declaration.label" | translate }}
+        </a>
       </div>
       <div class="version-information">
         <a [routerLink]="'/gdpr'" rel="noopener">{{
-          "layout.gdpr" | translate
+          "sidebar.footer.gdpr-info" | translate
         }}</a>
         <span class="version-text"
-          >{{ "layout.version" | translate }}: {{ version }}</span
+          >{{ "sidebar.footer.version" | translate }}: {{ version }}</span
         >
-        <a
-          class="mat-focus-indicator baseLogo"
-          [href]="'layout.baseLogo.link' | translate"
-          target="_blank"
-          rel="noopener">
-          <img src="assets/damap_white_new.png" alt="Logo" height="30" />
-        </a>
       </div>
     </div>
     <div *ngIf="isCollapsed" class="footer-icon">
       <button
         mat-icon-button
-        [matTooltip]="'layout.icon.dataAlert' | translate"
-        [aria-label]="'layout.icon.dataAlert' | translate">
+        [matTooltip]="'sidebar.footer.collapsed.hint' | translate"
+        [aria-label]="'sidebar.footer.collapsed.hint' | translate">
         <mat-icon class="md-light outline">data_alert</mat-icon>
       </button>
     </div>
@@ -163,7 +165,12 @@
             [href]="'layout.logo.link' | translate"
             target="_blank"
             rel="noopener">
-            <img src="assets/logo.svg" alt="Logo" height="100px" width="auto" />
+            <img
+              [src]="logoUrl"
+              alt="Logo"
+              [class]="
+                isDefaultLogo(logoUrl) ? 'header-logo-default' : 'header-logo'
+              " />
           </a>
         </div>
       </mat-toolbar-row>

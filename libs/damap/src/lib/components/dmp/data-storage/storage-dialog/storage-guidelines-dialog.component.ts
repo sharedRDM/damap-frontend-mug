@@ -1,5 +1,5 @@
-import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-storage-guidelines-dialog',
@@ -9,7 +9,6 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 export class StorageGuidelinesDialogComponent {
   constructor(
     public dialogRef: MatDialogRef<StorageGuidelinesDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any,
   ) {}
 
   onNoClick(): void {

@@ -2,53 +2,41 @@
   <mat-label
     class="label-title mat-title-large"
     id="example-radio-group-label"
-    >{{ "dmp.steps.legal.heading" | translate }}</mat-label
+    >{{ "dmp.steps.legal.view.button.legal" | translate }}</mat-label
   >
   <app-info-message>
-    {{ "dmp.steps.legal.messageInfo.introduction" | translate }}
+    {{ "mug.info.legal.introduction" | translate }}
     <div class="legal-links">
       <a
         class="info-link-custom"
-        [href]="'dmp.steps.legal.messageInfo.links.rdmPolicy.url' | translate"
+        href="https://www.medunigraz.at/frontend/user_upload/OEs/oe-forschungsmanagement/abt-forschungsdokumentation/FDM_Policy_EN.pdf"
         target="_blank">
-        {{ "dmp.steps.legal.messageInfo.links.rdmPolicy.title" | translate }}
+        {{ "mug.info.legal.rdmPolicy.title" | translate }}
       </a>
-      {{ "dmp.steps.legal.messageInfo.links.rdmPolicy.text" | translate }}
+      {{ "mug.info.legal.rdmPolicy.text" | translate }}
       <br />
       <a
         class="info-link-custom"
-        [href]="
-          'dmp.steps.legal.messageInfo.links.dataProtection.url' | translate
-        "
+        href="https://confluence.medunigraz.at/spaces/ITKB/pages/64392119/Richtlinie+f%C3%BCr+Datenschutz+und+IT-Sicherheit"
         target="_blank">
-        {{
-          "dmp.steps.legal.messageInfo.links.dataProtection.title" | translate
-        }}
+        {{ "mug.info.legal.dataProtection.title" | translate }}
       </a>
-      {{ "dmp.steps.legal.messageInfo.links.dataProtection.text" | translate }}
       <br />
       <a
         class="info-link-custom"
-        [href]="
-          'dmp.steps.legal.messageInfo.links.dataTransfer.url' | translate
-        "
+        href="https://muniverse.medunigraz.at/forschung/forschungsdatenmanagement/datenweitergabe?language=DE"
         target="_blank">
-        {{ "dmp.steps.legal.messageInfo.links.dataTransfer.title" | translate }}
+        {{ "mug.info.legal.dataTransfer.title" | translate }}
       </a>
-      {{ "dmp.steps.legal.messageInfo.links.dataTransfer.text" | translate }}
       <br />
       <a
         class="info-link-custom"
-        [href]="
-          'dmp.steps.legal.messageInfo.links.personalData.url' | translate
-        "
+        href="https://muniverse.medunigraz.at/uploads/Positionspapier_Datenweitergabe_f249bb2446.pdf"
         target="_blank">
-        {{ "dmp.steps.legal.messageInfo.links.personalData.title" | translate }}
+        {{ "mug.info.legal.personalData.title" | translate }}
       </a>
-      {{ "dmp.steps.legal.messageInfo.links.personalData.text" | translate }}
     </div>
   </app-info-message>
-
   <mat-card class="legal-ethical-card card-shadow">
     <mat-card-content>
       <div *ngIf="selectedView === 'primaryView'">
@@ -60,7 +48,6 @@
                 "dmp.steps.legal.question.sensitiveData.prefix" | translate
               }}
               <a
-                class="info-link-custom"
                 href="{{ 'dmp.steps.legal.link.sensitiveData' | translate }}"
                 target="_blank"
                 rel="noopener"
@@ -74,11 +61,13 @@
             <mat-radio-group
               aria-labelledby="sensitiveData"
               formControlName="sensitiveData">
-              <mat-radio-button class="boolean-mat-radio-button" [value]="true"
-                >{{ "yes" | translate }}
+              <mat-radio-button class="boolean-mat-radio-button" [value]="true">
+                {{ "dmp.steps.legal.question.answer.yes" | translate }}
               </mat-radio-button>
-              <mat-radio-button class="boolean-mat-radio-button" [value]="false"
-                >{{ "no" | translate }}
+              <mat-radio-button
+                class="boolean-mat-radio-button"
+                [value]="false">
+                {{ "dmp.steps.legal.question.answer.no" | translate }}
               </mat-radio-button>
             </mat-radio-group>
             <ng-container
@@ -126,22 +115,27 @@
                         }}
                       </mat-option>
                     </mat-select>
-                    <mat-hint>{{
-                      "help.legal.sensitiveDataSecurity" | translate
-                    }}</mat-hint>
                   </mat-form-field>
+                  <app-tooltip
+                    [tooltip]="'dmp.steps.legal.help.sensitiveDataSecurity'">
+                  </app-tooltip>
                 </div>
-                <br /><br />
                 <ng-container *ngIf="isOtherMeasureSelected">
                   <app-textarea-wrapper
                     [label]="
-                      'dmp.steps.legal.question.otherDataSecurityMeasures'
+                      'dmp.steps.legal.question.short.otherDataSecurityMeasures'
+                    "
+                    [longLabel]="
+                      'dmp.steps.legal.question.long.otherDataSecurityMeasures'
                     "
                     [control]="otherDataSecurityMeasures"
                     [maxLength]="4000"></app-textarea-wrapper>
                 </ng-container>
                 <app-textarea-wrapper
-                  [label]="'dmp.steps.legal.question.sensitiveDataAccess'"
+                  [label]="'dmp.steps.legal.question.short.sensitiveDataAccess'"
+                  [longLabel]="
+                    'dmp.steps.legal.question.long.sensitiveDataAccess'
+                  "
                   [control]="sensitiveDataAccess"
                   [maxLength]="4000"
                   appearance="fill"></app-textarea-wrapper>
@@ -161,11 +155,13 @@
             <mat-radio-group
               formControlName="{{ question.model }}"
               aria-labelledby="{{ question.label }}">
-              <mat-radio-button class="boolean-mat-radio-button" [value]="true"
-                >{{ "yes" | translate }}
+              <mat-radio-button class="boolean-mat-radio-button" [value]="true">
+                {{ "dmp.steps.legal.question.answer.yes" | translate }}
               </mat-radio-button>
-              <mat-radio-button class="boolean-mat-radio-button" [value]="false"
-                >{{ "no" | translate }}
+              <mat-radio-button
+                class="boolean-mat-radio-button"
+                [value]="false">
+                {{ "dmp.steps.legal.question.answer.no" | translate }}
               </mat-radio-button>
             </mat-radio-group>
 
@@ -214,14 +210,17 @@
                     </mat-option>
                   </mat-select>
                   <mat-hint>{{
-                    "help.legal.personalDataCompliance" | translate
+                    "dmp.steps.legal.help.personalDataCompliance" | translate
                   }}</mat-hint>
                 </mat-form-field>
                 <br /><br />
                 <ng-container *ngIf="isOtherSelected">
                   <app-textarea-wrapper
                     [label]="
-                      'dmp.steps.legal.question.otherPersonalDataCompliance'
+                      'dmp.steps.legal.question.short.otherPersonalDataCompliance'
+                    "
+                    [longLabel]="
+                      'dmp.steps.legal.question.long.otherPersonalDataCompliance'
                     "
                     [control]="otherPersonalDataCompliance"
                     [maxLength]="4000"></app-textarea-wrapper>
@@ -257,7 +256,12 @@
               </div>
               <div>
                 <app-textarea-wrapper
-                  [label]="'dmp.steps.legal.question.legalRestrictionsComment'"
+                  [label]="
+                    'dmp.steps.legal.question.short.legalRestrictionsComment'
+                  "
+                  [longLabel]="
+                    'dmp.steps.legal.question.long.legalRestrictionsComment'
+                  "
                   [control]="legalRestrictionsComment"
                   [maxLength]="4000"></app-textarea-wrapper>
               </div>
@@ -283,7 +287,10 @@
               <ng-container *ngIf="isOtherDocumentSelected">
                 <app-textarea-wrapper
                   [label]="
-                    'dmp.steps.legal.question.otherLegalRestrictionsDocuments'
+                    'dmp.steps.legal.question.short.otherLegalRestrictionsDocuments'
+                  "
+                  [longLabel]="
+                    'dmp.steps.legal.question.long.otherLegalRestrictionsDocuments'
                   "
                   [maxLength]="4000"
                   [control]="
@@ -293,23 +300,21 @@
             </ng-container>
             <hr *ngIf="!last" />
           </div>
+
           <div class="form-field-hint">
             <app-textarea-wrapper
-              [label]="'dmp.steps.legal.question.dataRightsAndAccessControl'"
+              [label]="
+                'dmp.steps.legal.question.short.dataRightsAndAccessControl'
+              "
+              [longLabel]="
+                'dmp.steps.legal.question.long.dataRightsAndAccessControl'
+              "
               [maxLength]="4000"
               [control]="dataRightsAndAccessControl"></app-textarea-wrapper>
-            <div class="flex-row-wrap">
-              <app-tooltip
-                [tooltip]="
-                  'dmp.steps.legal.question.dataRightsAndAccessControl'
-                    | translate
-                "
-                (click)="openLegalAspectsDialogInfo()"
-                class="clickable-info">
-                <mat-icon class="material-icon-primary outline">info</mat-icon>
-                <span class="dialog-indicator">...</span>
-              </app-tooltip>
-            </div>
+            <app-tooltip
+              [tooltip]="'mug.dialog.legalAspects.title'"
+              (click)="openLegalAspectsDialogInfo()"
+              class="clickable-info"></app-tooltip>
           </div>
         </div>
       </div>
@@ -320,7 +325,7 @@
   <mat-label
     class="label-title mat-title-large"
     id="example-radio-group-label"
-    >{{ "dmp.steps.ethical.heading" | translate }}</mat-label
+    >{{ "dmp.steps.legal.view.button.ethical" | translate }}</mat-label
   >
   <app-ethical-aspects
     [legalEthicalStep]="legalEthicalStep"

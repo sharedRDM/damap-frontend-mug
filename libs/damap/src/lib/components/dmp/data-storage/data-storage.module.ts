@@ -30,6 +30,8 @@ import { MatSlideToggle } from '@angular/material/slide-toggle';
     SharedModule,
     StepIntroModule,
     ToggleButtonsModule,
+    InfoMessageModule,
+
     // Materials
     MatExpansionModule,
     MatFormFieldModule,
@@ -40,7 +42,6 @@ import { MatSlideToggle } from '@angular/material/slide-toggle';
     MatDialogModule,
     MatButtonModule,
     MatFormFieldModule,
-    InfoMessageModule,
     MatSlideToggle,
   ],
   declarations: [

@@ -1,26 +1,21 @@
-<h2 mat-dialog-title>{{ "validation.title" | translate }}</h2>
+<h2 mat-dialog-title>{{ "mug.dialog.validation.title" | translate }}</h2>
 <mat-dialog-content>
   <p>
-    {{ "validation.documentationGuidance" | translate }}
+    {{ "mug.dialog.validation.documentationGuidance" | translate }}
   </p>
   <p>
-    {{ "validation.sharingOptions.description" | translate }}
-    <ng-container
-      *ngFor="let link of 'validation.sharingOptions.links' | translate">
-      <a class="info-link-custom" [href]="link.url" target="_blank">{{
-        link.title
-      }}</a>
-      <ng-container *ngIf="link.title === 'OSF'">
-        (<span style="font-weight: bold">O</span>pen
-        <span style="font-weight: bold">S</span>cience
-        <span style="font-weight: bold">F</span>ramework){{ link.text }}
-      </ng-container>
-      <ng-container *ngIf="link.title !== 'OSF'">
-        {{ link.text }}
-      </ng-container>
-    </ng-container>
+    {{ "mug.dialog.validation.sharingOptions.description" | translate }}
+    <a class="info-link-custom" href="https://osf.io/" target="_blank">OSF</a>
+    (<span style="font-weight: bold">O</span>pen
+    <span style="font-weight: bold">S</span>cience
+    <span style="font-weight: bold">F</span>ramework)
+    {{ "mug.dialog.validation.sharingOptions.osf" | translate }}
+    <a class="info-link-custom" href="http://protocols.io" target="_blank"
+      >protocols.io</a
+    >
+    {{ "mug.dialog.validation.sharingOptions.protocols" | translate }}
   </p>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button mat-dialog-close>{{ "Cancel" | translate }}</button>
 </mat-dialog-actions>
