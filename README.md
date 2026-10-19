@@ -1,3 +1,7 @@
+# DAMAP — MUG Fork
+
+This is the **Medical University of Graz (MUG)** fork of the DAMAP frontend. It is based on core [damap-org/damap-frontend](https://github.com/damap-org/damap-frontend) **v5.0.1** plus a small set of MUG-specific commits (custom info dialogs, Med Uni info boxes, OpenSans branding, nginx/deploy config). See [docs/MIGRATION-MUG.md](docs/MIGRATION-MUG.md) for the exact delta, the required backend translation seed, and the release/tagging conventions.
+
 # DAMAP
 
 DAMAP is an open source tool co-developed by TU Wien and TU Graz that supports researchers in managing both data and code along the research data lifecycle. It is based on the concept of machine-actionable data management plans (maDMPs) and aims to simplify the creation of data management plans (DMPs) for researchers.

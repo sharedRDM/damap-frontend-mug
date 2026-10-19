@@ -39,3 +39,8 @@ mat-radio-button {
   align-items: center;
   justify-content: center;
 }
+
+.button-position-custom {
+  color: var(--white-smoke-text) !important;
+  font-weight: 400 !important;
+}
