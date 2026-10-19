@@ -2,3 +2,16 @@
   font-size: 1.3rem;
   vertical-align: text-bottom;
 }
+
+.material-icon-warning {
+  color: darkorange;
+}
+
+.interactive-icon {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.interactive-icon:hover {
+  transform: scale(1.1);
+}

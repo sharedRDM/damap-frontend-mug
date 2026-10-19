@@ -1,4 +1,4 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, inject } from '@angular/core';
 import {
   UntypedFormControl,
   UntypedFormGroup,
@@ -14,6 +14,10 @@ import { MatSelect } from '@angular/material/select';
 import { MatOption } from '@angular/material/autocomplete';
 import { KeyValuePipe } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MetadataDialogInfoComponent } from '../../../shared/question-dialogs/metadata-dialog-info.component';
+import { StructureDialogInfoComponent } from '../../../shared/question-dialogs/structure-dialog-info.component';
+import { ValidationDialogInfoComponent } from '../../../shared/question-dialogs/validation-dialog-info.component';
 
 @Component({
   selector: 'app-dmp-doc-data-quality',
@@ -37,7 +41,30 @@ import { TranslatePipe } from '@ngx-translate/core';
   ],
 })
 export class DocDataQualityComponent {
+  private dialog = inject(MatDialog);
+
   @Input() docDataStep: UntypedFormGroup;
+
+  openMetadataDialog(): void {
+    this.dialog.open(MetadataDialogInfoComponent, {
+      width: '600px',
+      panelClass: 'custom-dialog-container',
+    });
+  }
+
+  openStructureDialog(): void {
+    this.dialog.open(StructureDialogInfoComponent, {
+      width: '600px',
+      panelClass: 'custom-dialog-container',
+    });
+  }
+
+  openValidationDialog(): void {
+    this.dialog.open(ValidationDialogInfoComponent, {
+      width: '600px',
+      panelClass: 'custom-dialog-container',
+    });
+  }
 
   optionsMetadata: string[] = [
     'We will be using the following domain specific metadata standards:…',

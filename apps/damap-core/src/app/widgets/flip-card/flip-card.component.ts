@@ -16,11 +16,14 @@ export class FlipCardComponent {
   readonly frontContent = input<string>(undefined);
   readonly backContent = input<string>(undefined);
   @Input() navigateRoute: string;
+  @Input() relinkUrl?: string;
   @Input() iconCard: string;
 
   navigateTo() {
     if (this.navigateRoute) {
       this.router.navigate([this.navigateRoute]);
+    } else if (this.relinkUrl) {
+      window.open(this.relinkUrl, '_blank');
     }
   }
 
