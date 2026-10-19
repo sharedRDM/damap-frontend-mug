@@ -42,10 +42,10 @@ export class StorageComponent implements OnInit {
   ngOnInit() {
     this.store
       .pipe(select(selectInternalStoragesLoaded))
-      .subscribe(val => (this.internalStoragesLoaded = val));
+      .subscribe((val) => (this.internalStoragesLoaded = val));
     this.store
       .pipe(select(selectInternalStorages))
-      .subscribe(val => (this.internalStorages = val));
+      .subscribe((val) => (this.internalStorages = val));
     this.getInternalStorages();
   }
 
@@ -63,7 +63,7 @@ export class StorageComponent implements OnInit {
 
   get activeStorages() {
     return this.internalStorages.filter(
-      storage => storage.active && storage.translations.length > 0,
+      (storage) => storage.active && storage.translations.length > 0,
     );
   }
 
@@ -75,8 +75,8 @@ export class StorageComponent implements OnInit {
       'en';
 
     const translation =
-      storage.translations.find(t => t.languageCode === currentLanguage) ??
-      storage.translations.find(t => t.languageCode === 'en') ??
+      storage.translations.find((t) => t.languageCode === currentLanguage) ??
+      storage.translations.find((t) => t.languageCode === 'en') ??
       storage.translations[0];
 
     return translation?.title ?? '';
@@ -84,8 +84,7 @@ export class StorageComponent implements OnInit {
 
   openStorageInfo(storage: InternalStorage) {
     const translation =
-      storage.translations.find(t => t.languageCode === 'eng') ||
-      storage.translations[0];
+      storage.translations.find((t) => t.languageCode === 'eng') || storage.translations[0];
     this.dialog.open(StorageInfoDialogComponent, {
       width: '500px',
       data: {

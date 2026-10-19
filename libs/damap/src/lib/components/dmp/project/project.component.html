@@ -1,10 +1,8 @@
 <!-- Selected project -->
 <div *ngIf="projectStep?.value">
-  <mat-label
-    class="label-title mat-title-large"
-    id="example-radio-group-label"
-    >{{ "dmp.steps.project.selected" | translate }}</mat-label
-  >
+  <mat-label class="label-title mat-title-large" id="example-radio-group-label">{{
+    'dmp.steps.project.selected' | translate
+  }}</mat-label>
   <mat-card appearance="raised" class="card-selected">
     <mat-card-header>
       <mat-card-title>
@@ -15,14 +13,15 @@
       <div class="mat-card-container">
         <p>
           <mat-icon class="mat-icon-style">date_range</mat-icon>
-          {{ projectStep.value.start | date: "dd/MMMM/yy" }} -
-          {{ projectStep.value.end | date: "dd/MMMM/yy" }}
+          {{ projectStep.value.start | date: 'dd/MMMM/yy' }} -
+          {{ projectStep.value.end | date: 'dd/MMMM/yy' }}
         </p>
         <div>
           <button
             class="button-position button-position-custom"
             mat-icon-button
-            (click)="changeProject(null)">
+            (click)="changeProject(null)"
+          >
             <mat-icon>delete</mat-icon>
           </button>
         </div>
@@ -32,15 +31,11 @@
 </div>
 
 <div *ngIf="selectedView === 'primaryView'">
-  <app-project-list
-    [selectedProject]="projectStep?.value"
-    (projectToSet)="changeProject($event)">
+  <app-project-list [selectedProject]="projectStep?.value" (projectToSet)="changeProject($event)">
   </app-project-list>
 </div>
 
 <div *ngIf="selectedView === 'secondaryView'">
-  <app-manual-project-input
-    [project]="projectStep?.value"
-    (projectUpdate)="changeProject($event)">
+  <app-manual-project-input [project]="projectStep?.value" (projectUpdate)="changeProject($event)">
   </app-manual-project-input>
 </div>

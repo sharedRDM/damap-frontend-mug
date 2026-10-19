@@ -1,39 +1,33 @@
 <div *ngIf="selectedView === 'primaryView'">
-  <mat-label
-    class="label-title mat-title-large"
-    id="example-radio-group-label"
-    >{{ "dmp.steps.legal.view.button.legal" | translate }}</mat-label
-  >
+  <mat-label class="label-title mat-title-large" id="example-radio-group-label">{{
+    'dmp.steps.legal.view.button.legal' | translate
+  }}</mat-label>
   <app-info-message>
-    {{ "mug.info.legal.introduction" | translate }}
+    {{ 'mug.info.legal.introduction' | translate }}
     <div class="legal-links">
-      <a
-        class="info-link-custom"
-        [href]="'mug.link.rdmPolicy.url' | translate"
-        target="_blank">
-        {{ "mug.info.legal.rdmPolicy.title" | translate }}
+      <a class="info-link-custom" [href]="'mug.link.rdmPolicy.url' | translate" target="_blank">
+        {{ 'mug.info.legal.rdmPolicy.title' | translate }}
       </a>
-      {{ "mug.info.legal.rdmPolicy.text" | translate }}
+      {{ 'mug.info.legal.rdmPolicy.text' | translate }}
       <br />
       <a
         class="info-link-custom"
         [href]="'mug.link.dataProtectionConfluence.url' | translate"
-        target="_blank">
-        {{ "mug.info.legal.dataProtection.title" | translate }}
+        target="_blank"
+      >
+        {{ 'mug.info.legal.dataProtection.title' | translate }}
       </a>
       <br />
-      <a
-        class="info-link-custom"
-        [href]="'mug.link.dataTransfer.url' | translate"
-        target="_blank">
-        {{ "mug.info.legal.dataTransfer.title" | translate }}
+      <a class="info-link-custom" [href]="'mug.link.dataTransfer.url' | translate" target="_blank">
+        {{ 'mug.info.legal.dataTransfer.title' | translate }}
       </a>
       <br />
       <a
         class="info-link-custom"
         [href]="'mug.link.personalDataPosition.url' | translate"
-        target="_blank">
-        {{ "mug.info.legal.personalData.title" | translate }}
+        target="_blank"
+      >
+        {{ 'mug.info.legal.personalData.title' | translate }}
       </a>
     </div>
   </app-info-message>
@@ -44,49 +38,33 @@
           <!--Sensitive Data-->
           <div class="flex-radio">
             <label id="sensitiveData"
-              >{{
-                "dmp.steps.legal.question.sensitiveData.prefix" | translate
-              }}
+              >{{ 'dmp.steps.legal.question.sensitiveData.prefix' | translate }}
               <a
                 href="{{ 'dmp.steps.legal.link.sensitiveData' | translate }}"
                 target="_blank"
                 rel="noopener"
-                >{{
-                  "dmp.steps.legal.question.sensitiveData.link" | translate
-                }}</a
-              >{{ "dmp.steps.legal.question.sensitiveData.suffix" | translate }}
+                >{{ 'dmp.steps.legal.question.sensitiveData.link' | translate }}</a
+              >{{ 'dmp.steps.legal.question.sensitiveData.suffix' | translate }}
             </label>
-            <app-cris-tag
-              [cris]="legalEthicalStep?.value.sensitiveDataCris"></app-cris-tag>
-            <mat-radio-group
-              aria-labelledby="sensitiveData"
-              formControlName="sensitiveData">
+            <app-cris-tag [cris]="legalEthicalStep?.value.sensitiveDataCris"></app-cris-tag>
+            <mat-radio-group aria-labelledby="sensitiveData" formControlName="sensitiveData">
               <mat-radio-button class="boolean-mat-radio-button" [value]="true">
-                {{ "dmp.steps.legal.question.answer.yes" | translate }}
+                {{ 'dmp.steps.legal.question.answer.yes' | translate }}
               </mat-radio-button>
-              <mat-radio-button
-                class="boolean-mat-radio-button"
-                [value]="false">
-                {{ "dmp.steps.legal.question.answer.no" | translate }}
+              <mat-radio-button class="boolean-mat-radio-button" [value]="false">
+                {{ 'dmp.steps.legal.question.answer.no' | translate }}
               </mat-radio-button>
             </mat-radio-group>
-            <ng-container
-              *ngIf="legalEthicalStep?.value.sensitiveData && datasets?.length">
+            <ng-container *ngIf="legalEthicalStep?.value.sensitiveData && datasets?.length">
               <div>
                 <section class="dataset-checkbox-section" [formGroup]="dmpForm">
-                  {{
-                    "dmp.steps.legal.question.dataset.sensitiveData"
-                      | translate
-                  }}:
+                  {{ 'dmp.steps.legal.question.dataset.sensitiveData' | translate }}:
                   <div formArrayName="datasets">
-                    <ng-container
-                      *ngFor="let dataset of datasets?.controls; index as i">
+                    <ng-container *ngFor="let dataset of datasets?.controls; index as i">
                       <ng-container [formGroupName]="i">
-                        <mat-checkbox
-                          class="dataset-checkbox"
-                          formControlName="sensitiveData"
-                          >{{ dataset.value.title }}</mat-checkbox
-                        >
+                        <mat-checkbox class="dataset-checkbox" formControlName="sensitiveData">{{
+                          dataset.value.title
+                        }}</mat-checkbox>
                       </ng-container>
                     </ng-container>
                   </div>
@@ -96,72 +74,52 @@
                 <div class="form-field-hint">
                   <mat-form-field class="full-width">
                     <mat-label
-                      >{{
-                        "dmp.steps.legal.question.sensitiveDataSecurity"
-                          | translate
-                      }}
+                      >{{ 'dmp.steps.legal.question.sensitiveDataSecurity' | translate }}
                     </mat-label>
-                    <mat-select
-                      formControlName="sensitiveDataSecurity"
-                      multiple>
+                    <mat-select formControlName="sensitiveDataSecurity" multiple>
                       <mat-option
-                        *ngFor="
-                          let option of securityOptions
-                            | keyvalue: originalOrder
-                        "
-                        [value]="option.value">
-                        {{
-                          translateSecurityPrefixEnum + option.value | translate
-                        }}
+                        *ngFor="let option of securityOptions | keyvalue: originalOrder"
+                        [value]="option.value"
+                      >
+                        {{ translateSecurityPrefixEnum + option.value | translate }}
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
-                  <app-tooltip
-                    [tooltip]="'dmp.steps.legal.help.sensitiveDataSecurity'">
+                  <app-tooltip [tooltip]="'dmp.steps.legal.help.sensitiveDataSecurity'">
                   </app-tooltip>
                 </div>
                 <ng-container *ngIf="isOtherMeasureSelected">
                   <app-textarea-wrapper
-                    [label]="
-                      'dmp.steps.legal.question.short.otherDataSecurityMeasures'
-                    "
-                    [longLabel]="
-                      'dmp.steps.legal.question.long.otherDataSecurityMeasures'
-                    "
+                    [label]="'dmp.steps.legal.question.short.otherDataSecurityMeasures'"
+                    [longLabel]="'dmp.steps.legal.question.long.otherDataSecurityMeasures'"
                     [control]="otherDataSecurityMeasures"
-                    [maxLength]="4000"></app-textarea-wrapper>
+                    [maxLength]="4000"
+                  ></app-textarea-wrapper>
                 </ng-container>
                 <app-textarea-wrapper
                   [label]="'dmp.steps.legal.question.short.sensitiveDataAccess'"
-                  [longLabel]="
-                    'dmp.steps.legal.question.long.sensitiveDataAccess'
-                  "
+                  [longLabel]="'dmp.steps.legal.question.long.sensitiveDataAccess'"
                   [control]="sensitiveDataAccess"
                   [maxLength]="4000"
-                  appearance="fill"></app-textarea-wrapper>
+                  appearance="fill"
+                ></app-textarea-wrapper>
               </div>
             </ng-container>
             <hr />
           </div>
           <!-- Yes/No Questions-->
-          <div
-            *ngFor="let question of questions; last as last"
-            class="flex-radio">
-            <label id="{{ question.label }}">{{
-              question.label | translate
-            }}</label>
-            <app-cris-tag
-              [cris]="legalEthicalStep.value[question.cris]"></app-cris-tag>
+          <div *ngFor="let question of questions; last as last" class="flex-radio">
+            <label id="{{ question.label }}">{{ question.label | translate }}</label>
+            <app-cris-tag [cris]="legalEthicalStep.value[question.cris]"></app-cris-tag>
             <mat-radio-group
               formControlName="{{ question.model }}"
-              aria-labelledby="{{ question.label }}">
+              aria-labelledby="{{ question.label }}"
+            >
               <mat-radio-button class="boolean-mat-radio-button" [value]="true">
-                {{ "dmp.steps.legal.question.answer.yes" | translate }}
+                {{ 'dmp.steps.legal.question.answer.yes' | translate }}
               </mat-radio-button>
-              <mat-radio-button
-                class="boolean-mat-radio-button"
-                [value]="false">
-                {{ "dmp.steps.legal.question.answer.no" | translate }}
+              <mat-radio-button class="boolean-mat-radio-button" [value]="false">
+                {{ 'dmp.steps.legal.question.answer.no' | translate }}
               </mat-radio-button>
             </mat-radio-group>
 
@@ -171,21 +129,17 @@
                 question.model === 'personalData' &&
                 legalEthicalStep?.value.personalData &&
                 datasets?.length
-              ">
+              "
+            >
               <div>
                 <section class="dataset-checkbox-section" [formGroup]="dmpForm">
-                  {{
-                    "dmp.steps.legal.question.dataset.personalData" | translate
-                  }}:
+                  {{ 'dmp.steps.legal.question.dataset.personalData' | translate }}:
                   <div formArrayName="datasets">
-                    <ng-container
-                      *ngFor="let dataset of datasets?.controls; index as i">
+                    <ng-container *ngFor="let dataset of datasets?.controls; index as i">
                       <ng-container [formGroupName]="i">
-                        <mat-checkbox
-                          class="dataset-checkbox"
-                          formControlName="personalData"
-                          >{{ dataset.value.title }}</mat-checkbox
-                        >
+                        <mat-checkbox class="dataset-checkbox" formControlName="personalData">{{
+                          dataset.value.title
+                        }}</mat-checkbox>
                       </ng-container>
                     </ng-container>
                   </div>
@@ -194,36 +148,28 @@
               <div>
                 <mat-form-field class="full-width">
                   <mat-label>{{
-                    "dmp.steps.legal.question.personalDataCompliance"
-                      | translate
+                    'dmp.steps.legal.question.personalDataCompliance' | translate
                   }}</mat-label>
                   <mat-select formControlName="personalDataCompliance" multiple>
                     <mat-option
-                      *ngFor="
-                        let option of complianceOptions
-                          | keyvalue: originalOrder
-                      "
-                      [value]="option.key">
-                      {{
-                        translateCompliancePrefixEnum + option.value | translate
-                      }}
+                      *ngFor="let option of complianceOptions | keyvalue: originalOrder"
+                      [value]="option.key"
+                    >
+                      {{ translateCompliancePrefixEnum + option.value | translate }}
                     </mat-option>
                   </mat-select>
                   <mat-hint>{{
-                    "dmp.steps.legal.help.personalDataCompliance" | translate
+                    'dmp.steps.legal.help.personalDataCompliance' | translate
                   }}</mat-hint>
                 </mat-form-field>
                 <br /><br />
                 <ng-container *ngIf="isOtherSelected">
                   <app-textarea-wrapper
-                    [label]="
-                      'dmp.steps.legal.question.short.otherPersonalDataCompliance'
-                    "
-                    [longLabel]="
-                      'dmp.steps.legal.question.long.otherPersonalDataCompliance'
-                    "
+                    [label]="'dmp.steps.legal.question.short.otherPersonalDataCompliance'"
+                    [longLabel]="'dmp.steps.legal.question.long.otherPersonalDataCompliance'"
                     [control]="otherPersonalDataCompliance"
-                    [maxLength]="4000"></app-textarea-wrapper>
+                    [maxLength]="4000"
+                  ></app-textarea-wrapper>
                 </ng-container>
               </div>
             </ng-container>
@@ -233,16 +179,13 @@
                 question.model === 'legalRestrictions' &&
                 legalEthicalStep?.value.legalRestrictions &&
                 datasets?.length
-              ">
+              "
+            >
               <div>
                 <section class="dataset-checkbox-section" [formGroup]="dmpForm">
-                  {{
-                    "dmp.steps.legal.question.dataset.legalRestrictions"
-                      | translate
-                  }}
+                  {{ 'dmp.steps.legal.question.dataset.legalRestrictions' | translate }}
                   <div formArrayName="datasets">
-                    <ng-container
-                      *ngFor="let dataset of datasets?.controls; index as i">
+                    <ng-container *ngFor="let dataset of datasets?.controls; index as i">
                       <ng-container [formGroupName]="i">
                         <mat-checkbox
                           class="dataset-checkbox"
@@ -256,46 +199,32 @@
               </div>
               <div>
                 <app-textarea-wrapper
-                  [label]="
-                    'dmp.steps.legal.question.short.legalRestrictionsComment'
-                  "
-                  [longLabel]="
-                    'dmp.steps.legal.question.long.legalRestrictionsComment'
-                  "
+                  [label]="'dmp.steps.legal.question.short.legalRestrictionsComment'"
+                  [longLabel]="'dmp.steps.legal.question.long.legalRestrictionsComment'"
                   [control]="legalRestrictionsComment"
-                  [maxLength]="4000"></app-textarea-wrapper>
+                  [maxLength]="4000"
+                ></app-textarea-wrapper>
               </div>
               <mat-form-field class="full-width">
                 <mat-label>{{
-                  "dmp.steps.legal.question.legalRestrictionsDocuments"
-                    | translate
+                  'dmp.steps.legal.question.legalRestrictionsDocuments' | translate
                 }}</mat-label>
-                <mat-select
-                  formControlName="legalRestrictionsDocuments"
-                  multiple>
+                <mat-select formControlName="legalRestrictionsDocuments" multiple>
                   <mat-option
-                    *ngFor="
-                      let option of agreementOptions | keyvalue: originalOrder
-                    "
-                    [value]="option.key">
-                    {{
-                      translateAgreementPrefixEnum + option.value | translate
-                    }}
+                    *ngFor="let option of agreementOptions | keyvalue: originalOrder"
+                    [value]="option.key"
+                  >
+                    {{ translateAgreementPrefixEnum + option.value | translate }}
                   </mat-option>
                 </mat-select>
               </mat-form-field>
               <ng-container *ngIf="isOtherDocumentSelected">
                 <app-textarea-wrapper
-                  [label]="
-                    'dmp.steps.legal.question.short.otherLegalRestrictionsDocuments'
-                  "
-                  [longLabel]="
-                    'dmp.steps.legal.question.long.otherLegalRestrictionsDocuments'
-                  "
+                  [label]="'dmp.steps.legal.question.short.otherLegalRestrictionsDocuments'"
+                  [longLabel]="'dmp.steps.legal.question.long.otherLegalRestrictionsDocuments'"
                   [maxLength]="4000"
-                  [control]="
-                    otherLegalRestrictionsDocuments
-                  "></app-textarea-wrapper>
+                  [control]="otherLegalRestrictionsDocuments"
+                ></app-textarea-wrapper>
               </ng-container>
             </ng-container>
             <hr *ngIf="!last" />
@@ -303,18 +232,16 @@
 
           <div class="form-field-hint">
             <app-textarea-wrapper
-              [label]="
-                'dmp.steps.legal.question.short.dataRightsAndAccessControl'
-              "
-              [longLabel]="
-                'dmp.steps.legal.question.long.dataRightsAndAccessControl'
-              "
+              [label]="'dmp.steps.legal.question.short.dataRightsAndAccessControl'"
+              [longLabel]="'dmp.steps.legal.question.long.dataRightsAndAccessControl'"
               [maxLength]="4000"
-              [control]="dataRightsAndAccessControl"></app-textarea-wrapper>
+              [control]="dataRightsAndAccessControl"
+            ></app-textarea-wrapper>
             <app-tooltip
               [tooltip]="'mug.dialog.legalAspects.title'"
               (click)="openLegalAspectsDialogInfo()"
-              class="clickable-info"></app-tooltip>
+              class="clickable-info"
+            ></app-tooltip>
           </div>
         </div>
       </div>
@@ -322,12 +249,11 @@
   </mat-card>
 </div>
 <div *ngIf="selectedView === 'secondaryView'">
-  <mat-label
-    class="label-title mat-title-large"
-    id="example-radio-group-label"
-    >{{ "dmp.steps.legal.view.button.ethical" | translate }}</mat-label
-  >
+  <mat-label class="label-title mat-title-large" id="example-radio-group-label">{{
+    'dmp.steps.legal.view.button.ethical' | translate
+  }}</mat-label>
   <app-ethical-aspects
     [legalEthicalStep]="legalEthicalStep"
-    [ethicalReportEnabled]="ethicalReportEnabled"></app-ethical-aspects>
+    [ethicalReportEnabled]="ethicalReportEnabled"
+  ></app-ethical-aspects>
 </div>

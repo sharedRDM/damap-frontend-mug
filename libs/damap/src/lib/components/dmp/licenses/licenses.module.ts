@@ -3,11 +3,7 @@ import { DataDeletionModule } from '../data-deletion/data-deletion.module';
 import { InfoMessageModule } from '../../../widgets/info-message/info-message.module';
 import { LicenseWizardModule } from '../../../widgets/license-wizard/license-wizard.module';
 import { LicensesComponent } from './licenses.component';
-import {
-  DateAdapter,
-  MAT_DATE_FORMATS,
-  MAT_DATE_LOCALE,
-} from '@angular/material/core';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { NgModule } from '@angular/core';

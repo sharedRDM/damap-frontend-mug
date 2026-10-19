@@ -1,7 +1,4 @@
-import {
-  ConfirmDeletionDialogComponent,
-  PeopleComponent,
-} from './people.component';
+import { ConfirmDeletionDialogComponent, PeopleComponent } from './people.component';
 
 import { ContributorFilterPipe } from './contributor-filter.pipe';
 import { ContributorManualComponent } from './contributor-manual/contributor-manual.component';
