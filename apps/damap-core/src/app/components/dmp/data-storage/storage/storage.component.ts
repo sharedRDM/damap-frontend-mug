@@ -8,7 +8,10 @@ import {
 
 import { InternalStorage } from '../../../../domain/internal-storage';
 import { MatDialog } from '@angular/material/dialog';
+import { StorageGuidelinesDialogComponent } from '../storage-dialog/storage-guidelines-dialog.component';
 import { StorageInfoDialogComponent } from '../storage-dialog/storage-info-dialog.component';
+import { InfoMessageComponent } from '../../../../widgets/info-message/info-message.component';
+import { TooltipComponent } from '../../../../widgets/tooltip/tooltip.component';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { InternalStorageStore } from '../../../../data-access/internal-storage.store';
 import { MatLabel, MatFormField } from '@angular/material/form-field';
@@ -51,6 +54,8 @@ import { StorageFilterPipe } from './storage-filter.pipe';
     MatOption,
     TranslatePipe,
     StorageFilterPipe,
+    InfoMessageComponent,
+    TooltipComponent,
   ],
 })
 export class StorageComponent {
@@ -94,6 +99,13 @@ export class StorageComponent {
       storage.translations[0];
 
     return translation?.title ?? '';
+  }
+
+  openStorageGuidelinesDialog(): void {
+    this.dialog.open(StorageGuidelinesDialogComponent, {
+      width: '600px',
+      panelClass: 'custom-dialog-container',
+    });
   }
 
   openStorageInfo(storage: InternalStorage) {

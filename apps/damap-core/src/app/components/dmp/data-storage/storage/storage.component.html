@@ -1,6 +1,27 @@
-<mat-label class="label-title label-title" id="example-radio-group-label">{{
-  'dmp.steps.storage.intro' | translate
-}}</mat-label>
+<app-info-message>
+  {{ 'mug.info.fileServices.text' | translate }}
+  <a class="info-link-custom" [href]="'mug.link.fileservices.url' | translate" target="_blank">
+    {{ 'mug.info.fileServices.links.0.title' | translate }}</a
+  >
+  {{ 'mug.info.fileServices.links.0.text' | translate }}
+  <a class="info-link-custom" [href]="'mug.link.dataProtection.url' | translate" target="_blank">
+    {{ 'mug.info.fileServices.links.1.title' | translate }}</a
+  >
+  {{ 'mug.info.fileServices.links.1.text' | translate }}
+  <a class="info-link-custom" [href]="'mug.link.itkbOverview.url' | translate" target="_blank">
+    {{ 'mug.info.fileServices.links.2.title' | translate }}</a
+  >
+  {{ 'mug.info.fileServices.links.2.text' | translate }}
+</app-info-message>
+<mat-label class="label-title label-title" id="example-radio-group-label"
+  >{{ 'dmp.steps.storage.intro' | translate }}
+  <app-tooltip
+    [tooltip]="'mug.dialog.storageGuidelines.title'"
+    (click)="openStorageGuidelinesDialog()"
+    iconType="warning"
+    class="clickable-info"
+  />
+</mat-label>
 <section class="tu-storage">
   <div class="storage-grid">
     @for (

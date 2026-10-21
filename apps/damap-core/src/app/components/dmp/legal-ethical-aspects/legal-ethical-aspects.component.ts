@@ -1,4 +1,4 @@
-import { Component, Input, ChangeDetectionStrategy, input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, inject, input } from '@angular/core';
 import {
   UntypedFormArray,
   UntypedFormControl,
@@ -10,6 +10,9 @@ import {
 import { Agreement } from '../../../domain/enum/agreement.enum';
 import { ComplianceType } from '../../../domain/enum/compliance-type.enum';
 import { SecurityMeasure } from '../../../domain/enum/security-measure.enum';
+import { LegalAspectsDialogInfoComponent } from '../../../shared/question-dialogs/legal-aspects-dialog-info.component';
+import { MatDialog } from '@angular/material/dialog';
+import { InfoMessageComponent } from '../../../widgets/info-message/info-message.component';
 import { MatLabel, MatFormField, MatHint } from '@angular/material/form-field';
 import { MatCard, MatCardContent } from '@angular/material/card';
 import { CrisTagComponent } from '../../../widgets/cris-tag/cris-tag.component';
@@ -45,6 +48,7 @@ import { TranslatePipe } from '@ngx-translate/core';
     TextareaWrapperComponent,
     MatHint,
     EthicalAspectsComponent,
+    InfoMessageComponent,
     KeyValuePipe,
     TranslatePipe,
   ],
@@ -60,6 +64,15 @@ export class LegalEthicalAspectsComponent {
   translateSecurityPrefixEnum = 'enum.securitymeasure.';
 
   selectedView: 'primaryView' | 'secondaryView' = 'primaryView';
+
+  private dialog = inject(MatDialog);
+
+  openLegalAspectsDialogInfo(): void {
+    this.dialog.open(LegalAspectsDialogInfoComponent, {
+      width: '600px',
+      panelClass: 'custom-dialog-container',
+    });
+  }
 
   optionsLinksEthics: string[] = ['Guidelines on Safeguarding Good Scientific Practice'];
 
