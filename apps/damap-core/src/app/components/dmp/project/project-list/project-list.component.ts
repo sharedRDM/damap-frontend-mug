@@ -83,6 +83,7 @@ export class ProjectListComponent implements OnInit, AfterViewInit {
           return previous === current;
         }),
         switchMap((term: string) => {
+          this.loading = true;
           return term === null || term.length === 0
             ? this.backendService.getRecommendedProjects()
             : this.backendService.getProjectSearchResult(term);
@@ -103,7 +104,6 @@ export class ProjectListComponent implements OnInit, AfterViewInit {
   }
 
   search(term: string) {
-    this.loading = true;
     this.searchTerms.next(term);
   }
 
