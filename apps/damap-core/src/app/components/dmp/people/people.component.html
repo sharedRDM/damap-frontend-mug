@@ -3,6 +3,28 @@
     <mat-label class="label-title mat-title-large title-search" id="example-radio-group-label">{{
       'dmp.steps.people.general.search' | translate
     }}</mat-label>
+
+    <app-info-message
+      >{{ 'mug.info.peopleContact.prefix' | translate }}
+
+      <a class="info-link-custom" href="https://orcid.org/" target="_blank">
+        {{ 'mug.info.peopleContact.orcid.title' | translate }}</a
+      >
+      {{ 'mug.info.peopleContact.orcid.text' | translate }}
+      {{ 'mug.info.peopleContact.id.title' | translate }}
+      {{ 'mug.info.peopleContact.id.text' | translate }}
+      <p>
+        {{ 'mug.info.peopleContact.endPrefix' | translate }}
+        <a
+          class="info-link-custom"
+          [href]="'mug.link.dataTransfer.url' | translate"
+          target="_blank"
+        >
+          {{ 'mug.info.peopleContact.mUni.title' | translate }}</a
+        >
+      </p>
+    </app-info-message>
+
     <!-- SEARCH -->
     <div [formGroup]="dmpForm" class="mat-search-form-field">
       <div class="search-container">
