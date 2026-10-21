@@ -28,6 +28,7 @@ import { MatIcon } from '@angular/material/icon';
 import { MatSelect } from '@angular/material/select';
 import { MatOption } from '@angular/material/autocomplete';
 import { ErrorMessageComponent } from '../../../widgets/error-message/error-message.component';
+import { InfoMessageComponent } from '../../../widgets/info-message/info-message.component';
 import { MatTabLabel } from '@angular/material/tabs';
 import { RepoRecommendationComponent } from './repo-recommendation/repo-recommendation.component';
 import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
@@ -43,6 +44,7 @@ import { RepoPipe } from './repo.pipe';
   changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     MatLabel,
+    InfoMessageComponent,
     RetentionPeriodComponent,
     FormsModule,
     ReactiveFormsModule,

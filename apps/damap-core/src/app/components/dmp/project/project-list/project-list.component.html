@@ -8,6 +8,9 @@
     [label]="'dmp.steps.project.search' | translate"
     (searchChange)="search($event)"
   />
+  @if (loading) {
+    <mat-progress-bar mode="indeterminate" />
+  }
   @if (!selectedProject) {
     <div class="list-container">
       <mat-selection-list
