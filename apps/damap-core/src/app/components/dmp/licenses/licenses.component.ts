@@ -27,7 +27,9 @@ import {
 } from '@angular/material/datepicker';
 import { DataDeletionComponent } from '../data-deletion/data-deletion.component';
 import { TextareaWrapperComponent } from '../../../shared/textarea-wrapper/textarea-wrapper.component';
+// CUSTOMIZATION MUG START
 import { InfoMessageComponent } from '../../../widgets/info-message/info-message.component';
+// CUSTOMIZATION MUG END
 import { KeyValuePipe } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
 import {
@@ -44,7 +46,9 @@ import {
   imports: [
     FormsModule,
     ReactiveFormsModule,
+    // CUSTOMIZATION MUG START
     InfoMessageComponent,
+    // CUSTOMIZATION MUG END
     MatLabel,
     MatCard,
     MatCardHeader,

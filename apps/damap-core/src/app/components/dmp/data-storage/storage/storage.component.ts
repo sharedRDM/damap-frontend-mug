@@ -8,10 +8,12 @@ import {
 
 import { InternalStorage } from '../../../../domain/internal-storage';
 import { MatDialog } from '@angular/material/dialog';
+// CUSTOMIZATION MUG START
 import { StorageGuidelinesDialogComponent } from '../storage-dialog/storage-guidelines-dialog.component';
-import { StorageInfoDialogComponent } from '../storage-dialog/storage-info-dialog.component';
 import { InfoMessageComponent } from '../../../../widgets/info-message/info-message.component';
 import { TooltipComponent } from '../../../../widgets/tooltip/tooltip.component';
+// CUSTOMIZATION MUG END
+import { StorageInfoDialogComponent } from '../storage-dialog/storage-info-dialog.component';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { InternalStorageStore } from '../../../../data-access/internal-storage.store';
 import { MatLabel, MatFormField } from '@angular/material/form-field';
@@ -54,8 +56,10 @@ import { StorageFilterPipe } from './storage-filter.pipe';
     MatOption,
     TranslatePipe,
     StorageFilterPipe,
+    // CUSTOMIZAZION MUG START
     InfoMessageComponent,
     TooltipComponent,
+    // CUSTOMIZATION MUG END
   ],
 })
 export class StorageComponent {
@@ -101,12 +105,14 @@ export class StorageComponent {
     return translation?.title ?? '';
   }
 
+  // CUSTOMIZATION MUG START
   openStorageGuidelinesDialog(): void {
     this.dialog.open(StorageGuidelinesDialogComponent, {
       width: '600px',
       panelClass: 'custom-dialog-container',
     });
   }
+  // CUSTOMIZATION MUG END
 
   openStorageInfo(storage: InternalStorage) {
     const translation =

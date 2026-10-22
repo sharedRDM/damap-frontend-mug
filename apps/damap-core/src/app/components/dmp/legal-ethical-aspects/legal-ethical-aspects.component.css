@@ -33,6 +33,7 @@ hr {
   opacity: 0.5;
 }
 
+/* CUSTOMIZATION MUG START */
 .clickable-info {
   cursor: pointer;
   display: flex;
@@ -48,3 +49,4 @@ hr {
   color: rgba(0, 0, 0, 0.6);
   margin-left: 2px;
 }
+/* CUSTOMIZATION MUG END */

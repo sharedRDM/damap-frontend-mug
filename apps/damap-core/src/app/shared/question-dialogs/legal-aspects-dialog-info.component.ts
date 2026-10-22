@@ -1,3 +1,4 @@
+// CUSTOMIZATION MUG START
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {
   MatDialogTitle,
@@ -22,3 +23,4 @@ import { TranslatePipe } from '@ngx-translate/core';
   ],
 })
 export class LegalAspectsDialogInfoComponent {}
+// CUSTOMIZATION MUG END

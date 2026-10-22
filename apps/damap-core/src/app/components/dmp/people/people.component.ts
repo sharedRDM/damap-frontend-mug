@@ -54,7 +54,9 @@ import { MatCard, MatCardContent } from '@angular/material/card';
 import { ContributorManualComponent } from './contributor-manual/contributor-manual.component';
 import { OrcidComponent } from '../../../widgets/orcid/orcid.component';
 import { InputWrapperComponent } from '../../../shared/input-wrapper/input-wrapper.component';
+// CUSTOMIZATION MUG START
 import { InfoMessageComponent } from '../../../widgets/info-message/info-message.component';
+// CUSTOMIZATION MUG END
 import { AsyncPipe, KeyValuePipe } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
 import { CdkScrollable } from '@angular/cdk/scrolling';
@@ -67,7 +69,9 @@ import { CdkScrollable } from '@angular/cdk/scrolling';
   changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     MatLabel,
+    // CUSTOMIZATION MUG START
     InfoMessageComponent,
+    // CUSTOMIZATION MUG END
     FormsModule,
     ReactiveFormsModule,
     PersonSearchComponent,

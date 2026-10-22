@@ -40,7 +40,9 @@ mat-radio-button {
   justify-content: center;
 }
 
+/* CUSTOMIZATION MUG START */
 .button-position-custom {
   color: var(--white-smoke-text) !important;
   font-weight: 400 !important;
 }
+/* CUSTOMIZATION MUG END */

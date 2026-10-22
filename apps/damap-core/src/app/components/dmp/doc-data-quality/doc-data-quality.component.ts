@@ -1,4 +1,6 @@
+// CUSTOMIZATION MUG: extra inject dependency START
 import { Component, Input, ChangeDetectionStrategy, inject } from '@angular/core';
+// CUSTOMIZATION MUG END
 import {
   UntypedFormControl,
   UntypedFormGroup,
@@ -14,10 +16,12 @@ import { MatSelect } from '@angular/material/select';
 import { MatOption } from '@angular/material/autocomplete';
 import { KeyValuePipe } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
+// CUSTOMIZATION MUG START
 import { MatDialog } from '@angular/material/dialog';
 import { MetadataDialogInfoComponent } from '../../../shared/question-dialogs/metadata-dialog-info.component';
 import { StructureDialogInfoComponent } from '../../../shared/question-dialogs/structure-dialog-info.component';
 import { ValidationDialogInfoComponent } from '../../../shared/question-dialogs/validation-dialog-info.component';
+// CUSTOMIZATION MUG END
 
 @Component({
   selector: 'app-dmp-doc-data-quality',
@@ -41,10 +45,13 @@ import { ValidationDialogInfoComponent } from '../../../shared/question-dialogs/
   ],
 })
 export class DocDataQualityComponent {
+  // CUSTOMIZATION MUG START
   private dialog = inject(MatDialog);
+  // CUSTOMIZATION MUG END
 
   @Input() docDataStep: UntypedFormGroup;
 
+  // CUSTOMIZATION MUG START
   openMetadataDialog(): void {
     this.dialog.open(MetadataDialogInfoComponent, {
       width: '600px',
@@ -65,6 +72,7 @@ export class DocDataQualityComponent {
       panelClass: 'custom-dialog-container',
     });
   }
+  // CUSTOMIZATION MUG END
 
   optionsMetadata: string[] = [
     'We will be using the following domain specific metadata standards:…',
