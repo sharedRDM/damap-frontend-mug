@@ -4,6 +4,7 @@ div#content {
   padding-bottom: 50px;
 }
 
+/* CUSTOMIZATION MUG START */
 .text-content {
   color: var(--primary-text);
 }
@@ -16,3 +17,4 @@ div#content {
 .position {
   margin-top: 10px;
 }
+/* CUSTOMIZATION MUG END */

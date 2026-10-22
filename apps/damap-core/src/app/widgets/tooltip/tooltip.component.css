@@ -3,6 +3,7 @@
   vertical-align: text-bottom;
 }
 
+/* CUSTOMIZATION MUG START */
 .material-icon-warning {
   color: darkorange;
 }
@@ -15,3 +16,4 @@
 .interactive-icon:hover {
   transform: scale(1.1);
 }
+/* CUSTOMIZATION MUG END */

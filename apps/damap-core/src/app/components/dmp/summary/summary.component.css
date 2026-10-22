@@ -15,7 +15,9 @@ td.mat-mdc-footer-cell {
 }
 
 td a {
+  /* CUSTOMIZATION MUG START */
   color: var(--primary);
+  /* CUSTOMIZATION MUG END */
   text-decoration: underline;
   cursor: pointer;
 }

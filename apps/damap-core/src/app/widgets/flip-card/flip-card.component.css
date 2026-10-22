@@ -61,6 +61,7 @@
   text-align: center;
 }
 
+/* CUSTOMIZATION MUG START */
 .title,
 .description {
   font-weight: 300;
@@ -69,6 +70,7 @@
 .title {
   margin: 10px;
 }
+/* CUSTOMIZATION MUG END */
 @media (max-width: 768px) {
   .flip-card-container {
     display: flex;
