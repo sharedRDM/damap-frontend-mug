@@ -23,7 +23,9 @@ import { SearchResult } from '../../../../domain/search/search-result';
 import { MatLabel } from '@angular/material/form-field';
 import { SearchFieldComponent } from '../../../../shared/search-field/search-field.component';
 import { MatIcon } from '@angular/material/icon';
+// CUSTOMIZATION MUG START
 import { MatProgressBar } from '@angular/material/progress-bar';
+// CUSTOMIZATION MUG END
 import { MatTooltip } from '@angular/material/tooltip';
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -41,7 +43,9 @@ import { TranslatePipe } from '@ngx-translate/core';
     MatListItemTitle,
     MatListItemLine,
     MatIcon,
+    // CUSTOMIZATION MUG START
     MatProgressBar,
+    // CUSTOMIZATION MUG END
     MatTooltip,
     AsyncPipe,
     DatePipe,
@@ -69,7 +73,9 @@ export class ProjectListComponent implements OnInit, AfterViewInit {
 
   private searchTerms = new Subject<string>();
   searchResult$: Observable<SearchResult<Project>>;
+  // CUSTOMIZATION MUG START
   loading = false;
+  // CUSTOMIZATION MUG END
 
   ngOnInit(): void {
     this.searchTerms
@@ -90,7 +96,9 @@ export class ProjectListComponent implements OnInit, AfterViewInit {
         }),
       )
       .subscribe((results) => {
+        // CUSTOMIZATION MUG START
         this.loading = false;
+        // CUSTOMIZATION MUG END
         this.searchResult$ = of(results);
       });
   }

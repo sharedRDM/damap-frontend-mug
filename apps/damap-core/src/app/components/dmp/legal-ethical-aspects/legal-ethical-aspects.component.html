@@ -3,6 +3,7 @@
     <mat-label class="label-title mat-title-large" id="example-radio-group-label">{{
       'dmp.steps.legal.view.button.legal' | translate
     }}</mat-label>
+    <!-- CUSTOMIZATION MUG START -->
     <app-info-message>
       {{ 'mug.info.legal.introduction' | translate }}
       <div class="legal-links">
@@ -36,6 +37,7 @@
         </a>
       </div>
     </app-info-message>
+    <!-- CUSTOMIZATION MUG END -->
     <mat-card class="legal-ethical-card card-shadow">
       <mat-card-content>
         @if (selectedView === 'primaryView') {
@@ -254,11 +256,13 @@
                   [maxLength]="4000"
                   [control]="dataRightsAndAccessControl"
                 />
+                <!-- CUSTOMIZATION MUG START -->
                 <app-tooltip
                   [tooltip]="'mug.dialog.legalAspects.title'"
                   (click)="openLegalAspectsDialogInfo()"
                   class="clickable-info"
                 />
+                <!-- CUSTOMIZATION MUG END -->
               </div>
             </div>
           </div>

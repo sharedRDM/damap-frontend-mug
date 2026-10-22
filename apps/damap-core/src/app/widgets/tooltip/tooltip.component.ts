@@ -12,5 +12,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 })
 export class TooltipComponent {
   @Input() tooltip: string;
+  // CUSTOMIZATION MUG START
   @Input() iconType: 'info' | 'warning' = 'info';
+  // CUSTOMIZATION MUG END
 }

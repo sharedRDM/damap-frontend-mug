@@ -10,9 +10,11 @@ import {
 import { Agreement } from '../../../domain/enum/agreement.enum';
 import { ComplianceType } from '../../../domain/enum/compliance-type.enum';
 import { SecurityMeasure } from '../../../domain/enum/security-measure.enum';
+// CUSTOMIZATION MUG START
 import { LegalAspectsDialogInfoComponent } from '../../../shared/question-dialogs/legal-aspects-dialog-info.component';
 import { MatDialog } from '@angular/material/dialog';
 import { InfoMessageComponent } from '../../../widgets/info-message/info-message.component';
+// CUSTOMIZATION MUG END
 import { MatLabel, MatFormField, MatHint } from '@angular/material/form-field';
 import { MatCard, MatCardContent } from '@angular/material/card';
 import { CrisTagComponent } from '../../../widgets/cris-tag/cris-tag.component';
@@ -65,6 +67,7 @@ export class LegalEthicalAspectsComponent {
 
   selectedView: 'primaryView' | 'secondaryView' = 'primaryView';
 
+  // CUSTOMIZATION MUG START
   private dialog = inject(MatDialog);
 
   openLegalAspectsDialogInfo(): void {
@@ -73,6 +76,7 @@ export class LegalEthicalAspectsComponent {
       panelClass: 'custom-dialog-container',
     });
   }
+  // CUSTOMIZATION MUG END
 
   optionsLinksEthics: string[] = ['Guidelines on Safeguarding Good Scientific Practice'];
 

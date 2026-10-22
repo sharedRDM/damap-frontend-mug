@@ -8,9 +8,11 @@
     [label]="'dmp.steps.project.search' | translate"
     (searchChange)="search($event)"
   />
+  <!-- CUSTOMIZATION MUG START -->
   @if (loading) {
     <mat-progress-bar mode="indeterminate" />
   }
+  <!-- CUSTOMIZATION MUG END -->
   @if (!selectedProject) {
     <div class="list-container">
       <mat-selection-list

@@ -4,8 +4,10 @@
   padding: 1rem;
   align-items: flex-start;
   border-radius: 5px;
+  /* CUSTOMIZATION MUG START */
   color: var(--mat-theme-on-surface-variant);
   background-color: var(--mat-theme-surface-variant);
+  /* CUSTOMIZATION MUG END */
 }
 
 .mat-icon {

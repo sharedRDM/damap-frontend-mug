@@ -1,3 +1,4 @@
+<!-- CUSTOMIZATION MUG START -->
 <app-info-message>
   {{ 'mug.info.fileServices.text' | translate }}
   <a class="info-link-custom" [href]="'mug.link.fileservices.url' | translate" target="_blank">
@@ -13,14 +14,17 @@
   >
   {{ 'mug.info.fileServices.links.2.text' | translate }}
 </app-info-message>
+<!-- CUSTOMIZATION MUG END -->
 <mat-label class="label-title label-title" id="example-radio-group-label"
   >{{ 'dmp.steps.storage.intro' | translate }}
+  <!-- CUSTOMIZATION MUG START -->
   <app-tooltip
     [tooltip]="'mug.dialog.storageGuidelines.title'"
     (click)="openStorageGuidelinesDialog()"
     iconType="warning"
     class="clickable-info"
   />
+  <!-- CUSTOMIZATION MUG END -->
 </mat-label>
 <section class="tu-storage">
   <div class="storage-grid">
