@@ -25,8 +25,9 @@ import {
   MatDialogActions,
   MatDialogClose,
 } from '@angular/material/dialog';
-import { Observable, Subject, Subscription } from 'rxjs';
-import { debounceTime } from 'rxjs/operators';
+// CUSTOMIZATION MUG START
+import { Observable, Subject, Subscription, catchError, debounceTime, of, switchMap } from 'rxjs';
+// CUSTOMIZATION MUG END
 import { ServiceConfig } from '../../../domain/config-services';
 import { SearchResult } from '../../../domain/search/search-result';
 import { Contributor } from '../../../domain/contributor';
@@ -56,6 +57,7 @@ import { OrcidComponent } from '../../../widgets/orcid/orcid.component';
 import { InputWrapperComponent } from '../../../shared/input-wrapper/input-wrapper.component';
 // CUSTOMIZATION MUG START
 import { InfoMessageComponent } from '../../../widgets/info-message/info-message.component';
+import { MatProgressBar } from '@angular/material/progress-bar';
 // CUSTOMIZATION MUG END
 import { AsyncPipe, KeyValuePipe } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -71,6 +73,7 @@ import { CdkScrollable } from '@angular/cdk/scrolling';
     MatLabel,
     // CUSTOMIZATION MUG START
     InfoMessageComponent,
+    MatProgressBar,
     // CUSTOMIZATION MUG END
     FormsModule,
     ReactiveFormsModule,
@@ -125,6 +128,9 @@ export class PeopleComponent implements OnInit, OnDestroy {
   serviceConfig$: ServiceConfig[];
   serviceConfigType: ServiceConfig;
   isCollapsed: boolean = false;
+  // CUSTOMIZATION MUG START
+  loading = false;
+  // CUSTOMIZATION MUG END
 
   currentUpdateContributorIdx: number = -1;
   form = new UntypedFormGroup({
@@ -144,12 +150,24 @@ export class PeopleComponent implements OnInit, OnDestroy {
       });
 
       const searchSubscription = this.searchTerms
-        .pipe(debounceTime(300))
-        .subscribe((term: string) => {
-          this.searchResult$ = this.backendService.getPersonSearchResult(
-            term,
-            this.serviceConfigType.queryValue,
-          );
+        .pipe(
+          debounceTime(300),
+          // CUSTOMIZATION MUG START
+          switchMap((term: string) => {
+            const trimmed = term?.trim();
+            if (!trimmed) {
+              return of({ items: [] } as SearchResult<Contributor>);
+            }
+            this.loading = true;
+            return this.backendService
+              .getPersonSearchResult(trimmed, this.serviceConfigType.queryValue)
+              .pipe(catchError(() => of({ items: [] } as SearchResult<Contributor>)));
+          }),
+        )
+        .subscribe((results) => {
+          this.loading = false;
+          this.searchResult$ = of(results);
+          // CUSTOMIZATION MUG END
         });
       this.subscriptions.push(searchSubscription);
     });
