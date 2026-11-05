@@ -56,6 +56,11 @@
             </mat-form-field>
           </div>
         </div>
+        <!-- CUSTOMIZATION MUG START -->
+        @if (loading) {
+          <mat-progress-bar mode="indeterminate" />
+        }
+        <!-- CUSTOMIZATION MUG END -->
       </div>
     </div>
     @if (!projectMembers?.length) {
