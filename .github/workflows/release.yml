@@ -33,9 +33,9 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ github.repository }}
-          # git tag: v1.2.3, output: 1.2.3
+          # git tag: v1.2.3.4, output: 1.2.3.4
           tags: |
-            type=semver,pattern={{version}},enable=${{ env.is-version-tag == 'true'}}
+            type=pep440,pattern={{version}},enable=${{ env.is-version-tag == 'true'}}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
